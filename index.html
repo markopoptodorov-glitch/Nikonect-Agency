@@ -904,34 +904,26 @@
     }
   ];
 
-  // Grid tiles — cover image + Behance link for each project
+  // Grid tiles — cover image for each project; clicking a tile jumps to its category filter
   const projects = [
     {name:'Matchdays Vol. 1', cat:'matchdays', tall:true,
-      img:'images/matchday/mosquera matchday.png',
-      url:'https://www.behance.net/gallery/235414227/Matchdays-vol-1-Nikonect-Agency'},
+      img:'images/matchday/mosquera matchday.png'},
     {name:'2025 Sport Designs', cat:'matchdays',
-      img:'images/matchday/en nesyri matchday.png',
-      url:'https://www.behance.net/gallery/195884277/2025-Sport-Designs'},
+      img:'images/matchday/en nesyri matchday.png'},
     {name:'EA FC 26 Concept Cover', cat:'concepts',
-      img:'images/concepts/psg barca copy.png',
-      url:'https://www.behance.net/gallery/234850439/EA-FC-26-Concept-Cover-Design'},
+      img:'images/concepts/psg barca copy.png'},
     {name:'Car Designs', cat:'concepts', tall:true,
-      img:'images/concepts/PORSCHE copy.png',
-      url:'https://www.behance.net/gallery/233735827/Car-Designs-Nikonect'},
+      img:'images/concepts/PORSCHE copy.png'},
     {name:'SlamJam Skopje 2025', cat:'events', tall:true,
-      img:'https://mir-s3-cdn-cf.behance.net/projects/404/d983e5233756287.Y3JvcCwyNDI0LDE4OTYsMCww.png',
-      url:'https://www.behance.net/gallery/233756287/SlamJam-Skopje-2025'},
+      img:'images/SlamJam/slamjam x nikonect.png'},
     {name:'Veles Sport Games 2025', cat:'events',
-      img:'https://mir-s3-cdn-cf.behance.net/projects/404/0a1299230590629.Y3JvcCwyNDI0LDE4OTYsMCww.png',
-      url:'https://www.behance.net/gallery/230590629/sportski-igri-veles-2025'},
+      img:'images/Sportski Igri/mkd vs bel.png'},
     {name:'Thumbnail Designs', cat:'thumbnails',
-      img:'https://mir-s3-cdn-cf.behance.net/projects/404/7350dd233758677.Y3JvcCwyNDI0LDE4OTYsMCww.png',
-      url:'https://www.behance.net/gallery/233758677/Thumbnail-Designs-Nikonect'}
+      img:'images/thumbnails/legoat thumbnail.png'}
   ];
 
   projects.forEach(p => {
-    const t = document.createElement(p.url ? 'a' : 'div');
-    if(p.url){ t.href=p.url; t.target='_blank'; t.rel='noopener'; }
+    const t = document.createElement('div');
     t.className = 'tile' + (p.tall ? ' tall' : '');
     t.dataset.cat = p.cat;
     t.setAttribute('data-cursor', '');
@@ -941,6 +933,7 @@
     t.innerHTML = `
       <div class="tile-inner">${media}</div>
       <div class="overlay"><span class="cat">${p.cat}</span><span class="name">${p.name}</span></div>`;
+    t.addEventListener('click', () => applyFilter(p.cat));
     grid.appendChild(t);
   });
 
@@ -996,39 +989,40 @@
     });
   }
 
-  // Filter logic
+  // Filter logic — shared by the filter buttons and tile clicks (tile jumps to its own category)
   const filters = document.querySelectorAll('.filter');
-  filters.forEach(f => {
-    f.addEventListener('click', () => {
-      filters.forEach(x => x.classList.remove('active'));
-      f.classList.add('active');
-      const cat = f.dataset.filter;
 
-      if(cat === 'events') {
-        // Two labelled trains, one per event
-        grid.style.display = 'none';
-        carouselView.classList.add('active');
-        buildEventCarousels();
-      } else if(carouselImages[cat]) {
-        // Carousel mode
-        grid.style.display = 'none';
-        carouselView.classList.add('active');
-        buildCarousel(carouselImages[cat]);
-      } else {
-        // Grid mode
-        carouselView.classList.remove('active');
-        grid.style.display = '';
-        document.querySelectorAll('.tile').forEach(t => {
-          const show = cat === 'all' || t.dataset.cat === cat;
-          if(show){
-            t.classList.remove('hide');
-            gsap.fromTo(t,{opacity:0,scale:.9},{opacity:1,scale:1,duration:.5,ease:'power3.out'});
-          } else {
-            t.classList.add('hide');
-          }
-        });
-      }
-    });
+  function applyFilter(cat) {
+    filters.forEach(x => x.classList.toggle('active', x.dataset.filter === cat));
+
+    if(cat === 'events') {
+      // Two labelled trains, one per event
+      grid.style.display = 'none';
+      carouselView.classList.add('active');
+      buildEventCarousels();
+    } else if(carouselImages[cat]) {
+      // Carousel mode
+      grid.style.display = 'none';
+      carouselView.classList.add('active');
+      buildCarousel(carouselImages[cat]);
+    } else {
+      // Grid mode
+      carouselView.classList.remove('active');
+      grid.style.display = '';
+      document.querySelectorAll('.tile').forEach(t => {
+        const show = cat === 'all' || t.dataset.cat === cat;
+        if(show){
+          t.classList.remove('hide');
+          gsap.fromTo(t,{opacity:0,scale:.9},{opacity:1,scale:1,duration:.5,ease:'power3.out'});
+        } else {
+          t.classList.add('hide');
+        }
+      });
+    }
+  }
+
+  filters.forEach(f => {
+    f.addEventListener('click', () => applyFilter(f.dataset.filter));
   });
 
   // Cursor grow on tiles
