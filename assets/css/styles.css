@@ -1376,3 +1376,106 @@ html[lang='mk'] .about h2 { font-size: clamp(2rem, 5vw, 3.6rem); }
   .proof-card { flex: 1 1 calc(50% - .7rem); min-width: 150px; min-height: 104px; padding: 1.1rem .8rem; }
   .proof-card__name { font-size: 1.02rem; }
 }
+
+/* =============================================================================
+   SECTION DECORATION
+   -----------------------------------------------------------------------------
+   Static background furniture so the page is not flat black between sections.
+   Every piece obeys the same rules:
+     - sits at z-index -1 inside its section, so it is always BEHIND text and
+       behind the poster marquee, never over them
+     - aria-hidden and pointer-events:none
+     - only --black / --white / --red, at low alpha
+     - no backdrop-filter, no filter: blur(), no animation at all
+     - built from gradients and a little inline SVG, so it adds no requests
+   ========================================================================== */
+.deco {
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  overflow: hidden;
+  pointer-events: none;
+}
+.deco > * { position: absolute; }
+
+/* --- faint square grid, masked to a soft patch ---------------------------- */
+.deco-grid {
+  inset: 0;
+  background-image:
+    linear-gradient(rgba(245, 245, 245, .045) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(245, 245, 245, .045) 1px, transparent 1px);
+  background-size: 76px 76px;
+  -webkit-mask-image: radial-gradient(ellipse 62% 58% at 22% 38%, #000 0%, transparent 72%);
+  mask-image: radial-gradient(ellipse 62% 58% at 22% 38%, #000 0%, transparent 72%);
+}
+.deco-grid--right {
+  -webkit-mask-image: radial-gradient(ellipse 58% 55% at 82% 62%, #000 0%, transparent 72%);
+  mask-image: radial-gradient(ellipse 58% 55% at 82% 62%, #000 0%, transparent 72%);
+}
+
+/* --- halftone dot cluster ------------------------------------------------- */
+.deco-halftone {
+  width: min(46vw, 460px);
+  height: min(46vw, 460px);
+  background-image: radial-gradient(rgba(245, 245, 245, .16) 1.4px, transparent 1.6px);
+  background-size: 13px 13px;
+  -webkit-mask-image: radial-gradient(circle at 50% 50%, #000 0%, transparent 68%);
+  mask-image: radial-gradient(circle at 50% 50%, #000 0%, transparent 68%);
+}
+.deco-halftone--red {
+  background-image: radial-gradient(rgba(232, 0, 28, .3) 1.4px, transparent 1.6px);
+}
+
+/* --- thin diagonal speed lines -------------------------------------------- */
+.deco-speed {
+  width: min(70vw, 760px);
+  height: min(42vw, 420px);
+  background-image: repeating-linear-gradient(
+    74deg,
+    rgba(245, 245, 245, .07) 0 1px,
+    transparent 1px 15px
+  );
+  -webkit-mask-image: linear-gradient(100deg, #000 0%, transparent 78%);
+  mask-image: linear-gradient(100deg, #000 0%, transparent 78%);
+}
+.deco-speed--red {
+  background-image: repeating-linear-gradient(
+    74deg,
+    rgba(232, 0, 28, .16) 0 1px,
+    transparent 1px 17px
+  );
+}
+
+/* --- red hairline --------------------------------------------------------- */
+.deco-hairline {
+  left: 0;
+  width: 100%;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, rgba(232, 0, 28, .38) 22%, rgba(232, 0, 28, .38) 78%, transparent);
+}
+
+/* --- oversized outlined word --------------------------------------------- */
+.deco-word {
+  font-family: var(--font-head);
+  font-weight: 800;
+  text-transform: uppercase;
+  line-height: .8;
+  letter-spacing: .01em;
+  white-space: nowrap;
+  color: transparent;
+  -webkit-text-stroke: 1px rgba(245, 245, 245, .055);
+  font-size: clamp(5rem, 17vw, 15rem);
+  user-select: none;
+}
+.deco-word--red { -webkit-text-stroke-color: rgba(232, 0, 28, .1); }
+
+/* --- inline SVG line art (court markings, registration ticks) ------------- */
+.deco-art { color: rgba(245, 245, 245, .07); }
+.deco-art--red { color: rgba(232, 0, 28, .13); }
+.deco-art svg { display: block; width: 100%; height: 100%; }
+
+/* Firefox has no -webkit-text-stroke; the word would render as a solid block
+   of white. Hide it there rather than let it cover the section. */
+@supports not (-webkit-text-stroke: 1px red) {
+  .deco-word { display: none; }
+}
