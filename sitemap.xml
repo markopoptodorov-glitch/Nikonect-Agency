@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- TODO(Marko): if you change SITE_CONFIG.siteUrl, change the URL here and
+     in robots.txt too — these are static files and cannot read the config. -->
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:xhtml="http://www.w3.org/1999/xhtml">
+  <url>
+    <loc>https://markopoptodorov-glitch.github.io/Nikonect-Agency/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>1.0</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://markopoptodorov-glitch.github.io/Nikonect-Agency/"/>
+    <xhtml:link rel="alternate" hreflang="mk" href="https://markopoptodorov-glitch.github.io/Nikonect-Agency/"/>
+  </url>
+</urlset>

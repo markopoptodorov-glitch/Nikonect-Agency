@@ -1,0 +1,8 @@
+User-agent: *
+Allow: /
+
+# Source PNGs are kept in the repo for archival only; they are not part of
+# the site and should not be crawled.
+Disallow: /assets/original/
+
+Sitemap: https://markopoptodorov-glitch.github.io/Nikonect-Agency/sitemap.xml
