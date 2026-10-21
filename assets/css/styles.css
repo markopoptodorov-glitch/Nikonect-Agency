@@ -425,7 +425,8 @@ html.marquee-visible .dock {
     inset: 0;
     flex-direction: column;
     justify-content: center;
-    background: rgba(8, 8, 8, .97);
+    /* Solid: at .97 the hero headline behind it was still faintly legible. */
+    background: var(--black);
     gap: 2.2rem;
     transform: translateX(100%);
     transition: transform .45s var(--ease);
@@ -1045,7 +1046,8 @@ form { display: flex; flex-direction: column; gap: 1.2rem; }
 .dock {
   position: fixed;
   right: clamp(.8rem, 2vw, 1.5rem);
-  bottom: clamp(.8rem, 2vw, 1.5rem);
+  /* Clear the iOS home indicator / Android gesture bar. */
+  bottom: calc(clamp(.8rem, 2vw, 1.5rem) + env(safe-area-inset-bottom, 0px));
   z-index: 45;
   display: flex;
   gap: .3rem;
@@ -1478,4 +1480,104 @@ html[lang='mk'] .about h2 { font-size: clamp(2rem, 5vw, 3.6rem); }
    of white. Hide it there rather than let it cover the section. */
 @supports not (-webkit-text-stroke: 1px red) {
   .deco-word { display: none; }
+}
+
+/* =============================================================================
+   MOBILE
+   Audited at 360 / 375 / 390 / 430 / 768. Each block below answers a specific
+   failure found by scripts/mobile-audit.mjs.
+   ========================================================================== */
+
+/* Small viewport units, for the two places a mobile browser's collapsing
+   toolbar would otherwise clip: the full-screen nav sheet and the lightbox
+   image. vh first as a fallback.
+
+   The nav sheet rule is inside the mobile query on purpose — above that width
+   .nav__links is an inline flex row in the pill, and giving it a viewport
+   height there stretches the whole header. */
+.lightbox img { max-height: 86vh; max-height: 86svh; }
+
+/* Headings that were still a fixed rem. */
+.step h3 { font-size: clamp(1.15rem, 3.6vw, 1.4rem); }
+.proof-card__name { font-size: clamp(1rem, 3.4vw, 1.2rem); }
+
+@media (max-width: 820px) {
+  /* iOS zooms the page in on focus for any field under 16px. */
+  .field input,
+  .field select,
+  .field textarea { font-size: 16px; }
+
+  /* 44px minimum for everything a thumb has to hit. */
+  .burger { width: 44px; height: 44px; }
+  .lang button {
+    display: grid;
+    place-items: center;
+    min-width: 44px;
+    min-height: 44px;
+    padding: 0 .7rem;
+  }
+  .filter {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 44px;
+  }
+  .dock a { width: 44px; height: 44px; }
+  .btn { min-height: 44px; }
+  .grid-more button { min-height: 44px; }
+
+  /* A backdrop-filter on an ancestor makes that ancestor the containing block
+     for fixed-position descendants, so the sheet was being sized and clipped
+     to the nav pill rather than the viewport. Dropping the pill's filter
+     while the menu is open hands the sheet the viewport back. */
+  .nav.menu-open .nav__pill {
+    -webkit-backdrop-filter: none;
+    backdrop-filter: none;
+    background: rgba(10, 10, 10, .96);
+  }
+  .nav__links { height: 100vh; height: 100svh; }
+
+  /* The off-canvas links were only as wide as their text. */
+  .nav__links a {
+    display: block;
+    width: 100%;
+    text-align: center;
+    min-height: 44px;
+    padding: .5rem 1rem;
+  }
+
+  /* A precise pointer can be reported on a touch device; at this width the
+     custom cursor is never wanted. */
+  html.cursor-on,
+  html.cursor-on * { cursor: auto; }
+  .cursor,
+  .cursor-dot { display: none !important; }
+}
+
+/* Marquee posters were 125px wide — too small to read on a phone. 400px of
+   height puts a 9:16 poster at 225px wide, and the longer duration keeps the
+   apparent speed down now that each poster is larger. */
+@media (max-width: 900px) {
+  .marquee__set img { height: 400px; }
+  .marquee__track { animation-duration: 95s; }
+}
+
+@media (max-width: 620px) {
+  /* Full-width stacked CTAs rather than two half-width buttons. */
+  .hero__cta { flex-direction: column; align-items: stretch; gap: .7rem; }
+  .hero__cta .btn,
+  .cta-band .btn { width: 100%; }
+
+  /* Cheaper effects: a smaller blur radius, one background glow instead of
+     three, and a single decorative layer per section instead of two or three. */
+  :root { --glass-blur: blur(8px) saturate(140%); }
+  /* The @supports rule above hardcodes blur(14px) with the refraction filter.
+     Neither is wanted on a phone, so override both here. */
+  .nav__pill {
+    -webkit-backdrop-filter: var(--glass-blur);
+    backdrop-filter: var(--glass-blur);
+  }
+  .glow--2,
+  .glow--3 { display: none; }
+  .deco > :nth-child(n + 2) { display: none; }
 }

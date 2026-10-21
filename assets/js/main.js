@@ -704,6 +704,9 @@ function initNav() {
   window.addEventListener('scroll', onScroll, { passive: true });
 
   const setMenu = (open) => {
+    /* Also flags the header so CSS can drop the pill's backdrop-filter, which
+       otherwise becomes the containing block for the fixed sheet. */
+    nav.classList.toggle('menu-open', open);
     burger.classList.toggle('is-open', open);
     links.classList.toggle('is-open', open);
     burger.setAttribute('aria-expanded', String(open));
@@ -843,8 +846,18 @@ function initDock() {
   const sync = () => dock.classList.toggle('is-visible', pastHero && !atContact);
 
   new IntersectionObserver(([e]) => { pastHero = !e.isIntersecting; sync(); }).observe(hero);
-  if (contact) {
-    new IntersectionObserver(([e]) => { atContact = e.isIntersecting; sync(); }).observe(contact);
+
+  /* Hide the dock over the contact section and the footer — both already show
+     the same links, and on a short screen a floating button would otherwise
+     sit on top of them. */
+  const tail = [contact, document.querySelector('footer')].filter(Boolean);
+  const seen = new Set();
+  for (const el of tail) {
+    new IntersectionObserver(([e]) => {
+      if (e.isIntersecting) seen.add(e.target); else seen.delete(e.target);
+      atContact = seen.size > 0;
+      sync();
+    }).observe(el);
   }
 }
 
