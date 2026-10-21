@@ -1,8 +1,9 @@
 [
  {
-  "id": "borec-2",
+  "id": "borec-signing-01",
   "cat": "borec",
-  "src": "assets/images/borec/borec-2",
+  "type": "signing",
+  "src": "assets/images/borec/borec-signing-01",
   "w": 1080,
   "h": 1350,
   "widths": [
@@ -16,12 +17,14 @@
    "480": 41922,
    "720": 72798,
    "1080": 176384
-  }
+  },
+  "source": "borec 2.png"
  },
  {
-  "id": "amg",
+  "id": "concept-01",
   "cat": "concepts",
-  "src": "assets/images/concepts/amg",
+  "type": "concept",
+  "src": "assets/images/concepts/concept-01",
   "w": 2000,
   "h": 2500,
   "widths": [
@@ -35,12 +38,14 @@
    "480": 52094,
    "720": 105144,
    "1080": 206216
-  }
+  },
+  "source": "amg.png"
  },
  {
-  "id": "atm-rma",
+  "id": "concept-02",
   "cat": "concepts",
-  "src": "assets/images/concepts/atm-rma",
+  "type": "concept",
+  "src": "assets/images/concepts/concept-02",
   "w": 2000,
   "h": 2500,
   "widths": [
@@ -54,12 +59,14 @@
    "480": 40830,
    "720": 73298,
    "1080": 135250
-  }
+  },
+  "source": "atm rma.png"
  },
  {
-  "id": "dembele-bdor",
+  "id": "concept-03",
   "cat": "concepts",
-  "src": "assets/images/concepts/dembele-bdor",
+  "type": "concept",
+  "src": "assets/images/concepts/concept-03",
   "w": 2000,
   "h": 2500,
   "widths": [
@@ -73,12 +80,14 @@
    "480": 62576,
    "720": 119246,
    "1080": 250210
-  }
+  },
+  "source": "concepts/dembele bdor.png"
  },
  {
-  "id": "hamilton",
+  "id": "concept-04",
   "cat": "concepts",
-  "src": "assets/images/concepts/hamilton",
+  "type": "concept",
+  "src": "assets/images/concepts/concept-04",
   "w": 2000,
   "h": 2500,
   "widths": [
@@ -92,12 +101,14 @@
    "480": 49190,
    "720": 92492,
    "1080": 156240
-  }
+  },
+  "source": "concepts/hamilton.png"
  },
  {
-  "id": "jordan",
+  "id": "concept-05",
   "cat": "concepts",
-  "src": "assets/images/concepts/jordan",
+  "type": "concept",
+  "src": "assets/images/concepts/concept-05",
   "w": 2000,
   "h": 2500,
   "widths": [
@@ -111,12 +122,14 @@
    "480": 49444,
    "720": 99544,
    "1080": 203352
-  }
+  },
+  "source": "concepts/jordan.png"
  },
  {
-  "id": "jude-nbaja-copy",
+  "id": "concept-06",
   "cat": "concepts",
-  "src": "assets/images/concepts/jude-nbaja-copy",
+  "type": "concept",
+  "src": "assets/images/concepts/concept-06",
   "w": 2000,
   "h": 2500,
   "widths": [
@@ -130,12 +143,14 @@
    "480": 75528,
    "720": 150502,
    "1080": 374764
-  }
+  },
+  "source": "concepts/jude nbaja copy.png"
  },
  {
-  "id": "maatsen",
+  "id": "concept-07",
   "cat": "concepts",
-  "src": "assets/images/concepts/maatsen",
+  "type": "concept",
+  "src": "assets/images/concepts/concept-07",
   "w": 2000,
   "h": 2500,
   "widths": [
@@ -149,12 +164,14 @@
    "480": 80550,
    "720": 146550,
    "1080": 346230
-  }
+  },
+  "source": "concepts/maatsen.png"
  },
  {
-  "id": "mainoo-copy",
+  "id": "concept-08",
   "cat": "concepts",
-  "src": "assets/images/concepts/mainoo-copy",
+  "type": "concept",
+  "src": "assets/images/concepts/concept-08",
   "w": 2000,
   "h": 2500,
   "widths": [
@@ -168,12 +185,14 @@
    "480": 60518,
    "720": 136514,
    "1080": 244432
-  }
+  },
+  "source": "concepts/mainoo copy.png"
  },
  {
-  "id": "marmoush",
+  "id": "concept-09",
   "cat": "concepts",
-  "src": "assets/images/concepts/marmoush",
+  "type": "concept",
+  "src": "assets/images/concepts/concept-09",
   "w": 2000,
   "h": 2500,
   "widths": [
@@ -187,12 +206,14 @@
    "480": 44636,
    "720": 90364,
    "1080": 183016
-  }
+  },
+  "source": "concepts/marmoush.png"
  },
  {
-  "id": "nissan-gtr-copy",
+  "id": "concept-10",
   "cat": "concepts",
-  "src": "assets/images/concepts/nissan-gtr-copy",
+  "type": "concept",
+  "src": "assets/images/concepts/concept-10",
   "w": 2000,
   "h": 2500,
   "widths": [
@@ -206,12 +227,14 @@
    "480": 50984,
    "720": 100142,
    "1080": 199472
-  }
+  },
+  "source": "concepts/nissan gtr copy.png"
  },
  {
-  "id": "nkunku-pop",
+  "id": "concept-11",
   "cat": "concepts",
-  "src": "assets/images/concepts/nkunku-pop",
+  "type": "concept",
+  "src": "assets/images/concepts/concept-11",
   "w": 2000,
   "h": 2500,
   "widths": [
@@ -225,12 +248,14 @@
    "480": 52580,
    "720": 118534,
    "1080": 255152
-  }
+  },
+  "source": "concepts/nkunku pop.png"
  },
  {
-  "id": "porsche-copy",
+  "id": "concept-12",
   "cat": "concepts",
-  "src": "assets/images/concepts/porsche-copy",
+  "type": "concept",
+  "src": "assets/images/concepts/concept-12",
   "w": 2000,
   "h": 2500,
   "widths": [
@@ -244,12 +269,14 @@
    "480": 47850,
    "720": 105332,
    "1080": 213506
-  }
+  },
+  "source": "concepts/PORSCHE copy.png"
  },
  {
-  "id": "psg-barca-copy",
+  "id": "concept-13",
   "cat": "concepts",
-  "src": "assets/images/concepts/psg-barca-copy",
+  "type": "concept",
+  "src": "assets/images/concepts/concept-13",
   "w": 2000,
   "h": 2500,
   "widths": [
@@ -263,12 +290,14 @@
    "480": 65584,
    "720": 136318,
    "1080": 258626
-  }
+  },
+  "source": "concepts/psg barca copy.png"
  },
  {
-  "id": "rodrygo",
+  "id": "concept-14",
   "cat": "concepts",
-  "src": "assets/images/concepts/rodrygo",
+  "type": "concept",
+  "src": "assets/images/concepts/concept-14",
   "w": 2000,
   "h": 2500,
   "widths": [
@@ -282,12 +311,14 @@
    "480": 72802,
    "720": 138720,
    "1080": 306462
-  }
+  },
+  "source": "concepts/rodrygo.png"
  },
  {
-  "id": "ronaldoo",
+  "id": "concept-15",
   "cat": "concepts",
-  "src": "assets/images/concepts/ronaldoo",
+  "type": "concept",
+  "src": "assets/images/concepts/concept-15",
   "w": 2000,
   "h": 2500,
   "widths": [
@@ -301,12 +332,14 @@
    "480": 79074,
    "720": 150198,
    "1080": 374826
-  }
+  },
+  "source": "concepts/ronaldoo.png"
  },
  {
-  "id": "rui-botelho-1",
+  "id": "concept-16",
   "cat": "concepts",
-  "src": "assets/images/concepts/rui-botelho-1",
+  "type": "concept",
+  "src": "assets/images/concepts/concept-16",
   "w": 3240,
   "h": 4050,
   "widths": [
@@ -320,12 +353,14 @@
    "480": 52788,
    "720": 112658,
    "1080": 244968
-  }
+  },
+  "source": "concepts/rui botelho 1.png"
  },
  {
-  "id": "rui-botelho-2",
+  "id": "concept-17",
   "cat": "concepts",
-  "src": "assets/images/concepts/rui-botelho-2",
+  "type": "concept",
+  "src": "assets/images/concepts/concept-17",
   "w": 3240,
   "h": 4050,
   "widths": [
@@ -339,12 +374,14 @@
    "480": 58652,
    "720": 111578,
    "1080": 204110
-  }
+  },
+  "source": "concepts/rui botelho 2.png"
  },
  {
-  "id": "rui-botelho-3",
+  "id": "concept-18",
   "cat": "concepts",
-  "src": "assets/images/concepts/rui-botelho-3",
+  "type": "concept",
+  "src": "assets/images/concepts/concept-18",
   "w": 3240,
   "h": 4050,
   "widths": [
@@ -358,12 +395,14 @@
    "480": 47016,
    "720": 88206,
    "1080": 158674
-  }
+  },
+  "source": "concepts/rui botelho 3.png"
  },
  {
-  "id": "ry",
+  "id": "concept-19",
   "cat": "concepts",
-  "src": "assets/images/concepts/ry",
+  "type": "concept",
+  "src": "assets/images/concepts/concept-19",
   "w": 2000,
   "h": 2500,
   "widths": [
@@ -377,12 +416,14 @@
    "480": 56870,
    "720": 121532,
    "1080": 239712
-  }
+  },
+  "source": "concepts/ry.png"
  },
  {
-  "id": "shai-real",
+  "id": "concept-20",
   "cat": "concepts",
-  "src": "assets/images/concepts/shai-real",
+  "type": "concept",
+  "src": "assets/images/concepts/concept-20",
   "w": 2000,
   "h": 2500,
   "widths": [
@@ -396,12 +437,14 @@
    "480": 70042,
    "720": 147994,
    "1080": 312822
-  }
+  },
+  "source": "concepts/shai real.png"
  },
  {
-  "id": "siakam-texture",
+  "id": "concept-21",
   "cat": "concepts",
-  "src": "assets/images/concepts/siakam-texture",
+  "type": "concept",
+  "src": "assets/images/concepts/concept-21",
   "w": 3240,
   "h": 4050,
   "widths": [
@@ -415,12 +458,14 @@
    "480": 59802,
    "720": 116746,
    "1080": 253724
-  }
+  },
+  "source": "concepts/siakam texture.png"
  },
  {
-  "id": "spain-euro-2025",
+  "id": "concept-22",
   "cat": "concepts",
-  "src": "assets/images/concepts/spain-euro-2025",
+  "type": "concept",
+  "src": "assets/images/concepts/concept-22",
   "w": 1080,
   "h": 1350,
   "widths": [
@@ -434,12 +479,14 @@
    "480": 63936,
    "720": 121832,
    "1080": 231388
-  }
+  },
+  "source": "concepts/spain euro 2025.png"
  },
  {
-  "id": "trawe",
+  "id": "concept-23",
   "cat": "concepts",
-  "src": "assets/images/concepts/trawe",
+  "type": "concept",
+  "src": "assets/images/concepts/concept-23",
   "w": 2000,
   "h": 2500,
   "widths": [
@@ -453,12 +500,14 @@
    "480": 68016,
    "720": 144958,
    "1080": 288994
-  }
+  },
+  "source": "concepts/TRAWE.png"
  },
  {
-  "id": "watkins",
+  "id": "concept-24",
   "cat": "concepts",
-  "src": "assets/images/concepts/watkins",
+  "type": "concept",
+  "src": "assets/images/concepts/concept-24",
   "w": 3240,
   "h": 4050,
   "widths": [
@@ -472,12 +521,14 @@
    "480": 43076,
    "720": 81458,
    "1080": 154878
-  }
+  },
+  "source": "concepts/watkins.png"
  },
  {
-  "id": "yamal-x-nico",
+  "id": "concept-25",
   "cat": "concepts",
-  "src": "assets/images/concepts/yamal-x-nico",
+  "type": "concept",
+  "src": "assets/images/concepts/concept-25",
   "w": 2000,
   "h": 2500,
   "widths": [
@@ -491,12 +542,14 @@
    "480": 76582,
    "720": 136102,
    "1080": 317316
-  }
+  },
+  "source": "concepts/yamal x nico.png"
  },
  {
-  "id": "zirkzee",
+  "id": "concept-26",
   "cat": "concepts",
-  "src": "assets/images/concepts/zirkzee",
+  "type": "concept",
+  "src": "assets/images/concepts/concept-26",
   "w": 2000,
   "h": 2500,
   "widths": [
@@ -510,69 +563,14 @@
    "480": 27224,
    "720": 47400,
    "1080": 78256
-  }
+  },
+  "source": "concepts/zirkzee.png"
  },
  {
-  "id": "balogun-matchday",
+  "id": "matchday-01",
   "cat": "matchdays",
-  "src": "assets/images/matchdays/balogun-matchday",
-  "w": 2160,
-  "h": 3840,
-  "widths": [
-   240,
-   480,
-   720,
-   1080
-  ],
-  "bytes": {
-   "240": 24416,
-   "480": 76438,
-   "720": 134450,
-   "1080": 363226
-  }
- },
- {
-  "id": "depay-matchday-copy",
-  "cat": "matchdays",
-  "src": "assets/images/matchdays/depay-matchday-copy",
-  "w": 2160,
-  "h": 3840,
-  "widths": [
-   240,
-   480,
-   720,
-   1080
-  ],
-  "bytes": {
-   "240": 33354,
-   "480": 107578,
-   "720": 152054,
-   "1080": 403742
-  }
- },
- {
-  "id": "en-nesyri-matchday",
-  "cat": "matchdays",
-  "src": "assets/images/matchdays/en-nesyri-matchday",
-  "w": 2160,
-  "h": 3840,
-  "widths": [
-   240,
-   480,
-   720,
-   1080
-  ],
-  "bytes": {
-   "240": 22958,
-   "480": 70062,
-   "720": 134274,
-   "1080": 245734
-  }
- },
- {
-  "id": "maccabi-matchday",
-  "cat": "matchdays",
-  "src": "assets/images/matchdays/maccabi-matchday",
+  "type": "matchday",
+  "src": "assets/images/matchdays/matchday-01",
   "w": 2160,
   "h": 3840,
   "widths": [
@@ -586,12 +584,77 @@
    "480": 73872,
    "720": 145774,
    "1080": 262058
-  }
+  },
+  "source": "maccabi matchday.png"
  },
  {
-  "id": "militao-matchday",
+  "id": "matchday-02",
   "cat": "matchdays",
-  "src": "assets/images/matchdays/militao-matchday",
+  "type": "matchday",
+  "src": "assets/images/matchdays/matchday-02",
+  "w": 2160,
+  "h": 3840,
+  "widths": [
+   240,
+   480,
+   720,
+   1080
+  ],
+  "bytes": {
+   "240": 24416,
+   "480": 76438,
+   "720": 134450,
+   "1080": 363226
+  },
+  "source": "matchday/balogun matchday.png"
+ },
+ {
+  "id": "matchday-03",
+  "cat": "matchdays",
+  "type": "matchday",
+  "src": "assets/images/matchdays/matchday-03",
+  "w": 2160,
+  "h": 3840,
+  "widths": [
+   240,
+   480,
+   720,
+   1080
+  ],
+  "bytes": {
+   "240": 33354,
+   "480": 107578,
+   "720": 152054,
+   "1080": 403742
+  },
+  "source": "matchday/depay matchday copy.png"
+ },
+ {
+  "id": "matchday-04",
+  "cat": "matchdays",
+  "type": "matchday",
+  "src": "assets/images/matchdays/matchday-04",
+  "w": 2160,
+  "h": 3840,
+  "widths": [
+   240,
+   480,
+   720,
+   1080
+  ],
+  "bytes": {
+   "240": 22958,
+   "480": 70062,
+   "720": 134274,
+   "1080": 245734
+  },
+  "source": "matchday/en nesyri matchday.png"
+ },
+ {
+  "id": "matchday-05",
+  "cat": "matchdays",
+  "type": "matchday",
+  "src": "assets/images/matchdays/matchday-05",
   "w": 2160,
   "h": 3840,
   "widths": [
@@ -605,12 +668,14 @@
    "480": 76220,
    "720": 132180,
    "1080": 301206
-  }
+  },
+  "source": "matchday/militao matchday.png"
  },
  {
-  "id": "mosquera-matchday",
+  "id": "matchday-06",
   "cat": "matchdays",
-  "src": "assets/images/matchdays/mosquera-matchday",
+  "type": "matchday",
+  "src": "assets/images/matchdays/matchday-06",
   "w": 2160,
   "h": 3840,
   "widths": [
@@ -624,12 +689,14 @@
    "480": 80616,
    "720": 147862,
    "1080": 262022
-  }
+  },
+  "source": "matchday/mosquera matchday.png"
  },
  {
-  "id": "nuno-mendes-matchday",
+  "id": "matchday-07",
   "cat": "matchdays",
-  "src": "assets/images/matchdays/nuno-mendes-matchday",
+  "type": "matchday",
+  "src": "assets/images/matchdays/matchday-07",
   "w": 1080,
   "h": 1920,
   "widths": [
@@ -643,12 +710,14 @@
    "480": 100348,
    "720": 149004,
    "1080": 420806
-  }
+  },
+  "source": "matchday/nuno mendes matchday.png"
  },
  {
-  "id": "sako-matchday",
+  "id": "matchday-08",
   "cat": "matchdays",
-  "src": "assets/images/matchdays/sako-matchday",
+  "type": "matchday",
+  "src": "assets/images/matchdays/matchday-08",
   "w": 1080,
   "h": 1920,
   "widths": [
@@ -662,126 +731,15 @@
    "480": 94506,
    "720": 153368,
    "1080": 325422
-  }
+  },
+  "source": "matchday/sako matchday.png",
+  "client": "Neal Sako"
  },
  {
-  "id": "3pts-junior",
+  "id": "slamjam-champions-01",
   "cat": "slamjam",
-  "src": "assets/images/slamjam/3pts-junior",
-  "w": 1080,
-  "h": 1350,
-  "widths": [
-   240,
-   480,
-   720,
-   1080
-  ],
-  "bytes": {
-   "240": 21976,
-   "480": 67554,
-   "720": 120296,
-   "1080": 207498
-  }
- },
- {
-  "id": "3pts-senior",
-  "cat": "slamjam",
-  "src": "assets/images/slamjam/3pts-senior",
-  "w": 1080,
-  "h": 1350,
-  "widths": [
-   240,
-   480,
-   720,
-   1080
-  ],
-  "bytes": {
-   "240": 20014,
-   "480": 58004,
-   "720": 100244,
-   "1080": 174716
-  }
- },
- {
-  "id": "behance-slamjam-poster",
-  "cat": "slamjam",
-  "src": "assets/images/slamjam/behance-slamjam-poster",
-  "w": 2424,
-  "h": 1896,
-  "widths": [
-   240,
-   480,
-   720,
-   1080
-  ],
-  "bytes": {
-   "240": 3178,
-   "480": 7282,
-   "720": 11106,
-   "1080": 16520
-  }
- },
- {
-  "id": "champions-senior",
-  "cat": "slamjam",
-  "src": "assets/images/slamjam/champions-senior",
-  "w": 1080,
-  "h": 1350,
-  "widths": [
-   240,
-   480,
-   720,
-   1080
-  ],
-  "bytes": {
-   "240": 22488,
-   "480": 69240,
-   "720": 126980,
-   "1080": 224050
-  }
- },
- {
-  "id": "dunk-juniori",
-  "cat": "slamjam",
-  "src": "assets/images/slamjam/dunk-juniori",
-  "w": 1080,
-  "h": 1350,
-  "widths": [
-   240,
-   480,
-   720,
-   1080
-  ],
-  "bytes": {
-   "240": 20746,
-   "480": 61874,
-   "720": 107300,
-   "1080": 182234
-  }
- },
- {
-  "id": "dunk-seniori",
-  "cat": "slamjam",
-  "src": "assets/images/slamjam/dunk-seniori",
-  "w": 1080,
-  "h": 1350,
-  "widths": [
-   240,
-   480,
-   720,
-   1080
-  ],
-  "bytes": {
-   "240": 19146,
-   "480": 54900,
-   "720": 96004,
-   "1080": 168994
-  }
- },
- {
-  "id": "juniori-champions",
-  "cat": "slamjam",
-  "src": "assets/images/slamjam/juniori-champions",
+  "type": "champions",
+  "src": "assets/images/slamjam/slamjam-champions-01",
   "w": 1080,
   "h": 1350,
   "widths": [
@@ -795,12 +753,14 @@
    "480": 61790,
    "720": 108276,
    "1080": 186802
-  }
+  },
+  "source": "juniori champions.png"
  },
  {
-  "id": "mvp-juniori",
+  "id": "slamjam-champions-02",
   "cat": "slamjam",
-  "src": "assets/images/slamjam/mvp-juniori",
+  "type": "champions",
+  "src": "assets/images/slamjam/slamjam-champions-02",
   "w": 1080,
   "h": 1350,
   "widths": [
@@ -810,16 +770,18 @@
    1080
   ],
   "bytes": {
-   "240": 21040,
-   "480": 59626,
-   "720": 101360,
-   "1080": 175394
-  }
+   "240": 22488,
+   "480": 69240,
+   "720": 126980,
+   "1080": 224050
+  },
+  "source": "SlamJam/champions senior.png"
  },
  {
-  "id": "mvp-seniori",
+  "id": "slamjam-dunk-01",
   "cat": "slamjam",
-  "src": "assets/images/slamjam/mvp-seniori",
+  "type": "dunk",
+  "src": "assets/images/slamjam/slamjam-dunk-01",
   "w": 1080,
   "h": 1350,
   "widths": [
@@ -829,16 +791,60 @@
    1080
   ],
   "bytes": {
-   "240": 18816,
-   "480": 55684,
-   "720": 100090,
-   "1080": 178238
-  }
+   "240": 20746,
+   "480": 61874,
+   "720": 107300,
+   "1080": 182234
+  },
+  "source": "SlamJam/dunk juniori.png"
  },
  {
-  "id": "nikonect-slamjam",
+  "id": "slamjam-dunk-02",
   "cat": "slamjam",
-  "src": "assets/images/slamjam/nikonect-slamjam",
+  "type": "dunk",
+  "src": "assets/images/slamjam/slamjam-dunk-02",
+  "w": 1080,
+  "h": 1350,
+  "widths": [
+   240,
+   480,
+   720,
+   1080
+  ],
+  "bytes": {
+   "240": 19146,
+   "480": 54900,
+   "720": 96004,
+   "1080": 168994
+  },
+  "source": "SlamJam/dunk seniori.png"
+ },
+ {
+  "id": "slamjam-key-art-01",
+  "cat": "slamjam",
+  "type": "key-art",
+  "src": "assets/images/slamjam/slamjam-key-art-01",
+  "w": 2424,
+  "h": 1896,
+  "widths": [
+   240,
+   480,
+   720,
+   1080
+  ],
+  "bytes": {
+   "240": 3178,
+   "480": 7282,
+   "720": 11106,
+   "1080": 16520
+  },
+  "source": "behance slamjam poster].png"
+ },
+ {
+  "id": "slamjam-key-art-02",
+  "cat": "slamjam",
+  "type": "key-art",
+  "src": "assets/images/slamjam/slamjam-key-art-02",
   "w": 1080,
   "h": 1350,
   "widths": [
@@ -852,12 +858,14 @@
    "480": 59368,
    "720": 117690,
    "1080": 246666
-  }
+  },
+  "source": "nikonect slamjam.png"
  },
  {
-  "id": "post",
+  "id": "slamjam-key-art-03",
   "cat": "slamjam",
-  "src": "assets/images/slamjam/post",
+  "type": "key-art",
+  "src": "assets/images/slamjam/slamjam-key-art-03",
   "w": 1080,
   "h": 1350,
   "widths": [
@@ -871,126 +879,14 @@
    "480": 77132,
    "720": 152666,
    "1080": 293394
-  }
+  },
+  "source": "SlamJam/post.png"
  },
  {
-  "id": "raspored-juniori-grupi",
+  "id": "slamjam-key-art-04",
   "cat": "slamjam",
-  "src": "assets/images/slamjam/raspored-juniori-grupi",
-  "w": 1080,
-  "h": 1350,
-  "widths": [
-   240,
-   480,
-   720,
-   1080
-  ],
-  "bytes": {
-   "240": 21670,
-   "480": 72204,
-   "720": 140552,
-   "1080": 280832
-  }
- },
- {
-  "id": "rezultati-juniori",
-  "cat": "slamjam",
-  "src": "assets/images/slamjam/rezultati-juniori",
-  "w": 1080,
-  "h": 1350,
-  "widths": [
-   240,
-   480,
-   720,
-   1080
-  ],
-  "bytes": {
-   "240": 21858,
-   "480": 70064,
-   "720": 131418,
-   "1080": 255906
-  }
- },
- {
-  "id": "rezultati-playpff",
-  "cat": "slamjam",
-  "src": "assets/images/slamjam/rezultati-playpff",
-  "w": 1080,
-  "h": 1350,
-  "widths": [
-   240,
-   480,
-   720,
-   1080
-  ],
-  "bytes": {
-   "240": 20582,
-   "480": 67134,
-   "720": 126794,
-   "1080": 245544
-  }
- },
- {
-  "id": "runner-juniori",
-  "cat": "slamjam",
-  "src": "assets/images/slamjam/runner-juniori",
-  "w": 1080,
-  "h": 1350,
-  "widths": [
-   240,
-   480,
-   720,
-   1080
-  ],
-  "bytes": {
-   "240": 19706,
-   "480": 61572,
-   "720": 109144,
-   "1080": 193180
-  }
- },
- {
-  "id": "saatnica-juniori",
-  "cat": "slamjam",
-  "src": "assets/images/slamjam/saatnica-juniori",
-  "w": 1080,
-  "h": 1350,
-  "widths": [
-   240,
-   480,
-   720,
-   1080
-  ],
-  "bytes": {
-   "240": 22012,
-   "480": 70484,
-   "720": 131982,
-   "1080": 257350
-  }
- },
- {
-  "id": "seniori-vtoro-mesto",
-  "cat": "slamjam",
-  "src": "assets/images/slamjam/seniori-vtoro-mesto",
-  "w": 1080,
-  "h": 1350,
-  "widths": [
-   240,
-   480,
-   720,
-   1080
-  ],
-  "bytes": {
-   "240": 21274,
-   "480": 63506,
-   "720": 115280,
-   "1080": 202964
-  }
- },
- {
-  "id": "slamjam-nikojenct",
-  "cat": "slamjam",
-  "src": "assets/images/slamjam/slamjam-nikojenct",
+  "type": "key-art",
+  "src": "assets/images/slamjam/slamjam-key-art-04",
   "w": 1080,
   "h": 1350,
   "widths": [
@@ -1004,69 +900,14 @@
    "480": 77706,
    "720": 133866,
    "1080": 293508
-  }
+  },
+  "source": "SlamJam/slamjam nikojenct.png"
  },
  {
-  "id": "slamjam-playoff",
+  "id": "slamjam-key-art-05",
   "cat": "slamjam",
-  "src": "assets/images/slamjam/slamjam-playoff",
-  "w": 1080,
-  "h": 1350,
-  "widths": [
-   240,
-   480,
-   720,
-   1080
-  ],
-  "bytes": {
-   "240": 19904,
-   "480": 63350,
-   "720": 122168,
-   "1080": 240842
-  }
- },
- {
-  "id": "slamjam-raspored-drugo",
-  "cat": "slamjam",
-  "src": "assets/images/slamjam/slamjam-raspored-drugo",
-  "w": 1080,
-  "h": 1350,
-  "widths": [
-   240,
-   480,
-   720,
-   1080
-  ],
-  "bytes": {
-   "240": 23430,
-   "480": 77172,
-   "720": 146968,
-   "1080": 290892
-  }
- },
- {
-  "id": "slamjam-seniori-grupa-raspored",
-  "cat": "slamjam",
-  "src": "assets/images/slamjam/slamjam-seniori-grupa-raspored",
-  "w": 1080,
-  "h": 1350,
-  "widths": [
-   240,
-   480,
-   720,
-   1080
-  ],
-  "bytes": {
-   "240": 24542,
-   "480": 78462,
-   "720": 147914,
-   "1080": 288350
-  }
- },
- {
-  "id": "slamjam-x-nikonect",
-  "cat": "slamjam",
-  "src": "assets/images/slamjam/slamjam-x-nikonect",
+  "type": "key-art",
+  "src": "assets/images/slamjam/slamjam-key-art-05",
   "w": 1080,
   "h": 1350,
   "widths": [
@@ -1080,12 +921,14 @@
    "480": 8858,
    "720": 13898,
    "1080": 22690
-  }
+  },
+  "source": "SlamJam/slamjam x nikonect.png"
  },
  {
-  "id": "3x3-znei",
-  "cat": "sportski",
-  "src": "assets/images/sportski/3x3-znei",
+  "id": "slamjam-mvp-01",
+  "cat": "slamjam",
+  "type": "mvp",
+  "src": "assets/images/slamjam/slamjam-mvp-01",
   "w": 1080,
   "h": 1350,
   "widths": [
@@ -1095,16 +938,18 @@
    1080
   ],
   "bytes": {
-   "240": 13376,
-   "480": 31356,
-   "720": 48860,
-   "1080": 70970
-  }
+   "240": 21040,
+   "480": 59626,
+   "720": 101360,
+   "1080": 175394
+  },
+  "source": "SlamJam/mvp juniori.png"
  },
  {
-  "id": "aspored-cetvrtok",
-  "cat": "sportski",
-  "src": "assets/images/sportski/aspored-cetvrtok",
+  "id": "slamjam-mvp-02",
+  "cat": "slamjam",
+  "type": "mvp",
+  "src": "assets/images/slamjam/slamjam-mvp-02",
   "w": 1080,
   "h": 1350,
   "widths": [
@@ -1114,16 +959,18 @@
    1080
   ],
   "bytes": {
-   "240": 15042,
-   "480": 36952,
-   "720": 57938,
-   "1080": 85266
-  }
+   "240": 18816,
+   "480": 55684,
+   "720": 100090,
+   "1080": 178238
+  },
+  "source": "SlamJam/mvp seniori.png"
  },
  {
-  "id": "cetvrtok-fudbal-crta",
-  "cat": "sportski",
-  "src": "assets/images/sportski/cetvrtok-fudbal-crta",
+  "id": "slamjam-playoff-01",
+  "cat": "slamjam",
+  "type": "playoff",
+  "src": "assets/images/slamjam/slamjam-playoff-01",
   "w": 1080,
   "h": 1350,
   "widths": [
@@ -1133,16 +980,18 @@
    1080
   ],
   "bytes": {
-   "240": 16760,
-   "480": 40418,
-   "720": 65676,
-   "1080": 95592
-  }
+   "240": 19904,
+   "480": 63350,
+   "720": 122168,
+   "1080": 240842
+  },
+  "source": "SlamJam/slamjam playoff.png"
  },
  {
-  "id": "cetvrtok-fudbal-org",
-  "cat": "sportski",
-  "src": "assets/images/sportski/cetvrtok-fudbal-org",
+  "id": "slamjam-results-01",
+  "cat": "slamjam",
+  "type": "results",
+  "src": "assets/images/slamjam/slamjam-results-01",
   "w": 1080,
   "h": 1350,
   "widths": [
@@ -1152,16 +1001,18 @@
    1080
   ],
   "bytes": {
-   "240": 16820,
-   "480": 40766,
-   "720": 65660,
-   "1080": 95614
-  }
+   "240": 21858,
+   "480": 70064,
+   "720": 131418,
+   "1080": 255906
+  },
+  "source": "SlamJam/rezultati juniori.png"
  },
  {
-  "id": "juniori-grupi",
-  "cat": "sportski",
-  "src": "assets/images/sportski/juniori-grupi",
+  "id": "slamjam-results-02",
+  "cat": "slamjam",
+  "type": "results",
+  "src": "assets/images/slamjam/slamjam-results-02",
   "w": 1080,
   "h": 1350,
   "widths": [
@@ -1171,16 +1022,18 @@
    1080
   ],
   "bytes": {
-   "240": 7866,
-   "480": 18000,
-   "720": 27458,
-   "1080": 42096
-  }
+   "240": 20582,
+   "480": 67134,
+   "720": 126794,
+   "1080": 245544
+  },
+  "source": "SlamJam/rezultati playpff.png"
  },
  {
-  "id": "mkd-vs-bel",
-  "cat": "sportski",
-  "src": "assets/images/sportski/mkd-vs-bel",
+  "id": "slamjam-runner-up-01",
+  "cat": "slamjam",
+  "type": "runner-up",
+  "src": "assets/images/slamjam/slamjam-runner-up-01",
   "w": 1080,
   "h": 1350,
   "widths": [
@@ -1190,16 +1043,18 @@
    1080
   ],
   "bytes": {
-   "240": 16136,
-   "480": 45724,
-   "720": 81880,
-   "1080": 146290
-  }
+   "240": 19706,
+   "480": 61572,
+   "720": 109144,
+   "1080": 193180
+  },
+  "source": "SlamJam/runner juniori.png"
  },
  {
-  "id": "polu-i-finale",
-  "cat": "sportski",
-  "src": "assets/images/sportski/polu-i-finale",
+  "id": "slamjam-runner-up-02",
+  "cat": "slamjam",
+  "type": "runner-up",
+  "src": "assets/images/slamjam/slamjam-runner-up-02",
   "w": 1080,
   "h": 1350,
   "widths": [
@@ -1209,16 +1064,18 @@
    1080
   ],
   "bytes": {
-   "240": 11892,
-   "480": 29192,
-   "720": 46120,
-   "1080": 71138
-  }
+   "240": 21274,
+   "480": 63506,
+   "720": 115280,
+   "1080": 202964
+  },
+  "source": "SlamJam/seniori vtoro mesto.png"
  },
  {
-  "id": "raspored-cetvrtok",
-  "cat": "sportski",
-  "src": "assets/images/sportski/raspored-cetvrtok",
+  "id": "slamjam-schedule-01",
+  "cat": "slamjam",
+  "type": "schedule",
+  "src": "assets/images/slamjam/slamjam-schedule-01",
   "w": 1080,
   "h": 1350,
   "widths": [
@@ -1228,16 +1085,18 @@
    1080
   ],
   "bytes": {
-   "240": 15238,
-   "480": 37044,
-   "720": 58572,
-   "1080": 85810
-  }
+   "240": 22012,
+   "480": 70484,
+   "720": 131982,
+   "1080": 257350
+  },
+  "source": "saatnica juniori.png"
  },
  {
-  "id": "raspored-juniori-podobro",
-  "cat": "sportski",
-  "src": "assets/images/sportski/raspored-juniori-podobro",
+  "id": "slamjam-schedule-02",
+  "cat": "slamjam",
+  "type": "schedule",
+  "src": "assets/images/slamjam/slamjam-schedule-02",
   "w": 1080,
   "h": 1350,
   "widths": [
@@ -1247,16 +1106,18 @@
    1080
   ],
   "bytes": {
-   "240": 14388,
-   "480": 34312,
-   "720": 53840,
-   "1080": 78926
-  }
+   "240": 21670,
+   "480": 72204,
+   "720": 140552,
+   "1080": 280832
+  },
+  "source": "SlamJam/raspored juniori grupi.png"
  },
  {
-  "id": "raspored-petok",
-  "cat": "sportski",
-  "src": "assets/images/sportski/raspored-petok",
+  "id": "slamjam-schedule-03",
+  "cat": "slamjam",
+  "type": "schedule",
+  "src": "assets/images/slamjam/slamjam-schedule-03",
   "w": 1080,
   "h": 1350,
   "widths": [
@@ -1266,16 +1127,18 @@
    1080
   ],
   "bytes": {
-   "240": 16666,
-   "480": 45146,
-   "720": 74710,
-   "1080": 119192
-  }
+   "240": 23430,
+   "480": 77172,
+   "720": 146968,
+   "1080": 290892
+  },
+  "source": "SlamJam/SLAMJAM RASPORED DRUGO.png"
  },
  {
-  "id": "rez-vtornik",
-  "cat": "sportski",
-  "src": "assets/images/sportski/rez-vtornik",
+  "id": "slamjam-schedule-04",
+  "cat": "slamjam",
+  "type": "schedule",
+  "src": "assets/images/slamjam/slamjam-schedule-04",
   "w": 1080,
   "h": 1350,
   "widths": [
@@ -1285,16 +1148,18 @@
    1080
   ],
   "bytes": {
-   "240": 17930,
-   "480": 42924,
-   "720": 66978,
-   "1080": 100070
-  }
+   "240": 24542,
+   "480": 78462,
+   "720": 147914,
+   "1080": 288350
+  },
+  "source": "SlamJam/SLAMJAM SENIORI GRUPA RASPORED.png"
  },
  {
-  "id": "rez-zeni-grupna-faza",
-  "cat": "sportski",
-  "src": "assets/images/sportski/rez-zeni-grupna-faza",
+  "id": "slamjam-three-point-01",
+  "cat": "slamjam",
+  "type": "three-point",
+  "src": "assets/images/slamjam/slamjam-three-point-01",
   "w": 1080,
   "h": 1350,
   "widths": [
@@ -1304,16 +1169,18 @@
    1080
   ],
   "bytes": {
-   "240": 15132,
-   "480": 37362,
-   "720": 58702,
-   "1080": 88856
-  }
+   "240": 21976,
+   "480": 67554,
+   "720": 120296,
+   "1080": 207498
+  },
+  "source": "SlamJam/3pts junior.png"
  },
  {
-  "id": "rezultati-fudbal-sreda",
-  "cat": "sportski",
-  "src": "assets/images/sportski/rezultati-fudbal-sreda",
+  "id": "slamjam-three-point-02",
+  "cat": "slamjam",
+  "type": "three-point",
+  "src": "assets/images/slamjam/slamjam-three-point-02",
   "w": 1080,
   "h": 1350,
   "widths": [
@@ -1323,92 +1190,18 @@
    1080
   ],
   "bytes": {
-   "240": 20916,
-   "480": 52950,
-   "720": 86920,
-   "1080": 138520
-  }
+   "240": 20014,
+   "480": 58004,
+   "720": 100244,
+   "1080": 174716
+  },
+  "source": "SlamJam/3pts senior.png"
  },
  {
-  "id": "rezultati-fudbal-vtornik",
+  "id": "sportski-champions-01",
   "cat": "sportski",
-  "src": "assets/images/sportski/rezultati-fudbal-vtornik",
-  "w": 1080,
-  "h": 1350,
-  "widths": [
-   240,
-   480,
-   720,
-   1080
-  ],
-  "bytes": {
-   "240": 19524,
-   "480": 50148,
-   "720": 83118,
-   "1080": 133148
-  }
- },
- {
-  "id": "rezultati-playoff-zeni",
-  "cat": "sportski",
-  "src": "assets/images/sportski/rezultati-playoff-zeni",
-  "w": 1080,
-  "h": 1350,
-  "widths": [
-   240,
-   480,
-   720,
-   1080
-  ],
-  "bytes": {
-   "240": 13412,
-   "480": 32468,
-   "720": 51294,
-   "1080": 79430
-  }
- },
- {
-  "id": "rezultati-vtornik-belo",
-  "cat": "sportski",
-  "src": "assets/images/sportski/rezultati-vtornik-belo",
-  "w": 1080,
-  "h": 1350,
-  "widths": [
-   240,
-   480,
-   720,
-   1080
-  ],
-  "bytes": {
-   "240": 19814,
-   "480": 51670,
-   "720": 85826,
-   "1080": 136446
-  }
- },
- {
-  "id": "round-of-16",
-  "cat": "sportski",
-  "src": "assets/images/sportski/round-of-16",
-  "w": 1080,
-  "h": 1350,
-  "widths": [
-   240,
-   480,
-   720,
-   1080
-  ],
-  "bytes": {
-   "240": 12504,
-   "480": 30272,
-   "720": 48532,
-   "1080": 74300
-  }
- },
- {
-  "id": "sampioni-zeni-1",
-  "cat": "sportski",
-  "src": "assets/images/sportski/sampioni-zeni-1",
+  "type": "champions",
+  "src": "assets/images/sportski/sportski-champions-01",
   "w": 1080,
   "h": 1350,
   "widths": [
@@ -1422,12 +1215,14 @@
    "480": 41018,
    "720": 68968,
    "1080": 110718
-  }
+  },
+  "source": "Sportski Igri/sampioni zeni 1.png"
  },
  {
-  "id": "sesnaestina-popraveno",
+  "id": "sportski-final-01",
   "cat": "sportski",
-  "src": "assets/images/sportski/sesnaestina-popraveno",
+  "type": "final",
+  "src": "assets/images/sportski/sportski-final-01",
   "w": 1080,
   "h": 1350,
   "widths": [
@@ -1437,16 +1232,60 @@
    1080
   ],
   "bytes": {
-   "240": 12522,
-   "480": 30222,
-   "720": 48470,
-   "1080": 74234
-  }
+   "240": 11892,
+   "480": 29192,
+   "720": 46120,
+   "1080": 71138
+  },
+  "source": "Sportski Igri/polu i finale.png"
  },
  {
-  "id": "zzeni-grupi-3x3",
+  "id": "sportski-fixture-01",
   "cat": "sportski",
-  "src": "assets/images/sportski/zzeni-grupi-3x3",
+  "type": "fixture",
+  "src": "assets/images/sportski/sportski-fixture-01",
+  "w": 1080,
+  "h": 1350,
+  "widths": [
+   240,
+   480,
+   720,
+   1080
+  ],
+  "bytes": {
+   "240": 16136,
+   "480": 45724,
+   "720": 81880,
+   "1080": 146290
+  },
+  "source": "Sportski Igri/mkd vs bel.png"
+ },
+ {
+  "id": "sportski-groups-01",
+  "cat": "sportski",
+  "type": "groups",
+  "src": "assets/images/sportski/sportski-groups-01",
+  "w": 1080,
+  "h": 1350,
+  "widths": [
+   240,
+   480,
+   720,
+   1080
+  ],
+  "bytes": {
+   "240": 7866,
+   "480": 18000,
+   "720": 27458,
+   "1080": 42096
+  },
+  "source": "Sportski Igri/JUNIORI GRUPI.png"
+ },
+ {
+  "id": "sportski-groups-02",
+  "cat": "sportski",
+  "type": "groups",
+  "src": "assets/images/sportski/sportski-groups-02",
   "w": 1080,
   "h": 1350,
   "widths": [
@@ -1460,12 +1299,329 @@
    "480": 17326,
    "720": 26266,
    "1080": 40158
-  }
+  },
+  "source": "Sportski Igri/ZZENI GRUPI 3X3.png"
  },
  {
-  "id": "messi-thumbnail",
+  "id": "sportski-knockout-01",
+  "cat": "sportski",
+  "type": "knockout",
+  "src": "assets/images/sportski/sportski-knockout-01",
+  "w": 1080,
+  "h": 1350,
+  "widths": [
+   240,
+   480,
+   720,
+   1080
+  ],
+  "bytes": {
+   "240": 12504,
+   "480": 30272,
+   "720": 48532,
+   "1080": 74300
+  },
+  "source": "Sportski Igri/round of 16.png"
+ },
+ {
+  "id": "sportski-knockout-02",
+  "cat": "sportski",
+  "type": "knockout",
+  "src": "assets/images/sportski/sportski-knockout-02",
+  "w": 1080,
+  "h": 1350,
+  "widths": [
+   240,
+   480,
+   720,
+   1080
+  ],
+  "bytes": {
+   "240": 12522,
+   "480": 30222,
+   "720": 48470,
+   "1080": 74234
+  },
+  "source": "Sportski Igri/sesnaestina popraveno.png"
+ },
+ {
+  "id": "sportski-results-01",
+  "cat": "sportski",
+  "type": "results",
+  "src": "assets/images/sportski/sportski-results-01",
+  "w": 1080,
+  "h": 1350,
+  "widths": [
+   240,
+   480,
+   720,
+   1080
+  ],
+  "bytes": {
+   "240": 17930,
+   "480": 42924,
+   "720": 66978,
+   "1080": 100070
+  },
+  "source": "Sportski Igri/rez vtornik.png"
+ },
+ {
+  "id": "sportski-results-02",
+  "cat": "sportski",
+  "type": "results",
+  "src": "assets/images/sportski/sportski-results-02",
+  "w": 1080,
+  "h": 1350,
+  "widths": [
+   240,
+   480,
+   720,
+   1080
+  ],
+  "bytes": {
+   "240": 15132,
+   "480": 37362,
+   "720": 58702,
+   "1080": 88856
+  },
+  "source": "Sportski Igri/rez zeni grupna faza.png"
+ },
+ {
+  "id": "sportski-results-03",
+  "cat": "sportski",
+  "type": "results",
+  "src": "assets/images/sportski/sportski-results-03",
+  "w": 1080,
+  "h": 1350,
+  "widths": [
+   240,
+   480,
+   720,
+   1080
+  ],
+  "bytes": {
+   "240": 20916,
+   "480": 52950,
+   "720": 86920,
+   "1080": 138520
+  },
+  "source": "Sportski Igri/rezultati fudbal sreda.png"
+ },
+ {
+  "id": "sportski-results-04",
+  "cat": "sportski",
+  "type": "results",
+  "src": "assets/images/sportski/sportski-results-04",
+  "w": 1080,
+  "h": 1350,
+  "widths": [
+   240,
+   480,
+   720,
+   1080
+  ],
+  "bytes": {
+   "240": 19524,
+   "480": 50148,
+   "720": 83118,
+   "1080": 133148
+  },
+  "source": "Sportski Igri/rezultati fudbal vtornik.png"
+ },
+ {
+  "id": "sportski-results-05",
+  "cat": "sportski",
+  "type": "results",
+  "src": "assets/images/sportski/sportski-results-05",
+  "w": 1080,
+  "h": 1350,
+  "widths": [
+   240,
+   480,
+   720,
+   1080
+  ],
+  "bytes": {
+   "240": 13412,
+   "480": 32468,
+   "720": 51294,
+   "1080": 79430
+  },
+  "source": "Sportski Igri/rezultati playoff zeni.png"
+ },
+ {
+  "id": "sportski-results-06",
+  "cat": "sportski",
+  "type": "results",
+  "src": "assets/images/sportski/sportski-results-06",
+  "w": 1080,
+  "h": 1350,
+  "widths": [
+   240,
+   480,
+   720,
+   1080
+  ],
+  "bytes": {
+   "240": 19814,
+   "480": 51670,
+   "720": 85826,
+   "1080": 136446
+  },
+  "source": "Sportski Igri/rezultati vtornik belo.png"
+ },
+ {
+  "id": "sportski-schedule-01",
+  "cat": "sportski",
+  "type": "schedule",
+  "src": "assets/images/sportski/sportski-schedule-01",
+  "w": 1080,
+  "h": 1350,
+  "widths": [
+   240,
+   480,
+   720,
+   1080
+  ],
+  "bytes": {
+   "240": 15042,
+   "480": 36952,
+   "720": 57938,
+   "1080": 85266
+  },
+  "source": "aspored cetvrtok.png"
+ },
+ {
+  "id": "sportski-schedule-02",
+  "cat": "sportski",
+  "type": "schedule",
+  "src": "assets/images/sportski/sportski-schedule-02",
+  "w": 1080,
+  "h": 1350,
+  "widths": [
+   240,
+   480,
+   720,
+   1080
+  ],
+  "bytes": {
+   "240": 16760,
+   "480": 40418,
+   "720": 65676,
+   "1080": 95592
+  },
+  "source": "cetvrtok fudbal crta.png"
+ },
+ {
+  "id": "sportski-schedule-03",
+  "cat": "sportski",
+  "type": "schedule",
+  "src": "assets/images/sportski/sportski-schedule-03",
+  "w": 1080,
+  "h": 1350,
+  "widths": [
+   240,
+   480,
+   720,
+   1080
+  ],
+  "bytes": {
+   "240": 16820,
+   "480": 40766,
+   "720": 65660,
+   "1080": 95614
+  },
+  "source": "Sportski Igri/cetvrtok fudbal ORG.png"
+ },
+ {
+  "id": "sportski-schedule-04",
+  "cat": "sportski",
+  "type": "schedule",
+  "src": "assets/images/sportski/sportski-schedule-04",
+  "w": 1080,
+  "h": 1350,
+  "widths": [
+   240,
+   480,
+   720,
+   1080
+  ],
+  "bytes": {
+   "240": 15238,
+   "480": 37044,
+   "720": 58572,
+   "1080": 85810
+  },
+  "source": "Sportski Igri/raspored cetvrtok.png"
+ },
+ {
+  "id": "sportski-schedule-05",
+  "cat": "sportski",
+  "type": "schedule",
+  "src": "assets/images/sportski/sportski-schedule-05",
+  "w": 1080,
+  "h": 1350,
+  "widths": [
+   240,
+   480,
+   720,
+   1080
+  ],
+  "bytes": {
+   "240": 14388,
+   "480": 34312,
+   "720": 53840,
+   "1080": 78926
+  },
+  "source": "Sportski Igri/raspored juniori podobro.png"
+ },
+ {
+  "id": "sportski-schedule-06",
+  "cat": "sportski",
+  "type": "schedule",
+  "src": "assets/images/sportski/sportski-schedule-06",
+  "w": 1080,
+  "h": 1350,
+  "widths": [
+   240,
+   480,
+   720,
+   1080
+  ],
+  "bytes": {
+   "240": 16666,
+   "480": 45146,
+   "720": 74710,
+   "1080": 119192
+  },
+  "source": "Sportski Igri/raspored petok.png"
+ },
+ {
+  "id": "sportski-tournament-01",
+  "cat": "sportski",
+  "type": "tournament",
+  "src": "assets/images/sportski/sportski-tournament-01",
+  "w": 1080,
+  "h": 1350,
+  "widths": [
+   240,
+   480,
+   720,
+   1080
+  ],
+  "bytes": {
+   "240": 13376,
+   "480": 31356,
+   "720": 48860,
+   "1080": 70970
+  },
+  "source": "Sportski Igri/3x3 znei.png"
+ },
+ {
+  "id": "thumbnail-01",
   "cat": "thumbnails",
-  "src": "assets/images/thumbnails/messi-thumbnail",
+  "type": "thumbnail",
+  "src": "assets/images/thumbnails/thumbnail-01",
   "w": 3840,
   "h": 2160,
   "widths": [
@@ -1479,12 +1635,14 @@
    "480": 16352,
    "720": 29154,
    "1080": 50080
-  }
+  },
+  "source": "thumbnails/messi thumbnail.png"
  },
  {
-  "id": "ronaldo-thumbnail",
+  "id": "thumbnail-02",
   "cat": "thumbnails",
-  "src": "assets/images/thumbnails/ronaldo-thumbnail",
+  "type": "thumbnail",
+  "src": "assets/images/thumbnails/thumbnail-02",
   "w": 3840,
   "h": 2160,
   "widths": [
@@ -1498,6 +1656,7 @@
    "480": 15382,
    "720": 27448,
    "1080": 47140
-  }
+  },
+  "source": "thumbnails/ronaldo thumbnail.png"
  }
 ]

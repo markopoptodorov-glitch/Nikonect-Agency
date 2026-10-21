@@ -734,15 +734,23 @@ html.marquee-visible .dock {
   background: rgba(255, 255, 255, .03);
   border-top: 1px solid rgba(255, 255, 255, .06);
 }
-.tile__name {
+.tile__text { display: flex; flex-direction: column; min-width: 0; gap: .1rem; }
+.tile__project {
   font-size: .72rem;
-  color: #b4b4b4;
+  color: var(--white);
+  font-weight: 500;
   line-height: 1.25;
   overflow: hidden;
-  display: -webkit-box;
-  -webkit-line-clamp: 1;
-  line-clamp: 1;
-  -webkit-box-orient: vertical;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.tile__type {
+  font-size: .66rem;
+  color: #9a9a9a;
+  line-height: 1.25;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
 }
 
 .badge {

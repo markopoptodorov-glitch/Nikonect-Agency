@@ -316,22 +316,32 @@ function initLanguage() {
    `hidden` property. The DOM is never rebuilt and no image is ever re-fetched.
    -------------------------------------------------------------------------- */
 
-/* Most filenames are Macedonian shorthand. This turns them into something
-   readable for alt text and the hover label. */
-const TERMS = {
-  raspored: 'schedule', aspored: 'schedule', satnica: 'timetable', saatnica: 'timetable',
-  rezultati: 'results', rez: 'results', rezultat: 'results',
-  juniori: 'juniors', junior: 'juniors', seniori: 'seniors', senior: 'seniors',
-  zeni: "women's", zzeni: "women's", znei: "women's",
-  grupi: 'groups', grupa: 'group', grupna: 'group', faza: 'stage',
-  vtornik: 'Tuesday', sreda: 'Wednesday', cetvrtok: 'Thursday', petok: 'Friday',
-  fudbal: 'football', sampioni: 'champions', champions: 'champions',
-  polu: 'semi', finale: 'final', sesnaestina: 'round of 32',
-  popraveno: 'revised', podobro: 'revised', drugo: 'second', vtoro: 'second', mesto: 'place',
-  playpff: 'playoff', playoff: 'playoff', pts: 'points', runner: 'runner-up',
-  mkd: 'Macedonia', bel: 'Belgium', vs: 'vs', nikojenct: 'Nikonect',
-  bdor: "Ballon d'Or", mvp: 'MVP', dunk: 'dunk', copy: '', org: '', crta: '',
+/* Human labels for the build-time type classification. Nothing here is
+   derived from a filename: scripts/optimize-images.mjs classifies each source
+   into one of these keys, and only these words ever reach the page. */
+const TYPE_LABELS = {
+  matchday:      { en: 'Matchday poster',        mk: 'Постер за натпревар' },
+  thumbnail:     { en: 'Video thumbnail',        mk: 'Thumbnail за видео' },
+  signing:       { en: 'Signing announcement',   mk: 'Најава на потпишување' },
+  schedule:      { en: 'Schedule',               mk: 'Распоред' },
+  results:       { en: 'Results',                mk: 'Резултати' },
+  champions:     { en: 'Champions',              mk: 'Шампиони' },
+  mvp:           { en: 'MVP award',              mk: 'МВП награда' },
+  dunk:          { en: 'Dunk contest',           mk: 'Натпревар во закуцување' },
+  'three-point': { en: 'Three-point contest',    mk: 'Натпревар во тројки' },
+  'runner-up':   { en: 'Runner-up',              mk: 'Второ место' },
+  playoff:       { en: 'Playoff bracket',        mk: 'Плеј-оф' },
+  knockout:      { en: 'Knockout round',         mk: 'Елиминациона фаза' },
+  final:         { en: 'Semi-final and final',   mk: 'Полуфинале и финале' },
+  groups:        { en: 'Group stage',            mk: 'Групна фаза' },
+  fixture:       { en: 'Fixture announcement',   mk: 'Најава на натпревар' },
+  'key-art':     { en: 'Tournament key art',     mk: 'Клучна графика' },
+  tournament:    { en: 'Tournament graphic',     mk: 'Турнирска графика' },
+  concept:       { en: 'Concept poster',         mk: 'Концепт постер' },
 };
+
+const typeLabel = (type) => (TYPE_LABELS[type] || TYPE_LABELS.concept)[lang]
+  || (TYPE_LABELS[type] || TYPE_LABELS.concept).en;
 
 const CATEGORY = {
   slamjam:    { group: 'client',  project: 'SlamJam Skopje 2025',      filters: ['client'] },
@@ -342,18 +352,6 @@ const CATEGORY = {
   thumbnails: { group: 'concept', project: 'Thumbnail',                filters: ['thumbnails'] },
 };
 
-/* Per-image exceptions to the category defaults.
- *
- * The Valencia Basket poster sits in the matchday folder with the concept
- * pieces, but it is work for Neal Sako, who is a client. It is the only
- * poster in that folder that is — nothing else is promoted. */
-const IMAGE_OVERRIDES = {
-  'sako-matchday': {
-    group: 'client',
-    project: 'Neal Sako',
-    filters: ['client', 'matchdays'],
-  },
-};
 
 /* Priority for the round-robin below. The matchday posters are the strongest
    pieces visually, so they lead. */
@@ -384,14 +382,6 @@ function interleaveByCategory(images) {
     }
   }
   return out;
-}
-
-function prettyTitle(id) {
-  const words = id.split('-')
-    .map((w) => (w in TERMS ? TERMS[w] : w))
-    .filter(Boolean);
-  const s = words.join(' ').replace(/\s+/g, ' ').trim();
-  return s.charAt(0).toUpperCase() + s.slice(1);
 }
 
 function srcsetFor(entry) {
@@ -438,17 +428,22 @@ function buildPortfolio() {
 
 function makeTile(entry) {
   {
-    const meta = { ...(CATEGORY[entry.cat] || CATEGORY.concepts), ...(IMAGE_OVERRIDES[entry.id] || {}) };
-    const title = prettyTitle(entry.id);
+    const meta = CATEGORY[entry.cat] || CATEGORY.concepts;
+
+    /* A named client in the manifest promotes the piece out of its category
+       default — that is how the Valencia poster reaches Client work. */
+    const project = entry.client || meta.project;
+    const group = entry.client ? 'client' : meta.group;
+    const filters = entry.client ? [...new Set(['client', ...meta.filters])] : meta.filters;
 
     const btn = document.createElement('button');
     btn.type = 'button';
     btn.className = 'tile';
-    btn.dataset.filters = [...meta.filters, 'all'].join(' ');
+    btn.dataset.filters = [...filters, 'all'].join(' ');
     btn.dataset.full = `${entry.src}-1080.webp`;
-    btn.dataset.title = title;
-    btn.dataset.project = meta.project;
-    btn.dataset.group = meta.group;
+    btn.dataset.type = entry.type;
+    btn.dataset.project = project;
+    btn.dataset.group = group;
     btn.dataset.cat = entry.cat;
 
     const img = document.createElement('img');
@@ -459,23 +454,33 @@ function makeTile(entry) {
     img.height = entry.h;
     img.loading = 'lazy';
     img.decoding = 'async';
-    img.alt = `${title} — ${meta.project}`;
+    img.alt = `${project} — ${typeLabel(entry.type)}`;
 
     const frame = document.createElement('span');
     frame.className = 'tile__frame';
     frame.append(img);
 
     const badge = document.createElement('span');
-    badge.className = `badge badge--${meta.group}`;
-    badge.dataset.badge = meta.group;
+    badge.className = `badge badge--${group}`;
+    badge.dataset.badge = group;
 
+    /* Caption is club/event on one line and the kind of graphic on the next.
+       Both come from curated vocabulary, never from the source filename. */
     const name = document.createElement('span');
-    name.className = 'tile__name';
-    name.textContent = title;
+    name.className = 'tile__project';
+    name.textContent = project;
+
+    const kind = document.createElement('span');
+    kind.className = 'tile__type';
+    kind.textContent = typeLabel(entry.type);
+
+    const text = document.createElement('span');
+    text.className = 'tile__text';
+    text.append(name, kind);
 
     const label = document.createElement('span');
     label.className = 'tile__meta';
-    label.append(badge, name);
+    label.append(badge, text);
 
     btn.append(frame, label);
     return btn;
@@ -489,6 +494,11 @@ function relabelPortfolio() {
     const group = tile.dataset.group;
     const badge = $('.badge', tile);
     if (badge) badge.textContent = t(group === 'client' ? 'work.badge.client' : 'work.badge.concept');
+
+    const kind = $('.tile__type', tile);
+    if (kind) kind.textContent = typeLabel(tile.dataset.type);
+    const img = $('img', tile);
+    if (img) img.alt = `${tile.dataset.project} — ${typeLabel(tile.dataset.type)}`;
   }
 }
 
@@ -546,8 +556,8 @@ function initLightbox() {
 
   const open = (tile) => {
     img.src = tile.dataset.full;
-    img.alt = `${tile.dataset.title} — ${tile.dataset.project}`;
-    cap.textContent = `${tile.dataset.title} · ${tile.dataset.project}`;
+    img.alt = `${tile.dataset.project} — ${typeLabel(tile.dataset.type)}`;
+    cap.textContent = `${tile.dataset.project} · ${typeLabel(tile.dataset.type)}`;
     dlg.showModal();
   };
 
