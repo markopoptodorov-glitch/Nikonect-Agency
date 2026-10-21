@@ -573,7 +573,9 @@ html.marquee-visible .dock {
   max-width: var(--maxw);
   margin-inline: auto;
 }
-.bento .card:nth-child(1) { grid-column: span 2; grid-row: span 2; }
+/* All three cards are equal now: the social and thumbnail cards carry the
+   same collage and deliverables list as the matchday card, so an asymmetric
+   span would just make two of them look like filler. */
 @media (max-width: 860px) {
   .bento { grid-template-columns: 1fr; }
   .bento .card:nth-child(1) { grid-column: span 1; grid-row: span 1; }
@@ -1240,30 +1242,6 @@ footer .f-logo span { color: var(--red); }
   body { background: #fff; color: #000; }
 }
 
-/* -----------------------------------------------------------------------------
-   SERVICES — feature card artwork
-   Decorative only (empty alt). Without it the two-by-two card was mostly
-   empty space at desktop widths.
-   -------------------------------------------------------------------------- */
-.card--feature { position: relative; min-height: 340px; }
-.card--feature p { max-width: 30ch; }
-.card__visual {
-  position: absolute;
-  right: -2rem;
-  bottom: -2rem;
-  width: 46%;
-  max-width: 300px;
-  height: auto;
-  border-radius: 12px;
-  transform: rotate(-7deg);
-  opacity: .62;
-  pointer-events: none;
-  -webkit-mask-image: linear-gradient(200deg, #000 35%, transparent 92%);
-  mask-image: linear-gradient(200deg, #000 35%, transparent 92%);
-}
-@media (max-width: 860px) {
-  .card--feature { min-height: 0; }
-  .card__visual { display: none; }
 }
 
 /* "Request a quote" is a phrase, not a number — it does not want the full
@@ -1302,3 +1280,68 @@ footer .f-logo span { color: var(--red); }
 html[lang='mk'] .hero h1 { font-size: clamp(2.3rem, 5.4vw, 4.8rem); }
 html[lang='mk'] .sec-title { font-size: clamp(2rem, 5vw, 3.9rem); }
 html[lang='mk'] .about h2 { font-size: clamp(2rem, 5vw, 3.6rem); }
+
+/* -----------------------------------------------------------------------------
+   SERVICES — collage previews and deliverables
+   Each card carries a small overlapping collage of real portfolio work. The
+   images are decorative (empty alt, container aria-hidden), lazy, and served
+   from the 240/480 steps only — they never render larger than ~150px.
+   -------------------------------------------------------------------------- */
+.card { justify-content: flex-start; }
+.card p { margin-top: 0; }
+
+.card__list {
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  gap: .4rem;
+  margin: 1.2rem 0 0;
+}
+.card__list li {
+  font-size: .72rem;
+  letter-spacing: .04em;
+  color: #d2d2d2;
+  padding: .32rem .7rem;
+  border: 1px solid rgba(255, 255, 255, .14);
+  border-radius: 999px;
+  background: rgba(255, 255, 255, .03);
+}
+
+.card__collage {
+  display: flex;
+  align-items: flex-end;
+  margin-top: auto;
+  padding-top: 1.8rem;
+}
+.card__shot {
+  display: block;
+  flex: 0 0 auto;
+  overflow: hidden;
+  border-radius: 8px;
+  border: 1px solid rgba(255, 255, 255, .12);
+  background: var(--gray);
+  box-shadow: 0 14px 28px -18px rgba(0, 0, 0, .95);
+  transition: transform .5s var(--ease);
+}
+.card__shot img { width: 100%; height: 100%; object-fit: cover; }
+
+/* Overlap and fan the stack slightly. */
+.card__shot + .card__shot { margin-left: -14%; }
+.card__shot:nth-child(1) { transform: rotate(-4deg); }
+.card__shot:nth-child(2) { transform: translateY(-6px); z-index: 1; }
+.card__shot:nth-child(3) { transform: rotate(4deg); }
+.card:hover .card__shot:nth-child(1) { transform: rotate(-6deg) translateY(-3px); }
+.card:hover .card__shot:nth-child(3) { transform: rotate(6deg) translateY(-3px); }
+
+/* Per-card aspect so each collage matches the shape of its own work. */
+.card__collage--portrait .card__shot { width: 78px; aspect-ratio: 9 / 16; }
+.card__collage--square   .card__shot { width: 96px; aspect-ratio: 4 / 5; }
+.card__collage--wide     .card__shot { width: 148px; aspect-ratio: 16 / 9; }
+.card__collage--wide .card__shot + .card__shot { margin-left: -10%; }
+
+@media (prefers-reduced-motion: reduce) {
+  .card__shot,
+  .card:hover .card__shot:nth-child(1),
+  .card:hover .card__shot:nth-child(3) { transform: none; }
+  .card__shot:nth-child(2) { transform: none; }
+}

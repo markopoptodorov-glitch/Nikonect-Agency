@@ -111,6 +111,9 @@ const content = {
     'services.s2.d': 'Post and story packs built for the feed: announcements, results and campaign sets that stay on-brand all season.',
     'services.s3.t': 'Thumbnails',
     'services.s3.d': 'Thumbnails for YouTube and video content, designed to stay readable at small sizes.',
+    'services.s1.d1': 'Lineup graphics', 'services.s1.d2': 'Scorelines and results', 'services.s1.d3': 'Matchday posters',
+    'services.s2.d1': 'Post templates', 'services.s2.d2': 'Stories', 'services.s2.d3': 'Carousels',
+    'services.s3.d1': 'Video thumbnails', 'services.s3.d2': 'Social thumbnails',
 
     'work.eyebrow': 'Selected work',
     'work.title': 'The <em>portfolio.</em>',
@@ -197,6 +200,9 @@ const content = {
     'services.s2.d': 'Пакети постови и стории за фидот: најави, резултати и кампањи што остануваат во ист стил цела сезона.',
     'services.s3.t': 'Thumbnail дизајн',
     'services.s3.d': 'Thumbnail-и за YouTube и видео содржина, дизајнирани да се читаат и во мала големина.',
+    'services.s1.d1': 'Графики за состави', 'services.s1.d2': 'Резултати', 'services.s1.d3': 'Постери за натпревари',
+    'services.s2.d1': 'Шаблони за постови', 'services.s2.d2': 'Стории', 'services.s2.d3': 'Карусели',
+    'services.s3.d1': 'Thumbnail-и за видео', 'services.s3.d2': 'Thumbnail-и за социјални мрежи',
 
     'work.eyebrow': 'Избрани проекти',
     'work.title': '<em>Портфолио.</em>',
