@@ -603,14 +603,34 @@ function initMarquee() {
       marquee.classList.toggle('is-paused', !e.isIntersecting);
       document.documentElement.classList.toggle('marquee-visible', e.isIntersecting);
 
-      /* First time it comes near, fetch the whole strip at once. Left lazy,
-         posters would pop in one by one as the track slides them into view. */
+      /* The strip is fetched here, not by the parser. loading="lazy" was not
+         enough: Chrome's lazy threshold is generous and pulled all twelve
+         posters into the initial load, about 1MB on a phone. They now carry
+         data-src/data-srcset and nothing is requested until the marquee is
+         actually approaching. Fetching the whole set at once rather than
+         per-image also avoids posters popping in as the track slides. */
       if (e.isIntersecting && !primed) {
         primed = true;
-        for (const img of $$('img', marquee)) img.loading = 'eager';
+        /* Assigning all 24 sources at once was a 65ms task in the middle of a
+           scroll: each assignment re-runs image source selection, which needs
+           layout. requestAnimationFrame still landed it inside the scroll's
+           own frames, so this drains on idle callbacks instead, two at a time
+           and only while the frame has budget left. The strip is decorative,
+           so arriving a few hundred ms late costs nothing. */
+        const pending = $$('img', marquee);
+        const idle = window.requestIdleCallback || ((fn) => setTimeout(() => fn({ timeRemaining: () => 8 }), 16));
+        const pump = (deadline) => {
+          while (pending.length && deadline.timeRemaining() > 4) {
+            const img = pending.shift();
+            if (img.dataset.srcset) img.srcset = img.dataset.srcset;
+            if (img.dataset.src) img.src = img.dataset.src;
+          }
+          if (pending.length) idle(pump, { timeout: 600 });
+        };
+        idle(pump, { timeout: 600 });
       }
     }
-  }, { rootMargin: '200px 0px' });
+  }, { rootMargin: '700px 0px' });
 
   io.observe(marquee);
   marquee.classList.add('is-paused');
