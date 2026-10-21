@@ -1,0 +1,19 @@
+{
+  "name": "nikonect-agency",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Nikonect — sports design studio marketing site. Static: plain HTML/CSS/JS, hosted on GitHub Pages.",
+  "type": "module",
+  "scripts": {
+    "images": "node scripts/optimize-images.mjs",
+    "serve": "node scripts/serve.mjs",
+    "shots": "node scripts/screenshots.mjs",
+    "audit": "node scripts/lighthouse.mjs",
+    "longtasks": "node scripts/longtasks.mjs"
+  },
+  "devDependencies": {
+    "sharp": "^0.35.5",
+    "playwright": "^1.56.0",
+    "lighthouse": "^12.8.2"
+  }
+}
