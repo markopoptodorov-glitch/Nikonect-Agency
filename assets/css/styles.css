@@ -507,8 +507,32 @@ html.marquee-visible .dock {
   padding-top: 1.6rem;
   border-top: 1px solid rgba(255, 255, 255, .1);
 }
-.proof-strip strong { color: var(--white); font-weight: 600; }
-.proof-strip .dot { width: 4px; height: 4px; border-radius: 50%; background: var(--red); }
+.proof-strip__label { flex: 0 0 auto; }
+
+/* Separators are generated rather than DOM nodes, so a wrapped line can never
+   end on an orphaned dot — the dot always travels with the name it precedes. */
+.proof-strip__items {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: .4rem .85rem;
+  min-width: 0;
+}
+.proof-strip strong {
+  color: var(--white);
+  font-weight: 600;
+  display: inline-flex;
+  align-items: center;
+  gap: .85rem;
+}
+.proof-strip strong + strong::before {
+  content: '';
+  flex: 0 0 auto;
+  width: 4px;
+  height: 4px;
+  border-radius: 50%;
+  background: var(--red);
+}
 
 /* hero posters */
 .hero__posters {
@@ -1249,10 +1273,17 @@ footer .f-logo span { color: var(--red); }
   .filters { border-radius: var(--radius); width: 100%; }
   .filter { flex: 1 1 auto; text-align: center; }
 
-  /* Stack the two projects instead of leaving the separator dot orphaned at
-     the end of a wrapped line. */
-  .proof-strip { flex-direction: column; align-items: flex-start; gap: .35rem; }
-  .proof-strip .dot { display: none; }
+  /* Four client names will not sit on one phone line. A two-column grid keeps
+     them tidy and unambiguous without the separators. */
+  .proof-strip { flex-direction: column; align-items: flex-start; gap: .55rem; }
+  .proof-strip__items {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: .45rem .8rem;
+    width: 100%;
+    font-size: .74rem;
+  }
+  .proof-strip strong + strong::before { display: none; }
 }
 
 /* -----------------------------------------------------------------------------
