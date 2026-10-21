@@ -98,7 +98,7 @@ const content = {
     'nav.pricing': 'Pricing', 'nav.faq': 'FAQ', 'nav.contact': 'Contact',
     'cta.quote': 'Get a quote', 'cta.work': 'See the work',
 
-    'hero.tag': 'Sports design studio · North Macedonia',
+    'hero.tag': 'Sports design studio · Macedonia',
     'hero.h1': 'Sports design that looks like a <em>final.</em>',
     'hero.sub': 'Matchday posters, lineups and social content for clubs, players and tournaments. First draft in 48 hours.',
     'hero.proofLabel': 'Designer for',
@@ -132,7 +132,7 @@ const content = {
 
     'about.eyebrow': 'Who I am',
     'about.title': 'Sports is my <em>language.</em>',
-    'about.p1': 'Nikonect is a one-person sports design studio based in North Macedonia. I make matchday graphics, social media content and thumbnails for clubs, players and tournaments.',
+    'about.p1': 'Nikonect is a one-person sports design studio based in Macedonia. I make matchday graphics, social media content and thumbnails for clubs, players and tournaments.',
     'about.p2': "I work fast and stay close to the game. Send me the fixture, the lineup and your brand assets, and the first draft lands within 48 hours. I don't do logo design — what I do is everything that goes out on matchday and in the feed.",
     'about.stat1': 'First draft', 'about.stat2': 'Designs', 'about.stat3': 'Years',
 
@@ -172,7 +172,7 @@ const content = {
     'contact.err': 'That did not send. Please try again, or reach me on Instagram.',
     'contact.required': 'Please fill in your name, a valid email and a message.',
     'contact.mailto': 'Opening your mail app…',
-    'contact.instagram': 'Instagram', 'contact.based': 'Based in', 'contact.country': 'North Macedonia',
+    'contact.instagram': 'Instagram', 'contact.based': 'Based in', 'contact.country': 'Macedonia',
     'contact.noform': 'The contact form is not connected yet — send me a DM on Instagram and I will get back to you.',
 
     'footer.rights': 'All rights reserved.', 'footer.top': 'Back to top',
@@ -184,7 +184,7 @@ const content = {
     'nav.pricing': 'Цени', 'nav.faq': 'Прашања', 'nav.contact': 'Контакт',
     'cta.quote': 'Побарај понуда', 'cta.work': 'Погледни ги проектите',
 
-    'hero.tag': 'Студио за спортски дизајн · Северна Македонија',
+    'hero.tag': 'Студио за спортски дизајн · Македонија',
     'hero.h1': 'Дизајн за спортски клубови што изгледа како <em>финале.</em>',
     'hero.sub': 'Постери за натпревари, најави на состави и содржина за социјални мрежи. Прва скица за 48 часа.',
     'hero.proofLabel': 'Дизајнер за',
@@ -218,7 +218,7 @@ const content = {
 
     'about.eyebrow': 'Кој сум јас',
     'about.title': 'Спортот е мојот <em>јазик.</em>',
-    'about.p1': 'Nikonect е студио за спортски дизајн од една личност, со седиште во Северна Македонија. Работам графики за натпревари, содржина за социјални мрежи и thumbnail-и за клубови, играчи и турнири.',
+    'about.p1': 'Nikonect е студио за спортски дизајн од една личност, со седиште во Македонија. Работам графики за натпревари, содржина за социјални мрежи и thumbnail-и за клубови, играчи и турнири.',
     'about.p2': 'Работам брзо и блиску до играта. Прати ми го натпреварот, составот и твоите материјали, и првата скица стигнува за 48 часа. Не работам дизајн на логоа — она што го работам е сè што излегува на ден на натпревар и во фидот.',
     'about.stat1': 'Прва скица', 'about.stat2': 'Дизајни', 'about.stat3': 'Години',
 
@@ -258,7 +258,7 @@ const content = {
     'contact.err': 'Пораката не се испрати. Обиди се повторно или пиши ми на Instagram.',
     'contact.required': 'Те молам внеси име, валидна е-пошта и порака.',
     'contact.mailto': 'Се отвора твојата апликација за е-пошта…',
-    'contact.instagram': 'Instagram', 'contact.based': 'Седиште', 'contact.country': 'Северна Македонија',
+    'contact.instagram': 'Instagram', 'contact.based': 'Седиште', 'contact.country': 'Македонија',
     'contact.noform': 'Формата сè уште не е поврзана — прати ми DM на Instagram и ќе ти одговорам.',
 
     'footer.rights': 'Сите права задржани.', 'footer.top': 'Назад на почеток',
@@ -329,7 +329,7 @@ const TERMS = {
   polu: 'semi', finale: 'final', sesnaestina: 'round of 32',
   popraveno: 'revised', podobro: 'revised', drugo: 'second', vtoro: 'second', mesto: 'place',
   playpff: 'playoff', playoff: 'playoff', pts: 'points', runner: 'runner-up',
-  mkd: 'North Macedonia', bel: 'Belgium', vs: 'vs', nikojenct: 'Nikonect',
+  mkd: 'Macedonia', bel: 'Belgium', vs: 'vs', nikojenct: 'Nikonect',
   bdor: "Ballon d'Or", mvp: 'MVP', dunk: 'dunk', copy: '', org: '', crta: '',
 };
 
