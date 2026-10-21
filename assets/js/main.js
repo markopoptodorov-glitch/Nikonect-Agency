@@ -394,8 +394,37 @@ function buildPortfolio() {
 
   const sorted = interleaveByCategory(images);
 
-  const frag = document.createDocumentFragment();
-  for (const entry of sorted) {
+  /* Creating all 83 tiles in one go was the only task over 50ms left at load.
+     The first page is built immediately so the grid is usable, and the rest
+     follow in idle chunks. */
+  const build = (entries) => {
+    const frag = document.createDocumentFragment();
+    for (const entry of entries) frag.append(makeTile(entry));
+    grid.append(frag);
+    tiles = $$('.tile', grid);
+  };
+
+  build(sorted.slice(0, PAGE_SIZE));
+  relabelPortfolio();
+  initFilters();
+  initLightbox();
+
+  const rest = sorted.slice(PAGE_SIZE);
+  const idle = window.requestIdleCallback || ((fn) => setTimeout(fn, 1));
+  let cursor = 0;
+  const step = () => {
+    if (cursor >= rest.length) return;
+    build(rest.slice(cursor, cursor + PAGE_SIZE));
+    cursor += PAGE_SIZE;
+    relabelPortfolio();
+    applyFilter();
+    idle(step);
+  };
+  idle(step);
+}
+
+function makeTile(entry) {
+  {
     const meta = CATEGORY[entry.cat] || CATEGORY.concepts;
     const title = prettyTitle(entry.id);
 
@@ -436,13 +465,8 @@ function buildPortfolio() {
     label.append(badge, name);
 
     btn.append(frame, label);
-    frag.append(btn);
+    return btn;
   }
-  grid.append(frag);
-  tiles = $$('.tile', grid);
-  relabelPortfolio();
-  initFilters();
-  initLightbox();
 }
 
 /* Badge text and alt text follow the language toggle. */
@@ -514,7 +538,11 @@ function initLightbox() {
     dlg.showModal();
   };
 
-  for (const tile of tiles) tile.addEventListener('click', () => open(tile));
+  /* Delegated, so tiles added in later idle chunks work without rebinding. */
+  $('#grid')?.addEventListener('click', (e) => {
+    const tile = e.target.closest('.tile');
+    if (tile) open(tile);
+  });
   $('#lightboxClose')?.addEventListener('click', () => dlg.close());
   // Clicking the empty area around the image closes it.
   dlg.addEventListener('click', (e) => { if (e.target === dlg) dlg.close(); });
@@ -700,6 +728,7 @@ function renderPricing() {
     amt.className = 'price__amt';
     if (tier.price === null || tier.price === undefined || tier.price === '') {
       amt.textContent = t('pricing.quote');
+      amt.classList.add('price__amt--quote');
     } else {
       amt.textContent = `${currency}${tier.price}`;
       if (tier.unit) {

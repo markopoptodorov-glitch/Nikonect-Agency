@@ -15,7 +15,9 @@ import { join, extname, basename, relative, dirname, sep } from 'node:path';
 
 const SRC = 'assets/original';
 const OUT = 'assets/images';
-const WIDTHS = [480, 720, 1080];
+/* 240 exists because the marquee renders posters about 124px wide on a
+ * phone; without it the smallest file was four times the pixels shown. */
+const WIDTHS = [240, 480, 720, 1080];
 const QUALITY = 78;
 
 /* The carousel/marquee serves the 720px step, which must stay under this. */

@@ -27,9 +27,11 @@
   --maxw: 1320px;
 
   /* type */
-  --font-display: 'Bebas Neue', 'Big Shoulders Display', Impact, sans-serif;
-  --font-head: 'Big Shoulders Display', 'Bebas Neue', Impact, sans-serif;
-  --font-body: 'Space Grotesk', system-ui, -apple-system, sans-serif;
+  /* Oswald and Inter are Cyrillic-only (see assets/css/fonts.css); they pick
+     up the Macedonian copy, which the three brand faces do not cover. */
+  --font-display: 'Bebas Neue', 'Oswald', 'Big Shoulders Display', Impact, sans-serif;
+  --font-head: 'Big Shoulders Display', 'Oswald', 'Bebas Neue', Impact, sans-serif;
+  --font-body: 'Space Grotesk', 'Inter', system-ui, -apple-system, sans-serif;
 
   /* liquid glass */
   --glass-bg: rgba(255, 255, 255, .06);
@@ -1227,4 +1229,25 @@ footer .f-logo span { color: var(--red); }
 @media (max-width: 860px) {
   .card--feature { min-height: 0; }
   .card__visual { display: none; }
+}
+
+/* "Request a quote" is a phrase, not a number — it does not want the full
+   display size a price gets. */
+.price__amt--quote {
+  font-size: clamp(1.4rem, 2.2vw, 1.8rem);
+  letter-spacing: .01em;
+}
+
+/* -----------------------------------------------------------------------------
+   NARROW-SCREEN CORRECTIONS
+   -------------------------------------------------------------------------- */
+@media (max-width: 620px) {
+  /* A fully rounded pill looks wrong once the filters wrap onto three rows. */
+  .filters { border-radius: var(--radius); width: 100%; }
+  .filter { flex: 1 1 auto; text-align: center; }
+
+  /* Stack the two projects instead of leaving the separator dot orphaned at
+     the end of a wrapped line. */
+  .proof-strip { flex-direction: column; align-items: flex-start; gap: .35rem; }
+  .proof-strip .dot { display: none; }
 }

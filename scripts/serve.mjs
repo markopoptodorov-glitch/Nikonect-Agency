@@ -3,6 +3,11 @@
 import { createServer } from 'node:http';
 import { stat, readFile } from 'node:fs/promises';
 import { join, extname, resolve, sep } from 'node:path';
+import { gzipSync } from 'node:zlib';
+
+/* GitHub Pages gzips text responses. Without this, local measurements punish
+   the site for bytes production would never send. */
+const COMPRESSIBLE = /^(text\/|application\/(json|xml|manifest))/;
 
 const root = resolve(process.argv[2] || '.');
 const port = Number(process.argv[3] || 8080);
@@ -25,12 +30,18 @@ createServer(async (req, res) => {
     if (file !== root && !file.startsWith(root + sep)) throw new Error('escape');
     const s = await stat(file);
     if (s.isDirectory()) throw new Error('dir');
-    const body = await readFile(file);
-    res.writeHead(200, {
-      'Content-Type': TYPES[extname(file).toLowerCase()] || 'application/octet-stream',
-      'Content-Length': body.length,
-      'Cache-Control': 'no-store',
-    });
+    let body = await readFile(file);
+    const type = TYPES[extname(file).toLowerCase()] || 'application/octet-stream';
+    const headers = { 'Content-Type': type, 'Cache-Control': 'no-store' };
+
+    if (COMPRESSIBLE.test(type) && (req.headers['accept-encoding'] || '').includes('gzip')) {
+      body = gzipSync(body);
+      headers['Content-Encoding'] = 'gzip';
+      headers.Vary = 'Accept-Encoding';
+    }
+    headers['Content-Length'] = body.length;
+
+    res.writeHead(200, headers);
     res.end(body);
   } catch {
     res.writeHead(404, { 'Content-Type': 'text/plain' });
