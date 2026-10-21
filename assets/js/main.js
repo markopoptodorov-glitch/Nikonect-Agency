@@ -334,17 +334,30 @@ const TERMS = {
 };
 
 const CATEGORY = {
-  slamjam:        { group: 'client', project: 'SlamJam Skopje 2025',      filters: ['client'] },
-  sportski:       { group: 'client', project: 'Sportski Igri Veles 2025', filters: ['client'] },
-  'events-other': { group: 'client', project: 'Event graphics',           filters: ['client'] },
-  matchdays:      { group: 'concept', project: 'Matchday poster',         filters: ['matchdays'] },
-  concepts:       { group: 'concept', project: 'Concept piece',           filters: ['concepts'] },
-  thumbnails:     { group: 'concept', project: 'Thumbnail',               filters: ['thumbnails'] },
+  slamjam:    { group: 'client',  project: 'SlamJam Skopje 2025',      filters: ['client'] },
+  sportski:   { group: 'client',  project: 'Sportski Igri Veles 2025', filters: ['client'] },
+  borec:      { group: 'client',  project: 'Borec Basketball',         filters: ['client'] },
+  matchdays:  { group: 'concept', project: 'Matchday poster',          filters: ['matchdays'] },
+  concepts:   { group: 'concept', project: 'Concept piece',            filters: ['concepts'] },
+  thumbnails: { group: 'concept', project: 'Thumbnail',                filters: ['thumbnails'] },
+};
+
+/* Per-image exceptions to the category defaults.
+ *
+ * The Valencia Basket poster sits in the matchday folder with the concept
+ * pieces, but it is work for Neal Sako, who is a client. It is the only
+ * poster in that folder that is — nothing else is promoted. */
+const IMAGE_OVERRIDES = {
+  'sako-matchday': {
+    group: 'client',
+    project: 'Neal Sako',
+    filters: ['client', 'matchdays'],
+  },
 };
 
 /* Priority for the round-robin below. The matchday posters are the strongest
    pieces visually, so they lead. */
-const CAT_ORDER = ['matchdays', 'slamjam', 'concepts', 'sportski', 'events-other', 'thumbnails'];
+const CAT_ORDER = ['matchdays', 'slamjam', 'concepts', 'sportski', 'borec', 'thumbnails'];
 
 /* How many tiles are shown before "Load more". */
 const PAGE_SIZE = 24;
@@ -425,7 +438,7 @@ function buildPortfolio() {
 
 function makeTile(entry) {
   {
-    const meta = CATEGORY[entry.cat] || CATEGORY.concepts;
+    const meta = { ...(CATEGORY[entry.cat] || CATEGORY.concepts), ...(IMAGE_OVERRIDES[entry.id] || {}) };
     const title = prettyTitle(entry.id);
 
     const btn = document.createElement('button');

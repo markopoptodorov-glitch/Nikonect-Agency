@@ -1,5 +1,24 @@
 [
  {
+  "id": "borec-2",
+  "cat": "borec",
+  "src": "assets/images/borec/borec-2",
+  "w": 1080,
+  "h": 1350,
+  "widths": [
+   240,
+   480,
+   720,
+   1080
+  ],
+  "bytes": {
+   "240": 15614,
+   "480": 41922,
+   "720": 72798,
+   "1080": 176384
+  }
+ },
+ {
   "id": "amg",
   "cat": "concepts",
   "src": "assets/images/concepts/amg",
@@ -494,101 +513,6 @@
   }
  },
  {
-  "id": "aspored-cetvrtok",
-  "cat": "events-other",
-  "src": "assets/images/events-other/aspored-cetvrtok",
-  "w": 1080,
-  "h": 1350,
-  "widths": [
-   240,
-   480,
-   720,
-   1080
-  ],
-  "bytes": {
-   "240": 15042,
-   "480": 36952,
-   "720": 57938,
-   "1080": 85266
-  }
- },
- {
-  "id": "borec-2",
-  "cat": "events-other",
-  "src": "assets/images/events-other/borec-2",
-  "w": 1080,
-  "h": 1350,
-  "widths": [
-   240,
-   480,
-   720,
-   1080
-  ],
-  "bytes": {
-   "240": 15614,
-   "480": 41922,
-   "720": 72798,
-   "1080": 176384
-  }
- },
- {
-  "id": "cetvrtok-fudbal-crta",
-  "cat": "events-other",
-  "src": "assets/images/events-other/cetvrtok-fudbal-crta",
-  "w": 1080,
-  "h": 1350,
-  "widths": [
-   240,
-   480,
-   720,
-   1080
-  ],
-  "bytes": {
-   "240": 16760,
-   "480": 40418,
-   "720": 65676,
-   "1080": 95592
-  }
- },
- {
-  "id": "juniori-champions",
-  "cat": "events-other",
-  "src": "assets/images/events-other/juniori-champions",
-  "w": 1080,
-  "h": 1350,
-  "widths": [
-   240,
-   480,
-   720,
-   1080
-  ],
-  "bytes": {
-   "240": 21076,
-   "480": 61790,
-   "720": 108276,
-   "1080": 186802
-  }
- },
- {
-  "id": "saatnica-juniori",
-  "cat": "events-other",
-  "src": "assets/images/events-other/saatnica-juniori",
-  "w": 1080,
-  "h": 1350,
-  "widths": [
-   240,
-   480,
-   720,
-   1080
-  ],
-  "bytes": {
-   "240": 22012,
-   "480": 70484,
-   "720": 131982,
-   "1080": 257350
-  }
- },
- {
   "id": "balogun-matchday",
   "cat": "matchdays",
   "src": "assets/images/matchdays/balogun-matchday",
@@ -855,6 +779,25 @@
   }
  },
  {
+  "id": "juniori-champions",
+  "cat": "slamjam",
+  "src": "assets/images/slamjam/juniori-champions",
+  "w": 1080,
+  "h": 1350,
+  "widths": [
+   240,
+   480,
+   720,
+   1080
+  ],
+  "bytes": {
+   "240": 21076,
+   "480": 61790,
+   "720": 108276,
+   "1080": 186802
+  }
+ },
+ {
   "id": "mvp-juniori",
   "cat": "slamjam",
   "src": "assets/images/slamjam/mvp-juniori",
@@ -1007,6 +950,25 @@
   }
  },
  {
+  "id": "saatnica-juniori",
+  "cat": "slamjam",
+  "src": "assets/images/slamjam/saatnica-juniori",
+  "w": 1080,
+  "h": 1350,
+  "widths": [
+   240,
+   480,
+   720,
+   1080
+  ],
+  "bytes": {
+   "240": 22012,
+   "480": 70484,
+   "720": 131982,
+   "1080": 257350
+  }
+ },
+ {
   "id": "seniori-vtoro-mesto",
   "cat": "slamjam",
   "src": "assets/images/slamjam/seniori-vtoro-mesto",
@@ -1137,6 +1099,44 @@
    "480": 31356,
    "720": 48860,
    "1080": 70970
+  }
+ },
+ {
+  "id": "aspored-cetvrtok",
+  "cat": "sportski",
+  "src": "assets/images/sportski/aspored-cetvrtok",
+  "w": 1080,
+  "h": 1350,
+  "widths": [
+   240,
+   480,
+   720,
+   1080
+  ],
+  "bytes": {
+   "240": 15042,
+   "480": 36952,
+   "720": 57938,
+   "1080": 85266
+  }
+ },
+ {
+  "id": "cetvrtok-fudbal-crta",
+  "cat": "sportski",
+  "src": "assets/images/sportski/cetvrtok-fudbal-crta",
+  "w": 1080,
+  "h": 1350,
+  "widths": [
+   240,
+   480,
+   720,
+   1080
+  ],
+  "bytes": {
+   "240": 16760,
+   "480": 40418,
+   "720": 65676,
+   "1080": 95592
   }
  },
  {

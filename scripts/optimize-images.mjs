@@ -30,9 +30,6 @@ const CAROUSEL_BUDGET_KB = 150;
  * loose files at the top of assets/original/ have no folder to inherit from,
  * so they are mapped by hand below.
  *
- * TODO(Marko): the five files mapped to 'events-other' are clearly real event
- * graphics in Macedonian, but I could not tell which competition they belong
- * to. Tell me and I'll fold them into the right project group.
  * ------------------------------------------------------------------------ */
 const FOLDER_CATEGORY = {
   'SlamJam': 'slamjam',
@@ -48,11 +45,19 @@ const LOOSE_FILE_CATEGORY = {
   'maccabi matchday.png': 'matchdays',
   'amg.png': 'concepts',
   'atm rma.png': 'concepts',
-  'aspored cetvrtok.png': 'events-other',
-  'cetvrtok fudbal crta.png': 'events-other',
-  'juniori champions.png': 'events-other',
-  'saatnica juniori.png': 'events-other',
-  'borec 2.png': 'events-other',
+  /* These five were previously bucketed as 'events-other' because their
+   * filenames gave nothing away. Each has now been opened and identified:
+   *   aspored cetvrtok      -> Sportski Igri Veles football schedule (a
+   *                            near-duplicate of raspored cetvrtok)
+   *   cetvrtok fudbal crta  -> the same Thursday football schedule
+   *   juniori champions     -> SlamJam Skopje junior champions, Brick City
+   *   saatnica juniori      -> SlamJam Skopje juniors playoff schedule
+   *   borec 2               -> Borec Basketball, Derrick Ellis II signing  */
+  'aspored cetvrtok.png': 'sportski',
+  'cetvrtok fudbal crta.png': 'sportski',
+  'juniori champions.png': 'slamjam',
+  'saatnica juniori.png': 'slamjam',
+  'borec 2.png': 'borec',
 };
 
 const slugify = (s) =>
