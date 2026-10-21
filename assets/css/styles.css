@@ -1251,3 +1251,12 @@ footer .f-logo span { color: var(--red); }
   .proof-strip { flex-direction: column; align-items: flex-start; gap: .35rem; }
   .proof-strip .dot { display: none; }
 }
+
+/* -----------------------------------------------------------------------------
+   MACEDONIAN
+   The MK headline is roughly twice the length of the English one. At the same
+   size it runs to five lines and pushes the sub-head and CTAs off the fold.
+   -------------------------------------------------------------------------- */
+html[lang='mk'] .hero h1 { font-size: clamp(2.3rem, 5.4vw, 4.8rem); }
+html[lang='mk'] .sec-title { font-size: clamp(2rem, 5vw, 3.9rem); }
+html[lang='mk'] .about h2 { font-size: clamp(2rem, 5vw, 3.6rem); }

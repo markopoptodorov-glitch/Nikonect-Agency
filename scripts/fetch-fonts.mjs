@@ -22,8 +22,8 @@ const FAMILIES = [
   { css: 'Bebas+Neue', label: 'Bebas Neue' },
   { css: 'Big+Shoulders+Display:wght@800', label: 'Big Shoulders Display' },
   { css: 'Space+Grotesk:wght@300;500;600', label: 'Space Grotesk' },
-  { css: 'Oswald:wght@600', label: 'Oswald', only: ['cyrillic'] },
-  { css: 'Inter:wght@300;500;600', label: 'Inter', only: ['cyrillic'] },
+  { css: 'Oswald:wght@600', label: 'Oswald', only: ['cyrillic', 'cyrillic-ext'] },
+  { css: 'Inter:wght@300;500;600', label: 'Inter', only: ['cyrillic', 'cyrillic-ext'] },
 ];
 
 /* A modern UA string is what makes Google serve woff2 rather than ttf. */
@@ -42,14 +42,19 @@ for (const fam of FAMILIES) {
   if (!res.ok) throw new Error(`${fam.label}: HTTP ${res.status}`);
   let css = await res.text();
 
-  const faces = css.split('@font-face').slice(1);
-  for (const face of faces) {
+  /* Google labels each block with a comment that PRECEDES it:
+   *   / * cyrillic * / @font-face { ... }
+   * Pair them explicitly. Splitting on '@font-face' instead attaches each
+   * block to the next block's label, which silently fetched cyrillic-ext
+   * (U+0460-052F) under the name "cyrillic" and left the U+0400-045F letters
+   * Macedonian is actually written in uncovered. */
+  const faces = [...css.matchAll(/\/\*\s*([a-z0-9-]+)\s*\*\/\s*@font-face\s*\{([^}]*)\}/g)];
+  for (const [, subsetLabel, face] of faces) {
     const srcMatch = face.match(/src:\s*url\((https:\/\/[^)]+\.woff2)\)/);
-    const subsetMatch = face.match(/\/\*\s*([a-z-]+)\s*\*\//);
     const weightMatch = face.match(/font-weight:\s*(\d+)/);
     if (!srcMatch) continue;
 
-    const subset = subsetMatch ? subsetMatch[1] : 'latin';
+    const subset = subsetLabel;
     if (fam.only) {
       if (!fam.only.includes(subset)) continue;
     } else if (!/^(latin|latin-ext)$/.test(subset)) {

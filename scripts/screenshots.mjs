@@ -31,13 +31,28 @@ for (const width of WIDTHS) {
 
   const diag = await page.evaluate((vw) => {
     const docScrollW = document.documentElement.scrollWidth;
+
+    /* An element wider than the viewport is only a bug if it can actually
+       push the page sideways. Anything inside an overflow:hidden ancestor
+       (the marquee) or inside the closed off-canvas menu is clipped by
+       design, so it is not reported. */
+    const isClipped = (el) => {
+      for (let p = el.parentElement; p && p !== document.body; p = p.parentElement) {
+        const cs = getComputedStyle(p);
+        if (cs.overflowX !== 'visible' || cs.overflow !== 'visible') return true;
+        if (cs.transform !== 'none' && p.classList.contains('nav__links')) return true;
+      }
+      return false;
+    };
+
     const offenders = [];
     for (const el of document.querySelectorAll('body *')) {
       const r = el.getBoundingClientRect();
       if (r.width === 0 && r.height === 0) continue;
       const cs = getComputedStyle(el);
-      if (cs.position === 'fixed') continue; // decorative fixed layers are clipped by design
+      if (cs.position === 'fixed') continue; // decorative fixed layers
       if (r.right > vw + 1 || r.left < -1) {
+        if (isClipped(el)) continue;
         offenders.push({
           tag: el.tagName.toLowerCase(),
           cls: (el.className && el.className.toString().slice(0, 60)) || '',
