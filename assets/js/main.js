@@ -139,10 +139,15 @@ const content = {
     'about.p2': "I work fast and stay close to the game. Send me the fixture, the lineup and your brand assets, and the first draft lands within 48 hours.",
     'about.stat1': 'First draft', 'about.stat2': 'Designs', 'about.stat3': 'Years',
 
-    'proof.eyebrow': 'Trusted on',
-    'proof.title': 'Real <em>tournaments.</em>',
+    'proof.eyebrow': 'Trusted by',
+    'proof.title': 'Real <em>clients.</em>',
+    'proof.sub': 'The clubs, tournaments and players I design for.',
     'proof.r1': 'Tournament designer · 2025',
     'proof.r2': 'Tournament designer · 2025',
+    /* No year on the Borec card: the signing poster carries no date and one
+       will not be invented. TODO(Marko): tell me the year. */
+    'proof.r3': 'Designer',
+    'proof.r4': 'Designer · 2025',
 
     'pricing.eyebrow': 'Packages',
     'pricing.title': 'Pick your <em>lineup.</em>',
@@ -228,10 +233,13 @@ const content = {
     'about.p2': 'Работам брзо и блиску до играта. Прати ми го натпреварот, составот и твоите материјали, и првата скица стигнува за 48 часа.',
     'about.stat1': 'Прва скица', 'about.stat2': 'Дизајни', 'about.stat3': 'Години',
 
-    'proof.eyebrow': 'Доверено на',
-    'proof.title': 'Вистински <em>турнири.</em>',
+    'proof.eyebrow': 'Доверено од',
+    'proof.title': 'Вистински <em>клиенти.</em>',
+    'proof.sub': 'Клубовите, турнирите и играчите за кои дизајнирам.',
     'proof.r1': 'Дизајнер на турнирот · 2025',
     'proof.r2': 'Дизајнер на турнирот · 2025',
+    'proof.r3': 'Дизајнер',
+    'proof.r4': 'Дизајнер · 2025',
 
     'pricing.eyebrow': 'Пакети',
     'pricing.title': 'Избери го твојот <em>состав.</em>',

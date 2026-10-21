@@ -853,40 +853,6 @@ html.marquee-visible .dock {
 }
 
 /* -----------------------------------------------------------------------------
-   PROOF
-   -------------------------------------------------------------------------- */
-.proof-list {
-  display: flex;
-  flex-wrap: wrap;
-  gap: .8rem;
-  list-style: none;
-  max-width: var(--maxw);
-  margin-inline: auto;
-}
-.proof-list li {
-  display: flex;
-  flex-direction: column;
-  gap: .3rem;
-  padding: 1.1rem 1.6rem;
-  border: 1px solid rgba(255, 255, 255, .1);
-  border-radius: var(--radius);
-  background: rgba(255, 255, 255, .025);
-}
-.proof-list .name {
-  font-family: var(--font-head);
-  font-weight: 800;
-  text-transform: uppercase;
-  font-size: 1.25rem;
-  line-height: 1;
-}
-.proof-list .role {
-  font-size: .72rem;
-  letter-spacing: .14em;
-  text-transform: uppercase;
-  color: #b0b0b0;
-}
-
-/* -----------------------------------------------------------------------------
    PRICING
    -------------------------------------------------------------------------- */
 .prices {
@@ -1344,4 +1310,69 @@ html[lang='mk'] .about h2 { font-size: clamp(2rem, 5vw, 3.6rem); }
   .card:hover .card__shot:nth-child(1),
   .card:hover .card__shot:nth-child(3) { transform: none; }
   .card__shot:nth-child(2) { transform: none; }
+}
+
+/* -----------------------------------------------------------------------------
+   PROOF — "Trusted on"
+   Everything is centred: heading, subtitle, and a centred flex row of equal
+   cards. Because the row is centred rather than a fixed grid, a last row that
+   does not fill (three on a 2-up phone, or one on a 3-up tablet) centres
+   itself instead of hugging the left edge.
+   -------------------------------------------------------------------------- */
+.sec-head--center {
+  text-align: center;
+  margin-inline: auto;
+  max-width: 48rem;
+}
+.sec-head--center .sec-eyebrow { justify-content: center; }
+.sec-head--center .sec-sub { margin-inline: auto; }
+
+.proof-list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: stretch;
+  gap: 1rem;
+  list-style: none;
+  max-width: var(--maxw);
+  margin-inline: auto;
+  padding: 0;
+}
+.proof-card {
+  flex: 0 1 236px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: .45rem;
+  text-align: center;
+  min-height: 118px;
+  padding: 1.4rem 1.2rem;
+  border: 1px solid rgba(255, 255, 255, .1);
+  border-radius: var(--radius);
+  background: rgba(255, 255, 255, .025);
+  transition: border-color .4s var(--ease), transform .4s var(--ease);
+}
+.proof-card:hover { border-color: rgba(232, 0, 28, .45); transform: translateY(-3px); }
+@media (prefers-reduced-motion: reduce) { .proof-card, .proof-card:hover { transform: none; } }
+
+.proof-card__name {
+  font-family: var(--font-head);
+  font-weight: 800;
+  text-transform: uppercase;
+  font-size: 1.2rem;
+  line-height: 1.05;
+}
+.proof-card__role {
+  font-size: .7rem;
+  letter-spacing: .13em;
+  text-transform: uppercase;
+  color: #b0b0b0;
+}
+
+/* Two centred columns on a phone, one when there is no room for two. */
+@media (max-width: 620px) {
+  .proof-list { gap: .7rem; }
+  .proof-card { flex: 1 1 calc(50% - .7rem); min-width: 150px; min-height: 104px; padding: 1.1rem .8rem; }
+  .proof-card__name { font-size: 1.02rem; }
 }
