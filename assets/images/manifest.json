@@ -1463,63 +1463,6 @@
   }
  },
  {
-  "id": "7ww-thumbnaikl",
-  "cat": "thumbnails",
-  "src": "assets/images/thumbnails/7ww-thumbnaikl",
-  "w": 1280,
-  "h": 720,
-  "widths": [
-   240,
-   480,
-   720,
-   1080
-  ],
-  "bytes": {
-   "240": 8156,
-   "480": 23830,
-   "720": 46692,
-   "1080": 91418
-  }
- },
- {
-  "id": "la-casa-thumbnail",
-  "cat": "thumbnails",
-  "src": "assets/images/thumbnails/la-casa-thumbnail",
-  "w": 3840,
-  "h": 2160,
-  "widths": [
-   240,
-   480,
-   720,
-   1080
-  ],
-  "bytes": {
-   "240": 8048,
-   "480": 21390,
-   "720": 38370,
-   "1080": 71290
-  }
- },
- {
-  "id": "legoat-thumbnail",
-  "cat": "thumbnails",
-  "src": "assets/images/thumbnails/legoat-thumbnail",
-  "w": 3840,
-  "h": 2160,
-  "widths": [
-   240,
-   480,
-   720,
-   1080
-  ],
-  "bytes": {
-   "240": 10510,
-   "480": 33942,
-   "720": 68018,
-   "1080": 141690
-  }
- },
- {
   "id": "messi-thumbnail",
   "cat": "thumbnails",
   "src": "assets/images/thumbnails/messi-thumbnail",
@@ -1555,25 +1498,6 @@
    "480": 15382,
    "720": 27448,
    "1080": 47140
-  }
- },
- {
-  "id": "stranger-things-thumbnail",
-  "cat": "thumbnails",
-  "src": "assets/images/thumbnails/stranger-things-thumbnail",
-  "w": 3840,
-  "h": 2160,
-  "widths": [
-   240,
-   480,
-   720,
-   1080
-  ],
-  "bytes": {
-   "240": 8214,
-   "480": 22992,
-   "720": 42196,
-   "1080": 80772
   }
  }
 ]

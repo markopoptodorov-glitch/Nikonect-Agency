@@ -121,6 +121,16 @@ for (const { file, rel } of unique) {
      * quality down for those few files until it does. */
     const budget = w === 720 ? CAROUSEL_BUDGET_KB * 1024 : Infinity;
     let size = 0;
+
+    /* Skip anything already built from an unchanged source, so re-running
+     * after a content change costs seconds instead of re-encoding all of it. */
+    const cached = await stat(dest).catch(() => null);
+    if (cached && cached.mtimeMs >= (await stat(file)).mtimeMs) {
+      sizes[w] = cached.size;
+      totalOut += cached.size;
+      continue;
+    }
+
     for (const q of [QUALITY, 72, 66, 60, 54]) {
       await sharp(file)
         .resize({ width: w, withoutEnlargement: true })
