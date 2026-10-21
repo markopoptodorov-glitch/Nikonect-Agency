@@ -133,7 +133,7 @@ const content = {
     'about.eyebrow': 'Who I am',
     'about.title': 'Sports is my <em>language.</em>',
     'about.p1': 'Nikonect is a one-person sports design studio based in Macedonia. I make matchday graphics, social media content and thumbnails for clubs, players and tournaments.',
-    'about.p2': "I work fast and stay close to the game. Send me the fixture, the lineup and your brand assets, and the first draft lands within 48 hours. I don't do logo design — what I do is everything that goes out on matchday and in the feed.",
+    'about.p2': "I work fast and stay close to the game. Send me the fixture, the lineup and your brand assets, and the first draft lands within 48 hours.",
     'about.stat1': 'First draft', 'about.stat2': 'Designs', 'about.stat3': 'Years',
 
     'proof.eyebrow': 'Trusted on',
@@ -219,7 +219,7 @@ const content = {
     'about.eyebrow': 'Кој сум јас',
     'about.title': 'Спортот е мојот <em>јазик.</em>',
     'about.p1': 'Nikonect е студио за спортски дизајн од една личност, со седиште во Македонија. Работам графики за натпревари, содржина за социјални мрежи и thumbnail-и за клубови, играчи и турнири.',
-    'about.p2': 'Работам брзо и блиску до играта. Прати ми го натпреварот, составот и твоите материјали, и првата скица стигнува за 48 часа. Не работам дизајн на логоа — она што го работам е сè што излегува на ден на натпревар и во фидот.',
+    'about.p2': 'Работам брзо и блиску до играта. Прати ми го натпреварот, составот и твоите материјали, и првата скица стигнува за 48 часа.',
     'about.stat1': 'Прва скица', 'about.stat2': 'Дизајни', 'about.stat3': 'Години',
 
     'proof.eyebrow': 'Доверено на',
