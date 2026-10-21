@@ -1,0 +1,1413 @@
+[
+ {
+  "id": "amg",
+  "cat": "concepts",
+  "src": "assets/images/concepts/amg",
+  "w": 2000,
+  "h": 2500,
+  "widths": [
+   480,
+   720,
+   1080
+  ],
+  "bytes": {
+   "480": 52094,
+   "720": 105144,
+   "1080": 206216
+  }
+ },
+ {
+  "id": "atm-rma",
+  "cat": "concepts",
+  "src": "assets/images/concepts/atm-rma",
+  "w": 2000,
+  "h": 2500,
+  "widths": [
+   480,
+   720,
+   1080
+  ],
+  "bytes": {
+   "480": 40830,
+   "720": 73298,
+   "1080": 135250
+  }
+ },
+ {
+  "id": "dembele-bdor",
+  "cat": "concepts",
+  "src": "assets/images/concepts/dembele-bdor",
+  "w": 2000,
+  "h": 2500,
+  "widths": [
+   480,
+   720,
+   1080
+  ],
+  "bytes": {
+   "480": 62576,
+   "720": 119246,
+   "1080": 250210
+  }
+ },
+ {
+  "id": "hamilton",
+  "cat": "concepts",
+  "src": "assets/images/concepts/hamilton",
+  "w": 2000,
+  "h": 2500,
+  "widths": [
+   480,
+   720,
+   1080
+  ],
+  "bytes": {
+   "480": 49190,
+   "720": 92492,
+   "1080": 156240
+  }
+ },
+ {
+  "id": "jordan",
+  "cat": "concepts",
+  "src": "assets/images/concepts/jordan",
+  "w": 2000,
+  "h": 2500,
+  "widths": [
+   480,
+   720,
+   1080
+  ],
+  "bytes": {
+   "480": 49444,
+   "720": 99544,
+   "1080": 203352
+  }
+ },
+ {
+  "id": "jude-nbaja-copy",
+  "cat": "concepts",
+  "src": "assets/images/concepts/jude-nbaja-copy",
+  "w": 2000,
+  "h": 2500,
+  "widths": [
+   480,
+   720,
+   1080
+  ],
+  "bytes": {
+   "480": 75528,
+   "720": 150502,
+   "1080": 374764
+  }
+ },
+ {
+  "id": "maatsen",
+  "cat": "concepts",
+  "src": "assets/images/concepts/maatsen",
+  "w": 2000,
+  "h": 2500,
+  "widths": [
+   480,
+   720,
+   1080
+  ],
+  "bytes": {
+   "480": 80550,
+   "720": 146550,
+   "1080": 346230
+  }
+ },
+ {
+  "id": "mainoo-copy",
+  "cat": "concepts",
+  "src": "assets/images/concepts/mainoo-copy",
+  "w": 2000,
+  "h": 2500,
+  "widths": [
+   480,
+   720,
+   1080
+  ],
+  "bytes": {
+   "480": 60518,
+   "720": 136514,
+   "1080": 244432
+  }
+ },
+ {
+  "id": "marmoush",
+  "cat": "concepts",
+  "src": "assets/images/concepts/marmoush",
+  "w": 2000,
+  "h": 2500,
+  "widths": [
+   480,
+   720,
+   1080
+  ],
+  "bytes": {
+   "480": 44636,
+   "720": 90364,
+   "1080": 183016
+  }
+ },
+ {
+  "id": "nissan-gtr-copy",
+  "cat": "concepts",
+  "src": "assets/images/concepts/nissan-gtr-copy",
+  "w": 2000,
+  "h": 2500,
+  "widths": [
+   480,
+   720,
+   1080
+  ],
+  "bytes": {
+   "480": 50984,
+   "720": 100142,
+   "1080": 199472
+  }
+ },
+ {
+  "id": "nkunku-pop",
+  "cat": "concepts",
+  "src": "assets/images/concepts/nkunku-pop",
+  "w": 2000,
+  "h": 2500,
+  "widths": [
+   480,
+   720,
+   1080
+  ],
+  "bytes": {
+   "480": 52580,
+   "720": 118534,
+   "1080": 255152
+  }
+ },
+ {
+  "id": "porsche-copy",
+  "cat": "concepts",
+  "src": "assets/images/concepts/porsche-copy",
+  "w": 2000,
+  "h": 2500,
+  "widths": [
+   480,
+   720,
+   1080
+  ],
+  "bytes": {
+   "480": 47850,
+   "720": 105332,
+   "1080": 213506
+  }
+ },
+ {
+  "id": "psg-barca-copy",
+  "cat": "concepts",
+  "src": "assets/images/concepts/psg-barca-copy",
+  "w": 2000,
+  "h": 2500,
+  "widths": [
+   480,
+   720,
+   1080
+  ],
+  "bytes": {
+   "480": 65584,
+   "720": 136318,
+   "1080": 258626
+  }
+ },
+ {
+  "id": "rodrygo",
+  "cat": "concepts",
+  "src": "assets/images/concepts/rodrygo",
+  "w": 2000,
+  "h": 2500,
+  "widths": [
+   480,
+   720,
+   1080
+  ],
+  "bytes": {
+   "480": 72802,
+   "720": 138720,
+   "1080": 306462
+  }
+ },
+ {
+  "id": "ronaldoo",
+  "cat": "concepts",
+  "src": "assets/images/concepts/ronaldoo",
+  "w": 2000,
+  "h": 2500,
+  "widths": [
+   480,
+   720,
+   1080
+  ],
+  "bytes": {
+   "480": 79074,
+   "720": 150198,
+   "1080": 374826
+  }
+ },
+ {
+  "id": "rui-botelho-1",
+  "cat": "concepts",
+  "src": "assets/images/concepts/rui-botelho-1",
+  "w": 3240,
+  "h": 4050,
+  "widths": [
+   480,
+   720,
+   1080
+  ],
+  "bytes": {
+   "480": 52788,
+   "720": 112658,
+   "1080": 244968
+  }
+ },
+ {
+  "id": "rui-botelho-2",
+  "cat": "concepts",
+  "src": "assets/images/concepts/rui-botelho-2",
+  "w": 3240,
+  "h": 4050,
+  "widths": [
+   480,
+   720,
+   1080
+  ],
+  "bytes": {
+   "480": 58652,
+   "720": 111578,
+   "1080": 204110
+  }
+ },
+ {
+  "id": "rui-botelho-3",
+  "cat": "concepts",
+  "src": "assets/images/concepts/rui-botelho-3",
+  "w": 3240,
+  "h": 4050,
+  "widths": [
+   480,
+   720,
+   1080
+  ],
+  "bytes": {
+   "480": 47016,
+   "720": 88206,
+   "1080": 158674
+  }
+ },
+ {
+  "id": "ry",
+  "cat": "concepts",
+  "src": "assets/images/concepts/ry",
+  "w": 2000,
+  "h": 2500,
+  "widths": [
+   480,
+   720,
+   1080
+  ],
+  "bytes": {
+   "480": 56870,
+   "720": 121532,
+   "1080": 239712
+  }
+ },
+ {
+  "id": "shai-real",
+  "cat": "concepts",
+  "src": "assets/images/concepts/shai-real",
+  "w": 2000,
+  "h": 2500,
+  "widths": [
+   480,
+   720,
+   1080
+  ],
+  "bytes": {
+   "480": 70042,
+   "720": 147994,
+   "1080": 312822
+  }
+ },
+ {
+  "id": "siakam-texture",
+  "cat": "concepts",
+  "src": "assets/images/concepts/siakam-texture",
+  "w": 3240,
+  "h": 4050,
+  "widths": [
+   480,
+   720,
+   1080
+  ],
+  "bytes": {
+   "480": 59802,
+   "720": 116746,
+   "1080": 253724
+  }
+ },
+ {
+  "id": "spain-euro-2025",
+  "cat": "concepts",
+  "src": "assets/images/concepts/spain-euro-2025",
+  "w": 1080,
+  "h": 1350,
+  "widths": [
+   480,
+   720,
+   1080
+  ],
+  "bytes": {
+   "480": 63936,
+   "720": 121832,
+   "1080": 231388
+  }
+ },
+ {
+  "id": "trawe",
+  "cat": "concepts",
+  "src": "assets/images/concepts/trawe",
+  "w": 2000,
+  "h": 2500,
+  "widths": [
+   480,
+   720,
+   1080
+  ],
+  "bytes": {
+   "480": 68016,
+   "720": 144958,
+   "1080": 288994
+  }
+ },
+ {
+  "id": "watkins",
+  "cat": "concepts",
+  "src": "assets/images/concepts/watkins",
+  "w": 3240,
+  "h": 4050,
+  "widths": [
+   480,
+   720,
+   1080
+  ],
+  "bytes": {
+   "480": 43076,
+   "720": 81458,
+   "1080": 154878
+  }
+ },
+ {
+  "id": "yamal-x-nico",
+  "cat": "concepts",
+  "src": "assets/images/concepts/yamal-x-nico",
+  "w": 2000,
+  "h": 2500,
+  "widths": [
+   480,
+   720,
+   1080
+  ],
+  "bytes": {
+   "480": 76582,
+   "720": 136102,
+   "1080": 317316
+  }
+ },
+ {
+  "id": "zirkzee",
+  "cat": "concepts",
+  "src": "assets/images/concepts/zirkzee",
+  "w": 2000,
+  "h": 2500,
+  "widths": [
+   480,
+   720,
+   1080
+  ],
+  "bytes": {
+   "480": 27224,
+   "720": 47400,
+   "1080": 78256
+  }
+ },
+ {
+  "id": "aspored-cetvrtok",
+  "cat": "events-other",
+  "src": "assets/images/events-other/aspored-cetvrtok",
+  "w": 1080,
+  "h": 1350,
+  "widths": [
+   480,
+   720,
+   1080
+  ],
+  "bytes": {
+   "480": 36952,
+   "720": 57938,
+   "1080": 85266
+  }
+ },
+ {
+  "id": "borec-2",
+  "cat": "events-other",
+  "src": "assets/images/events-other/borec-2",
+  "w": 1080,
+  "h": 1350,
+  "widths": [
+   480,
+   720,
+   1080
+  ],
+  "bytes": {
+   "480": 41922,
+   "720": 72798,
+   "1080": 176384
+  }
+ },
+ {
+  "id": "cetvrtok-fudbal-crta",
+  "cat": "events-other",
+  "src": "assets/images/events-other/cetvrtok-fudbal-crta",
+  "w": 1080,
+  "h": 1350,
+  "widths": [
+   480,
+   720,
+   1080
+  ],
+  "bytes": {
+   "480": 40418,
+   "720": 65676,
+   "1080": 95592
+  }
+ },
+ {
+  "id": "juniori-champions",
+  "cat": "events-other",
+  "src": "assets/images/events-other/juniori-champions",
+  "w": 1080,
+  "h": 1350,
+  "widths": [
+   480,
+   720,
+   1080
+  ],
+  "bytes": {
+   "480": 61790,
+   "720": 108276,
+   "1080": 186802
+  }
+ },
+ {
+  "id": "saatnica-juniori",
+  "cat": "events-other",
+  "src": "assets/images/events-other/saatnica-juniori",
+  "w": 1080,
+  "h": 1350,
+  "widths": [
+   480,
+   720,
+   1080
+  ],
+  "bytes": {
+   "480": 70484,
+   "720": 131982,
+   "1080": 257350
+  }
+ },
+ {
+  "id": "balogun-matchday",
+  "cat": "matchdays",
+  "src": "assets/images/matchdays/balogun-matchday",
+  "w": 2160,
+  "h": 3840,
+  "widths": [
+   480,
+   720,
+   1080
+  ],
+  "bytes": {
+   "480": 76438,
+   "720": 134450,
+   "1080": 363226
+  }
+ },
+ {
+  "id": "depay-matchday-copy",
+  "cat": "matchdays",
+  "src": "assets/images/matchdays/depay-matchday-copy",
+  "w": 2160,
+  "h": 3840,
+  "widths": [
+   480,
+   720,
+   1080
+  ],
+  "bytes": {
+   "480": 107578,
+   "720": 152054,
+   "1080": 403742
+  }
+ },
+ {
+  "id": "en-nesyri-matchday",
+  "cat": "matchdays",
+  "src": "assets/images/matchdays/en-nesyri-matchday",
+  "w": 2160,
+  "h": 3840,
+  "widths": [
+   480,
+   720,
+   1080
+  ],
+  "bytes": {
+   "480": 70062,
+   "720": 134274,
+   "1080": 245734
+  }
+ },
+ {
+  "id": "maccabi-matchday",
+  "cat": "matchdays",
+  "src": "assets/images/matchdays/maccabi-matchday",
+  "w": 2160,
+  "h": 3840,
+  "widths": [
+   480,
+   720,
+   1080
+  ],
+  "bytes": {
+   "480": 73872,
+   "720": 145774,
+   "1080": 262058
+  }
+ },
+ {
+  "id": "militao-matchday",
+  "cat": "matchdays",
+  "src": "assets/images/matchdays/militao-matchday",
+  "w": 2160,
+  "h": 3840,
+  "widths": [
+   480,
+   720,
+   1080
+  ],
+  "bytes": {
+   "480": 76220,
+   "720": 132180,
+   "1080": 301206
+  }
+ },
+ {
+  "id": "mosquera-matchday",
+  "cat": "matchdays",
+  "src": "assets/images/matchdays/mosquera-matchday",
+  "w": 2160,
+  "h": 3840,
+  "widths": [
+   480,
+   720,
+   1080
+  ],
+  "bytes": {
+   "480": 80616,
+   "720": 147862,
+   "1080": 262022
+  }
+ },
+ {
+  "id": "nuno-mendes-matchday",
+  "cat": "matchdays",
+  "src": "assets/images/matchdays/nuno-mendes-matchday",
+  "w": 1080,
+  "h": 1920,
+  "widths": [
+   480,
+   720,
+   1080
+  ],
+  "bytes": {
+   "480": 100348,
+   "720": 149004,
+   "1080": 420806
+  }
+ },
+ {
+  "id": "sako-matchday",
+  "cat": "matchdays",
+  "src": "assets/images/matchdays/sako-matchday",
+  "w": 1080,
+  "h": 1920,
+  "widths": [
+   480,
+   720,
+   1080
+  ],
+  "bytes": {
+   "480": 94506,
+   "720": 153368,
+   "1080": 325422
+  }
+ },
+ {
+  "id": "3pts-junior",
+  "cat": "slamjam",
+  "src": "assets/images/slamjam/3pts-junior",
+  "w": 1080,
+  "h": 1350,
+  "widths": [
+   480,
+   720,
+   1080
+  ],
+  "bytes": {
+   "480": 67554,
+   "720": 120296,
+   "1080": 207498
+  }
+ },
+ {
+  "id": "3pts-senior",
+  "cat": "slamjam",
+  "src": "assets/images/slamjam/3pts-senior",
+  "w": 1080,
+  "h": 1350,
+  "widths": [
+   480,
+   720,
+   1080
+  ],
+  "bytes": {
+   "480": 58004,
+   "720": 100244,
+   "1080": 174716
+  }
+ },
+ {
+  "id": "behance-slamjam-poster",
+  "cat": "slamjam",
+  "src": "assets/images/slamjam/behance-slamjam-poster",
+  "w": 2424,
+  "h": 1896,
+  "widths": [
+   480,
+   720,
+   1080
+  ],
+  "bytes": {
+   "480": 7282,
+   "720": 11106,
+   "1080": 16520
+  }
+ },
+ {
+  "id": "champions-senior",
+  "cat": "slamjam",
+  "src": "assets/images/slamjam/champions-senior",
+  "w": 1080,
+  "h": 1350,
+  "widths": [
+   480,
+   720,
+   1080
+  ],
+  "bytes": {
+   "480": 69240,
+   "720": 126980,
+   "1080": 224050
+  }
+ },
+ {
+  "id": "dunk-juniori",
+  "cat": "slamjam",
+  "src": "assets/images/slamjam/dunk-juniori",
+  "w": 1080,
+  "h": 1350,
+  "widths": [
+   480,
+   720,
+   1080
+  ],
+  "bytes": {
+   "480": 61874,
+   "720": 107300,
+   "1080": 182234
+  }
+ },
+ {
+  "id": "dunk-seniori",
+  "cat": "slamjam",
+  "src": "assets/images/slamjam/dunk-seniori",
+  "w": 1080,
+  "h": 1350,
+  "widths": [
+   480,
+   720,
+   1080
+  ],
+  "bytes": {
+   "480": 54900,
+   "720": 96004,
+   "1080": 168994
+  }
+ },
+ {
+  "id": "mvp-juniori",
+  "cat": "slamjam",
+  "src": "assets/images/slamjam/mvp-juniori",
+  "w": 1080,
+  "h": 1350,
+  "widths": [
+   480,
+   720,
+   1080
+  ],
+  "bytes": {
+   "480": 59626,
+   "720": 101360,
+   "1080": 175394
+  }
+ },
+ {
+  "id": "mvp-seniori",
+  "cat": "slamjam",
+  "src": "assets/images/slamjam/mvp-seniori",
+  "w": 1080,
+  "h": 1350,
+  "widths": [
+   480,
+   720,
+   1080
+  ],
+  "bytes": {
+   "480": 55684,
+   "720": 100090,
+   "1080": 178238
+  }
+ },
+ {
+  "id": "nikonect-slamjam",
+  "cat": "slamjam",
+  "src": "assets/images/slamjam/nikonect-slamjam",
+  "w": 1080,
+  "h": 1350,
+  "widths": [
+   480,
+   720,
+   1080
+  ],
+  "bytes": {
+   "480": 59368,
+   "720": 117690,
+   "1080": 246666
+  }
+ },
+ {
+  "id": "post",
+  "cat": "slamjam",
+  "src": "assets/images/slamjam/post",
+  "w": 1080,
+  "h": 1350,
+  "widths": [
+   480,
+   720,
+   1080
+  ],
+  "bytes": {
+   "480": 77132,
+   "720": 152666,
+   "1080": 293394
+  }
+ },
+ {
+  "id": "raspored-juniori-grupi",
+  "cat": "slamjam",
+  "src": "assets/images/slamjam/raspored-juniori-grupi",
+  "w": 1080,
+  "h": 1350,
+  "widths": [
+   480,
+   720,
+   1080
+  ],
+  "bytes": {
+   "480": 72204,
+   "720": 140552,
+   "1080": 280832
+  }
+ },
+ {
+  "id": "rezultati-juniori",
+  "cat": "slamjam",
+  "src": "assets/images/slamjam/rezultati-juniori",
+  "w": 1080,
+  "h": 1350,
+  "widths": [
+   480,
+   720,
+   1080
+  ],
+  "bytes": {
+   "480": 70064,
+   "720": 131418,
+   "1080": 255906
+  }
+ },
+ {
+  "id": "rezultati-playpff",
+  "cat": "slamjam",
+  "src": "assets/images/slamjam/rezultati-playpff",
+  "w": 1080,
+  "h": 1350,
+  "widths": [
+   480,
+   720,
+   1080
+  ],
+  "bytes": {
+   "480": 67134,
+   "720": 126794,
+   "1080": 245544
+  }
+ },
+ {
+  "id": "runner-juniori",
+  "cat": "slamjam",
+  "src": "assets/images/slamjam/runner-juniori",
+  "w": 1080,
+  "h": 1350,
+  "widths": [
+   480,
+   720,
+   1080
+  ],
+  "bytes": {
+   "480": 61572,
+   "720": 109144,
+   "1080": 193180
+  }
+ },
+ {
+  "id": "seniori-vtoro-mesto",
+  "cat": "slamjam",
+  "src": "assets/images/slamjam/seniori-vtoro-mesto",
+  "w": 1080,
+  "h": 1350,
+  "widths": [
+   480,
+   720,
+   1080
+  ],
+  "bytes": {
+   "480": 63506,
+   "720": 115280,
+   "1080": 202964
+  }
+ },
+ {
+  "id": "slamjam-nikojenct",
+  "cat": "slamjam",
+  "src": "assets/images/slamjam/slamjam-nikojenct",
+  "w": 1080,
+  "h": 1350,
+  "widths": [
+   480,
+   720,
+   1080
+  ],
+  "bytes": {
+   "480": 77706,
+   "720": 133866,
+   "1080": 293508
+  }
+ },
+ {
+  "id": "slamjam-playoff",
+  "cat": "slamjam",
+  "src": "assets/images/slamjam/slamjam-playoff",
+  "w": 1080,
+  "h": 1350,
+  "widths": [
+   480,
+   720,
+   1080
+  ],
+  "bytes": {
+   "480": 63350,
+   "720": 122168,
+   "1080": 240842
+  }
+ },
+ {
+  "id": "slamjam-raspored-drugo",
+  "cat": "slamjam",
+  "src": "assets/images/slamjam/slamjam-raspored-drugo",
+  "w": 1080,
+  "h": 1350,
+  "widths": [
+   480,
+   720,
+   1080
+  ],
+  "bytes": {
+   "480": 77172,
+   "720": 146968,
+   "1080": 290892
+  }
+ },
+ {
+  "id": "slamjam-seniori-grupa-raspored",
+  "cat": "slamjam",
+  "src": "assets/images/slamjam/slamjam-seniori-grupa-raspored",
+  "w": 1080,
+  "h": 1350,
+  "widths": [
+   480,
+   720,
+   1080
+  ],
+  "bytes": {
+   "480": 78462,
+   "720": 147914,
+   "1080": 288350
+  }
+ },
+ {
+  "id": "slamjam-x-nikonect",
+  "cat": "slamjam",
+  "src": "assets/images/slamjam/slamjam-x-nikonect",
+  "w": 1080,
+  "h": 1350,
+  "widths": [
+   480,
+   720,
+   1080
+  ],
+  "bytes": {
+   "480": 8858,
+   "720": 13898,
+   "1080": 22690
+  }
+ },
+ {
+  "id": "3x3-znei",
+  "cat": "sportski",
+  "src": "assets/images/sportski/3x3-znei",
+  "w": 1080,
+  "h": 1350,
+  "widths": [
+   480,
+   720,
+   1080
+  ],
+  "bytes": {
+   "480": 31356,
+   "720": 48860,
+   "1080": 70970
+  }
+ },
+ {
+  "id": "cetvrtok-fudbal-org",
+  "cat": "sportski",
+  "src": "assets/images/sportski/cetvrtok-fudbal-org",
+  "w": 1080,
+  "h": 1350,
+  "widths": [
+   480,
+   720,
+   1080
+  ],
+  "bytes": {
+   "480": 40766,
+   "720": 65660,
+   "1080": 95614
+  }
+ },
+ {
+  "id": "juniori-grupi",
+  "cat": "sportski",
+  "src": "assets/images/sportski/juniori-grupi",
+  "w": 1080,
+  "h": 1350,
+  "widths": [
+   480,
+   720,
+   1080
+  ],
+  "bytes": {
+   "480": 18000,
+   "720": 27458,
+   "1080": 42096
+  }
+ },
+ {
+  "id": "mkd-vs-bel",
+  "cat": "sportski",
+  "src": "assets/images/sportski/mkd-vs-bel",
+  "w": 1080,
+  "h": 1350,
+  "widths": [
+   480,
+   720,
+   1080
+  ],
+  "bytes": {
+   "480": 45724,
+   "720": 81880,
+   "1080": 146290
+  }
+ },
+ {
+  "id": "polu-i-finale",
+  "cat": "sportski",
+  "src": "assets/images/sportski/polu-i-finale",
+  "w": 1080,
+  "h": 1350,
+  "widths": [
+   480,
+   720,
+   1080
+  ],
+  "bytes": {
+   "480": 29192,
+   "720": 46120,
+   "1080": 71138
+  }
+ },
+ {
+  "id": "raspored-cetvrtok",
+  "cat": "sportski",
+  "src": "assets/images/sportski/raspored-cetvrtok",
+  "w": 1080,
+  "h": 1350,
+  "widths": [
+   480,
+   720,
+   1080
+  ],
+  "bytes": {
+   "480": 37044,
+   "720": 58572,
+   "1080": 85810
+  }
+ },
+ {
+  "id": "raspored-juniori-podobro",
+  "cat": "sportski",
+  "src": "assets/images/sportski/raspored-juniori-podobro",
+  "w": 1080,
+  "h": 1350,
+  "widths": [
+   480,
+   720,
+   1080
+  ],
+  "bytes": {
+   "480": 34312,
+   "720": 53840,
+   "1080": 78926
+  }
+ },
+ {
+  "id": "raspored-petok",
+  "cat": "sportski",
+  "src": "assets/images/sportski/raspored-petok",
+  "w": 1080,
+  "h": 1350,
+  "widths": [
+   480,
+   720,
+   1080
+  ],
+  "bytes": {
+   "480": 45146,
+   "720": 74710,
+   "1080": 119192
+  }
+ },
+ {
+  "id": "rez-vtornik",
+  "cat": "sportski",
+  "src": "assets/images/sportski/rez-vtornik",
+  "w": 1080,
+  "h": 1350,
+  "widths": [
+   480,
+   720,
+   1080
+  ],
+  "bytes": {
+   "480": 42924,
+   "720": 66978,
+   "1080": 100070
+  }
+ },
+ {
+  "id": "rez-zeni-grupna-faza",
+  "cat": "sportski",
+  "src": "assets/images/sportski/rez-zeni-grupna-faza",
+  "w": 1080,
+  "h": 1350,
+  "widths": [
+   480,
+   720,
+   1080
+  ],
+  "bytes": {
+   "480": 37362,
+   "720": 58702,
+   "1080": 88856
+  }
+ },
+ {
+  "id": "rezultati-fudbal-sreda",
+  "cat": "sportski",
+  "src": "assets/images/sportski/rezultati-fudbal-sreda",
+  "w": 1080,
+  "h": 1350,
+  "widths": [
+   480,
+   720,
+   1080
+  ],
+  "bytes": {
+   "480": 52950,
+   "720": 86920,
+   "1080": 138520
+  }
+ },
+ {
+  "id": "rezultati-fudbal-vtornik",
+  "cat": "sportski",
+  "src": "assets/images/sportski/rezultati-fudbal-vtornik",
+  "w": 1080,
+  "h": 1350,
+  "widths": [
+   480,
+   720,
+   1080
+  ],
+  "bytes": {
+   "480": 50148,
+   "720": 83118,
+   "1080": 133148
+  }
+ },
+ {
+  "id": "rezultati-playoff-zeni",
+  "cat": "sportski",
+  "src": "assets/images/sportski/rezultati-playoff-zeni",
+  "w": 1080,
+  "h": 1350,
+  "widths": [
+   480,
+   720,
+   1080
+  ],
+  "bytes": {
+   "480": 32468,
+   "720": 51294,
+   "1080": 79430
+  }
+ },
+ {
+  "id": "rezultati-vtornik-belo",
+  "cat": "sportski",
+  "src": "assets/images/sportski/rezultati-vtornik-belo",
+  "w": 1080,
+  "h": 1350,
+  "widths": [
+   480,
+   720,
+   1080
+  ],
+  "bytes": {
+   "480": 51670,
+   "720": 85826,
+   "1080": 136446
+  }
+ },
+ {
+  "id": "round-of-16",
+  "cat": "sportski",
+  "src": "assets/images/sportski/round-of-16",
+  "w": 1080,
+  "h": 1350,
+  "widths": [
+   480,
+   720,
+   1080
+  ],
+  "bytes": {
+   "480": 30272,
+   "720": 48532,
+   "1080": 74300
+  }
+ },
+ {
+  "id": "sampioni-zeni-1",
+  "cat": "sportski",
+  "src": "assets/images/sportski/sampioni-zeni-1",
+  "w": 1080,
+  "h": 1350,
+  "widths": [
+   480,
+   720,
+   1080
+  ],
+  "bytes": {
+   "480": 41018,
+   "720": 68968,
+   "1080": 110718
+  }
+ },
+ {
+  "id": "sesnaestina-popraveno",
+  "cat": "sportski",
+  "src": "assets/images/sportski/sesnaestina-popraveno",
+  "w": 1080,
+  "h": 1350,
+  "widths": [
+   480,
+   720,
+   1080
+  ],
+  "bytes": {
+   "480": 30222,
+   "720": 48470,
+   "1080": 74234
+  }
+ },
+ {
+  "id": "zzeni-grupi-3x3",
+  "cat": "sportski",
+  "src": "assets/images/sportski/zzeni-grupi-3x3",
+  "w": 1080,
+  "h": 1350,
+  "widths": [
+   480,
+   720,
+   1080
+  ],
+  "bytes": {
+   "480": 17326,
+   "720": 26266,
+   "1080": 40158
+  }
+ },
+ {
+  "id": "7ww-thumbnaikl",
+  "cat": "thumbnails",
+  "src": "assets/images/thumbnails/7ww-thumbnaikl",
+  "w": 1280,
+  "h": 720,
+  "widths": [
+   480,
+   720,
+   1080
+  ],
+  "bytes": {
+   "480": 23830,
+   "720": 46692,
+   "1080": 91418
+  }
+ },
+ {
+  "id": "la-casa-thumbnail",
+  "cat": "thumbnails",
+  "src": "assets/images/thumbnails/la-casa-thumbnail",
+  "w": 3840,
+  "h": 2160,
+  "widths": [
+   480,
+   720,
+   1080
+  ],
+  "bytes": {
+   "480": 21390,
+   "720": 38370,
+   "1080": 71290
+  }
+ },
+ {
+  "id": "legoat-thumbnail",
+  "cat": "thumbnails",
+  "src": "assets/images/thumbnails/legoat-thumbnail",
+  "w": 3840,
+  "h": 2160,
+  "widths": [
+   480,
+   720,
+   1080
+  ],
+  "bytes": {
+   "480": 33942,
+   "720": 68018,
+   "1080": 141690
+  }
+ },
+ {
+  "id": "messi-thumbnail",
+  "cat": "thumbnails",
+  "src": "assets/images/thumbnails/messi-thumbnail",
+  "w": 3840,
+  "h": 2160,
+  "widths": [
+   480,
+   720,
+   1080
+  ],
+  "bytes": {
+   "480": 16352,
+   "720": 29154,
+   "1080": 50080
+  }
+ },
+ {
+  "id": "ronaldo-thumbnail",
+  "cat": "thumbnails",
+  "src": "assets/images/thumbnails/ronaldo-thumbnail",
+  "w": 3840,
+  "h": 2160,
+  "widths": [
+   480,
+   720,
+   1080
+  ],
+  "bytes": {
+   "480": 15382,
+   "720": 27448,
+   "1080": 47140
+  }
+ },
+ {
+  "id": "stranger-things-thumbnail",
+  "cat": "thumbnails",
+  "src": "assets/images/thumbnails/stranger-things-thumbnail",
+  "w": 3840,
+  "h": 2160,
+  "widths": [
+   480,
+   720,
+   1080
+  ],
+  "bytes": {
+   "480": 22992,
+   "720": 42196,
+   "1080": 80772
+  }
+ }
+]
