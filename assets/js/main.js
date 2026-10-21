@@ -637,6 +637,73 @@ function initMarquee() {
 }
 
 /* -----------------------------------------------------------------------------
+   HERO MOTION
+   A single transform on .hero__fan carries both the scroll parallax and the
+   pointer tilt, so the two never overwrite each other. It is written from one
+   rAF loop, never from the event handlers themselves.
+   -------------------------------------------------------------------------- */
+function initHeroMotion() {
+  if (reduceMotion.matches) return;
+  const hero = $('#hero');
+  const fan = $('.hero__fan');
+  if (!hero || !fan) return;
+
+  const fine = window.matchMedia('(hover: hover) and (pointer: fine)').matches;
+  let scrollY = window.scrollY;
+  let tiltX = 0;
+  let tiltY = 0;
+  let visible = true;
+  let queued = false;
+
+  const render = () => {
+    queued = false;
+    if (!visible) return;
+    /* Capped, so the fan can never drift far enough to reach the headline. */
+    const shift = Math.max(-40, Math.min(40, scrollY * 0.07));
+    fan.style.transform =
+      `translate3d(0, ${shift.toFixed(2)}px, 0) rotateX(${tiltY.toFixed(2)}deg) rotateY(${tiltX.toFixed(2)}deg)`;
+  };
+
+  const request = () => {
+    if (queued) return;
+    queued = true;
+    requestAnimationFrame(render);
+  };
+
+  window.addEventListener('scroll', () => { scrollY = window.scrollY; request(); }, { passive: true });
+
+  if (fine) {
+    fan.style.transformStyle = 'preserve-3d';
+    hero.addEventListener('pointermove', (e) => {
+      const r = hero.getBoundingClientRect();
+      tiltX = ((e.clientX - r.left) / r.width - 0.5) * 7;
+      tiltY = ((e.clientY - r.top) / r.height - 0.5) * -5;
+      request();
+    }, { passive: true });
+    hero.addEventListener('pointerleave', () => { tiltX = 0; tiltY = 0; request(); }, { passive: true });
+  }
+
+  /* Stop the float, and stop writing transforms, once the hero is behind you. */
+  if ('IntersectionObserver' in window) {
+    new IntersectionObserver(([e]) => {
+      visible = e.isIntersecting;
+      hero.classList.toggle('is-still', !visible);
+      if (visible) request();
+    }, { rootMargin: '100px 0px' }).observe(hero);
+  }
+
+  render();
+}
+
+/* The entrance animations are gated on this class so that a reduced-motion
+   preference, or a script that never runs, leaves the page fully visible and
+   static rather than stuck at opacity 0. Set after first paint. */
+function initMotionFlag() {
+  if (reduceMotion.matches) return;
+  requestAnimationFrame(() => document.documentElement.classList.add('motion'));
+}
+
+/* -----------------------------------------------------------------------------
    SCROLL REVEAL — opacity and transform only.
    -------------------------------------------------------------------------- */
 let revealObserver = null;
@@ -1085,7 +1152,9 @@ function init() {
   renderPricing();
   buildPortfolio();
   initMarquee();
+  initMotionFlag();
   initReveal();
+  initHeroMotion();
   initCounters();
   initNav();
   initDock();

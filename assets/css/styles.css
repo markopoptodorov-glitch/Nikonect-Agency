@@ -1593,19 +1593,136 @@ html[lang='mk'] .about h2 { font-size: clamp(2rem, 5vw, 3.6rem); }
   box-shadow: 0 32px 60px -28px rgba(0, 0, 0, .95);
 }
 .hero__poster img { width: 100%; height: auto; }
-.hero__poster + .hero__poster { margin-left: calc(var(--shot-w) * -.42); }
+.hero__card { flex: 0 0 auto; width: var(--shot-w); }
+.hero__card + .hero__card { margin-left: calc(var(--shot-w) * -.42); }
+.hero__poster { width: 100%; }
 
-/* The fan: alternating lift and tilt, with the middle pair on top so the
-   stack reads front-to-back rather than left-to-right. */
-.hero__poster:nth-child(1) { transform: translateY(26px) rotate(-6deg); z-index: 1; }
-.hero__poster:nth-child(2) { transform: translateY(-34px) rotate(-1.5deg); z-index: 3; }
-.hero__poster:nth-child(3) { transform: translateY(18px) rotate(3.5deg); z-index: 4; }
-.hero__poster:nth-child(4) { transform: translateY(-14px) rotate(8deg); z-index: 2; }
+/* Three nested layers with one transform each, so they never overwrite one
+   another: .hero__card holds the resting tilt, .hero__lift the entrance,
+   and the figure the idle float. */
+.hero__card:nth-child(1) { transform: translateY(26px) rotate(-6deg); z-index: 1; }
+.hero__card:nth-child(2) { transform: translateY(-34px) rotate(-1.5deg); z-index: 3; }
+.hero__card:nth-child(3) { transform: translateY(18px) rotate(3.5deg); z-index: 4; }
+.hero__card:nth-child(4) { transform: translateY(-14px) rotate(8deg); z-index: 2; }
 
 /* The Valencia poster is the one piece of client work in the fan. */
-.hero__poster:nth-child(3) { border-color: rgba(232, 0, 28, .55); }
+.hero__card:nth-child(3) .hero__poster { border-color: rgba(232, 0, 28, .55); }
 
 @media (max-width: 960px) {
   .hero__fan { padding: 1.5rem 0; }
   .hero__posters { margin-top: .5rem; }
+}
+
+/* =============================================================================
+   MOTION
+   -----------------------------------------------------------------------------
+   Everything here animates transform or opacity only — never blur, filter,
+   width/height or colour — so each one stays on the compositor.
+
+   .motion is set on <html> by main.js after first paint, and only when the
+   user has not asked for reduced motion. Nothing below runs without it, so a
+   script failure or a reduced-motion preference leaves the page fully
+   visible and static rather than stuck mid-animation.
+   ========================================================================== */
+
+@media (prefers-reduced-motion: no-preference) {
+
+  /* ---- hero entrance ---------------------------------------------------- */
+  .motion .hero__tag,
+  .motion .hero__sub,
+  .motion .hero__cta,
+  .motion .proof-strip { opacity: 0; animation: rise-in .8s var(--ease) forwards; }
+
+  /* The H1 is the LCP element: it moves but never starts transparent, because
+     an element at opacity 0 is not a paint candidate and fading it in would
+     push LCP out by the length of the fade. */
+  .motion .hero h1 { animation: settle-in .9s var(--ease) both; }
+
+  .motion .hero__tag    { animation-delay: .05s; }
+  .motion .hero__sub    { animation-delay: .22s; }
+  .motion .hero__cta    { animation-delay: .32s; }
+  .motion .proof-strip  { animation-delay: .42s; }
+
+  /* Posters deal in one after another, from behind and below. */
+  .motion .hero__lift { opacity: 0; animation: deal-in .85s var(--ease) forwards; }
+  .motion .hero__card:nth-child(1) .hero__lift { animation-delay: .30s; }
+  .motion .hero__card:nth-child(2) .hero__lift { animation-delay: .40s; }
+  .motion .hero__card:nth-child(3) .hero__lift { animation-delay: .50s; }
+  .motion .hero__card:nth-child(4) .hero__lift { animation-delay: .60s; }
+
+  /* Idle float, started only once the deal-in has finished. Paused whenever
+     the hero is off screen — see initHeroMotion(). */
+  .motion .hero__poster {
+    animation: drift 9s ease-in-out 1.6s infinite;
+    will-change: transform;
+  }
+  .motion .hero__card:nth-child(2) .hero__poster { animation-duration: 11s; animation-delay: 1.9s; }
+  .motion .hero__card:nth-child(3) .hero__poster { animation-duration: 8s;  animation-delay: 1.7s; }
+  .motion .hero__card:nth-child(4) .hero__poster { animation-duration: 12s; animation-delay: 2.1s; }
+  .motion .hero.is-still .hero__poster { animation-play-state: paused; }
+
+  /* ---- nav ------------------------------------------------------------- */
+  .motion .nav__pill { animation: drop-in .7s var(--ease) both; }
+
+  /* ---- richer section reveals ------------------------------------------ */
+  /* The shared .reveal stays a plain rise; these are opt-in variants. */
+  .js-anim .reveal--left  { transform: translate3d(-28px, 0, 0); }
+  .js-anim .reveal--right { transform: translate3d(28px, 0, 0); }
+  .js-anim .reveal--pop   { transform: scale(.94); }
+  .js-anim .reveal--left.is-in,
+  .js-anim .reveal--right.is-in,
+  .js-anim .reveal--pop.is-in { transform: none; }
+
+  /* Stagger children of a revealed group. */
+  .js-anim .reveal-group > * { opacity: 0; transform: translate3d(0, 20px, 0); transition: opacity .6s var(--ease), transform .6s var(--ease); }
+  .js-anim .reveal-group.is-in > * { opacity: 1; transform: none; }
+  .js-anim .reveal-group.is-in > :nth-child(1) { transition-delay: .00s; }
+  .js-anim .reveal-group.is-in > :nth-child(2) { transition-delay: .08s; }
+  .js-anim .reveal-group.is-in > :nth-child(3) { transition-delay: .16s; }
+  .js-anim .reveal-group.is-in > :nth-child(4) { transition-delay: .24s; }
+  .js-anim .reveal-group.is-in > :nth-child(5) { transition-delay: .32s; }
+
+  /* ---- primary button arrow -------------------------------------------- */
+  .btn__arrow { transition: transform .35s var(--ease); }
+  .btn:hover .btn__arrow { transform: translateX(4px); }
+}
+
+@keyframes rise-in {
+  from { opacity: 0; transform: translate3d(0, 24px, 0); }
+  to   { opacity: 1; transform: none; }
+}
+@keyframes settle-in {
+  from { transform: translate3d(0, 26px, 0); }
+  to   { transform: none; }
+}
+@keyframes deal-in {
+  from { opacity: 0; transform: translate3d(0, 54px, 0) scale(.93); }
+  to   { opacity: 1; transform: none; }
+}
+@keyframes drop-in {
+  from { opacity: 0; transform: translate3d(0, -18px, 0); }
+  to   { opacity: 1; transform: none; }
+}
+@keyframes drift {
+  0%, 100% { transform: translate3d(0, 0, 0); }
+  50%      { transform: translate3d(0, -12px, 0); }
+}
+
+/* The fan carries a JS-written transform (scroll parallax plus pointer tilt);
+   this only declares the hint and the easing for the pointer part. */
+.motion .hero__fan { will-change: transform; }
+
+/* Nothing above applies when reduced motion is requested — this is a belt and
+   braces guard for the JS-added hooks. */
+@media (prefers-reduced-motion: reduce) {
+  .hero__fan { transform: none !important; }
+  .hero__poster { animation: none !important; }
+}
+
+/* A sideways reveal on a full-width heading briefly pokes past the viewport
+   edge on a phone. Body overflow-x hides it, but there is no reason for the
+   excursion — below 620px these reveals rise instead. */
+@media (max-width: 620px) {
+  .js-anim .reveal--left,
+  .js-anim .reveal--right { transform: translate3d(0, 24px, 0); }
 }

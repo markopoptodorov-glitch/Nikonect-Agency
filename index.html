@@ -122,7 +122,7 @@
         <p class="hero__sub" data-i18n="hero.sub">Matchday posters, lineups and social content for clubs, players and tournaments. First draft in 48 hours.</p>
 
         <div class="hero__cta">
-          <a href="#contact" class="btn" data-i18n="cta.quote">Get a quote</a>
+          <a href="#contact" class="btn"><span data-i18n="cta.quote">Get a quote</span><svg class="btn__arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
           <a href="#portfolio" class="btn btn--ghost" data-i18n="cta.work">See the work</a>
         </div>
 
@@ -140,18 +140,34 @@
       <div class="hero__posters" id="heroPosters" aria-hidden="true">
         <!-- Static markup: an LCP candidate sits here and must not wait on JS. -->
         <div class="hero__fan">
-          <figure class="hero__poster">
+          <div class="hero__card">
+            <div class="hero__lift">
+              <figure class="hero__poster">
             <img src="assets/images/matchdays/matchday-02-480.webp" srcset="assets/images/matchdays/matchday-02-240.webp 240w, assets/images/matchdays/matchday-02-480.webp 480w, assets/images/matchdays/matchday-02-720.webp 720w, assets/images/matchdays/matchday-02-1080.webp 1080w" sizes="(min-width: 1200px) 232px, (min-width: 960px) 19vw, 30vw" width="2160" height="3840" alt="" loading="lazy" decoding="async" />
           </figure>
-          <figure class="hero__poster">
+            </div>
+          </div>
+          <div class="hero__card">
+            <div class="hero__lift">
+              <figure class="hero__poster">
             <img src="assets/images/matchdays/matchday-06-480.webp" srcset="assets/images/matchdays/matchday-06-240.webp 240w, assets/images/matchdays/matchday-06-480.webp 480w, assets/images/matchdays/matchday-06-720.webp 720w, assets/images/matchdays/matchday-06-1080.webp 1080w" sizes="(min-width: 1200px) 232px, (min-width: 960px) 19vw, 30vw" width="2160" height="3840" alt="" fetchpriority="high" decoding="async" />
           </figure>
-          <figure class="hero__poster">
+            </div>
+          </div>
+          <div class="hero__card">
+            <div class="hero__lift">
+              <figure class="hero__poster">
             <img src="assets/images/matchdays/matchday-08-480.webp" srcset="assets/images/matchdays/matchday-08-240.webp 240w, assets/images/matchdays/matchday-08-480.webp 480w, assets/images/matchdays/matchday-08-720.webp 720w, assets/images/matchdays/matchday-08-1080.webp 1080w" sizes="(min-width: 1200px) 232px, (min-width: 960px) 19vw, 30vw" width="1080" height="1920" alt="" loading="lazy" decoding="async" />
           </figure>
-          <figure class="hero__poster">
+            </div>
+          </div>
+          <div class="hero__card">
+            <div class="hero__lift">
+              <figure class="hero__poster">
             <img src="assets/images/matchdays/matchday-04-480.webp" srcset="assets/images/matchdays/matchday-04-240.webp 240w, assets/images/matchdays/matchday-04-480.webp 480w, assets/images/matchdays/matchday-04-720.webp 720w, assets/images/matchdays/matchday-04-1080.webp 1080w" sizes="(min-width: 1200px) 232px, (min-width: 960px) 19vw, 30vw" width="2160" height="3840" alt="" loading="lazy" decoding="async" />
           </figure>
+            </div>
+          </div>
         </div>
       </div>
     </div>
@@ -162,10 +178,10 @@
     <div class="deco" aria-hidden="true"><span class="deco-grid"></span><span class="deco-word" style="top:-2.5rem;right:-1.5rem">Studio</span><span class="deco-hairline" style="top:0"></span></div>
     <div class="sec-head shell">
       <div class="sec-eyebrow" data-i18n="services.eyebrow">What I do</div>
-      <h2 class="sec-title reveal" id="services-title" data-i18n-html="services.title">Built for the <em>game.</em></h2>
+      <h2 class="sec-title reveal reveal--left" id="services-title" data-i18n-html="services.title">Built for the <em>game.</em></h2>
     </div>
 
-    <div class="bento">
+    <div class="bento reveal reveal-group">
       <article class="card reveal">
         <span class="card__num">01</span>
         <h3 data-i18n="services.s1.t">Matchday designs</h3>
@@ -217,7 +233,7 @@
     <div class="deco" aria-hidden="true"><span class="deco-art deco-art--red" style="inset:1.5rem 1rem auto;height:min(60vh,600px)"><svg viewBox="0 0 1200 600" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M24 14v24M12 26h24"/><path d="M1176 14v24M1164 26h24"/><path d="M24 562v24M12 574h24"/><path d="M1176 562v24M1164 574h24"/><path d="M600 8v16"/><path d="M600 576v16"/></svg></span><span class="deco-halftone deco-halftone--red" style="right:-8%;bottom:4%"></span></div>
     <div class="sec-head shell">
       <div class="sec-eyebrow" data-i18n="work.eyebrow">Selected work</div>
-      <h2 class="sec-title reveal" id="portfolio-title" data-i18n-html="work.title">The <em>portfolio.</em></h2>
+      <h2 class="sec-title reveal reveal--left" id="portfolio-title" data-i18n-html="work.title">The <em>portfolio.</em></h2>
       <p class="sec-sub" data-i18n="work.sub">Client work for real tournaments, plus concept pieces made for practice. Both are labelled.</p>
     </div>
 
@@ -280,9 +296,9 @@
     <div class="deco" aria-hidden="true"><span class="deco-speed" style="left:-6%;top:12%"></span><span class="deco-word deco-word--red" style="bottom:-3rem;left:-1rem">Process</span><span class="deco-hairline" style="bottom:0"></span></div>
     <div class="sec-head shell">
       <div class="sec-eyebrow" data-i18n="process.eyebrow">How it works</div>
-      <h2 class="sec-title reveal" id="process-title" data-i18n-html="process.title">Three steps, <em>no fuss.</em></h2>
+      <h2 class="sec-title reveal reveal--left" id="process-title" data-i18n-html="process.title">Three steps, <em>no fuss.</em></h2>
     </div>
-    <div class="steps">
+    <div class="steps reveal reveal-group">
       <article class="step reveal">
         <h3 data-i18n="process.p1.t">Send the brief</h3>
         <p data-i18n="process.p1.d">Send the match or lineup details along with your brand assets: logo files, colours and player photos.</p>
@@ -310,7 +326,7 @@
         <p data-i18n="about.p1">Nikonect is a one-person sports design studio based in Macedonia. I make matchday graphics, social media content and thumbnails for clubs, players and tournaments.</p>
         <p data-i18n="about.p2">I work fast and stay close to the game. Send me the fixture, the lineup and your brand assets, and the first draft lands within 48 hours.</p>
 
-        <div class="stats">
+        <div class="stats reveal reveal-group">
           <div class="stat glass">
             <div class="stat__n" data-count="48" data-suffix="h">48h</div>
             <div class="stat__l" data-i18n="about.stat1">First draft</div>
@@ -333,14 +349,14 @@
     <div class="deco" aria-hidden="true"><span class="deco-halftone" style="left:-6%;top:6%"></span><span class="deco-halftone deco-halftone--red" style="right:-10%;bottom:-6%;width:min(34vw,340px);height:min(34vw,340px)"></span></div>
     <div class="sec-head sec-head--center">
       <div class="sec-eyebrow" data-i18n="proof.eyebrow">Trusted by</div>
-      <h2 class="sec-title reveal" id="proof-title" data-i18n-html="proof.title">Real <em>clients.</em></h2>
+      <h2 class="sec-title reveal reveal--left" id="proof-title" data-i18n-html="proof.title">Real <em>clients.</em></h2>
       <p class="sec-sub" data-i18n="proof.sub">The clubs, tournaments and players I design for.</p>
     </div>
 
     <!-- Text cards rather than logos: no logo asset exists in the repo for any
          of the four, and none of them would be invented.
          TODO(Marko): send logo files and these become logo cards. -->
-    <ul class="proof-list">
+    <ul class="proof-list reveal reveal-group">
       <li class="proof-card">
         <span class="proof-card__name">SlamJam Skopje</span>
         <span class="proof-card__role" data-i18n="proof.r1">Tournament designer · 2025</span>
@@ -376,7 +392,7 @@
     <div class="deco" aria-hidden="true"><span class="deco-grid deco-grid--right"></span><span class="deco-word" style="top:-2rem;left:-2rem">Packages</span><span class="deco-hairline" style="top:0"></span></div>
     <div class="sec-head shell">
       <div class="sec-eyebrow" data-i18n="pricing.eyebrow">Packages</div>
-      <h2 class="sec-title reveal" id="pricing-title" data-i18n-html="pricing.title">Pick your <em>lineup.</em></h2>
+      <h2 class="sec-title reveal reveal--left" id="pricing-title" data-i18n-html="pricing.title">Pick your <em>lineup.</em></h2>
     </div>
     <div class="prices" id="prices">
       <!-- Rendered from SITE_CONFIG.pricing. -->
@@ -388,7 +404,7 @@
     <div class="deco" aria-hidden="true"><span class="deco-art deco-art--red" style="right:-6%;top:10%;width:min(40vw,380px);height:min(30vw,280px)"><svg viewBox="0 0 300 220" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M110 2v58h80V2"/><circle cx="150" cy="60" r="40"/><path d="M24 2a150 150 0 0 0 252 0"/><path d="M150 100v96"/></svg></span><span class="deco-speed deco-speed--red" style="left:-10%;bottom:4%"></span></div>
     <div class="sec-head shell">
       <div class="sec-eyebrow" data-i18n="faq.eyebrow">Questions</div>
-      <h2 class="sec-title reveal" id="faq-title" data-i18n-html="faq.title">Before you <em>ask.</em></h2>
+      <h2 class="sec-title reveal reveal--left" id="faq-title" data-i18n-html="faq.title">Before you <em>ask.</em></h2>
     </div>
     <div class="faq">
       <details>
@@ -416,7 +432,7 @@
 
   <!-- ============================ CLOSING CTA ============================ -->
   <section class="section section--cv" id="cta" aria-labelledby="cta-title">
-    <div class="cta-band reveal">
+    <div class="cta-band reveal reveal--pop">
       <h2 id="cta-title" data-i18n-html="cta.title">Got a match <em>coming up?</em></h2>
       <p data-i18n="cta.sub">First draft in 48 hours. Tell me the fixture and what you need.</p>
       <a href="#contact" class="btn" data-i18n="cta.quote">Get a quote</a>
@@ -428,7 +444,7 @@
     <div class="deco" aria-hidden="true"><span class="deco-art" style="left:50%;top:6%;width:min(46vw,460px);height:min(35vw,345px);transform:translateX(-50%)"><svg viewBox="0 0 400 300" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><circle cx="200" cy="150" r="62"/><circle cx="200" cy="150" r="2.5" fill="currentColor" stroke="none"/><path d="M200 2v296"/><path d="M18 46h86v208H18"/><path d="M104 150a52 52 0 0 0 0 0"/><path d="M18 88a104 104 0 0 1 0 124"/></svg></span><span class="deco-hairline" style="top:0"></span></div>
     <div class="sec-head shell">
       <div class="sec-eyebrow" data-i18n="contact.eyebrow">Get in touch</div>
-      <h2 class="sec-title reveal" id="contact-title" data-i18n-html="contact.title">Let's work <em>together.</em></h2>
+      <h2 class="sec-title reveal reveal--left" id="contact-title" data-i18n-html="contact.title">Let's work <em>together.</em></h2>
     </div>
 
     <div class="contact-grid">
