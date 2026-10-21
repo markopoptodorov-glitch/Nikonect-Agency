@@ -451,10 +451,18 @@ html.marquee-visible .dock {
    -------------------------------------------------------------------------- */
 .hero {
   position: relative;
-  padding: clamp(8rem, 16vw, 11rem) var(--pad) clamp(3.5rem, 7vw, 6rem);
+  display: flex;
+  align-items: center;
+  /* A proper landing screen. svh so a mobile toolbar cannot crop it. */
+  min-height: 100vh;
+  min-height: 100svh;
+  padding: clamp(7rem, 14vw, 9.5rem) var(--pad) clamp(3rem, 6vw, 5rem);
   overflow: hidden;
 }
 .hero__grid {
+  /* .hero is a flex container now, so the grid has to claim the full width
+     rather than shrink to its content. */
+  width: 100%;
   display: grid;
   grid-template-columns: 1.05fr .95fr;
   gap: clamp(2rem, 5vw, 4.5rem);
@@ -535,33 +543,7 @@ html.marquee-visible .dock {
   background: var(--red);
 }
 
-/* hero posters */
-.hero__posters {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: .8rem;
-  align-items: start;
-}
-.hero__poster {
-  position: relative;
-  border-radius: var(--radius);
-  overflow: hidden;
-  border: 1px solid rgba(255, 255, 255, .09);
-  background: var(--gray);
-  box-shadow: 0 24px 50px -28px rgba(0, 0, 0, .95);
-  transition: transform .6s var(--ease);
-}
-.hero__poster img { width: 100%; height: auto; }
-.hero__poster:nth-child(1) { transform: translateY(1.6rem); }
-.hero__poster:nth-child(3) { transform: translateY(2.8rem); }
-@media (max-width: 960px) {
-  .hero__posters { max-width: 540px; }
-  .hero__poster:nth-child(1) { transform: translateY(.8rem); }
-  .hero__poster:nth-child(3) { transform: translateY(1.4rem); }
-}
-@media (prefers-reduced-motion: reduce) {
-  .hero__poster, .hero__poster:nth-child(1), .hero__poster:nth-child(3) { transform: none; }
-}
+/* The hero poster fan lives further down, after the decoration block. */
 
 /* -----------------------------------------------------------------------------
    SERVICES — bento
@@ -1580,4 +1562,50 @@ html[lang='mk'] .about h2 { font-size: clamp(2rem, 5vw, 3.6rem); }
   .glow--2,
   .glow--3 { display: none; }
   .deco > :nth-child(n + 2) { display: none; }
+}
+
+/* -----------------------------------------------------------------------------
+   HERO POSTER FAN
+   Four matchday posters overlapped into a fan. The previous row of three left
+   the right column about half empty: 328px of posters in a 632px column.
+   Overlapping lets each poster be far larger (232px wide instead of 200px,
+   and staggered vertically) so the cluster fills the column.
+   -------------------------------------------------------------------------- */
+.hero__posters {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.hero__fan {
+  --shot-w: clamp(118px, 16.5vw, 232px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 2.5rem 0;
+}
+.hero__poster {
+  flex: 0 0 auto;
+  width: var(--shot-w);
+  border-radius: 12px;
+  overflow: hidden;
+  border: 1px solid rgba(255, 255, 255, .1);
+  background: var(--gray);
+  box-shadow: 0 32px 60px -28px rgba(0, 0, 0, .95);
+}
+.hero__poster img { width: 100%; height: auto; }
+.hero__poster + .hero__poster { margin-left: calc(var(--shot-w) * -.42); }
+
+/* The fan: alternating lift and tilt, with the middle pair on top so the
+   stack reads front-to-back rather than left-to-right. */
+.hero__poster:nth-child(1) { transform: translateY(26px) rotate(-6deg); z-index: 1; }
+.hero__poster:nth-child(2) { transform: translateY(-34px) rotate(-1.5deg); z-index: 3; }
+.hero__poster:nth-child(3) { transform: translateY(18px) rotate(3.5deg); z-index: 4; }
+.hero__poster:nth-child(4) { transform: translateY(-14px) rotate(8deg); z-index: 2; }
+
+/* The Valencia poster is the one piece of client work in the fan. */
+.hero__poster:nth-child(3) { border-color: rgba(232, 0, 28, .55); }
+
+@media (max-width: 960px) {
+  .hero__fan { padding: 1.5rem 0; }
+  .hero__posters { margin-top: .5rem; }
 }

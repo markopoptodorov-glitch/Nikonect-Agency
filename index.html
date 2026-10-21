@@ -108,6 +108,13 @@
 
   <!-- ============================ HERO ============================ -->
   <section class="hero" id="hero">
+    <div class="deco" aria-hidden="true">
+      <span class="deco-grid"></span>
+      <span class="deco-art deco-art--red" style="left:-7%;bottom:-18%;width:min(44vw,540px);height:min(44vw,540px)"><svg viewBox="0 0 300 300" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><circle cx="150" cy="150" r="86"/><circle cx="150" cy="150" r="3" fill="currentColor" stroke="none"/><path d="M150 0v300"/><path d="M0 150h300"/><path d="M40 40h60v60H40z"/><path d="M200 200h60v60h-60z"/></svg></span>
+      <span class="deco-halftone" style="right:-6%;top:-10%"></span>
+      <span class="deco-speed" style="right:0;bottom:4%"></span>
+      <span class="deco-hairline" style="bottom:0"></span>
+    </div>
     <div class="hero__grid">
       <div>
         <span class="hero__tag" data-i18n="hero.tag">Sports design studio · Macedonia</span>
@@ -131,16 +138,21 @@
       </div>
 
       <div class="hero__posters" id="heroPosters" aria-hidden="true">
-        <!-- Static markup: these are the LCP candidates and must not wait on JS. -->
-        <figure class="hero__poster">
-          <img src="assets/images/matchdays/matchday-06-480.webp" srcset="assets/images/matchdays/matchday-06-240.webp 240w, assets/images/matchdays/matchday-06-480.webp 480w, assets/images/matchdays/matchday-06-720.webp 720w, assets/images/matchdays/matchday-06-1080.webp 1080w" sizes="(min-width: 960px) 200px, 30vw" width="2160" height="3840" alt="" fetchpriority="high" decoding="async" />
-        </figure>
-        <figure class="hero__poster">
-          <img src="assets/images/matchdays/matchday-04-480.webp" srcset="assets/images/matchdays/matchday-04-240.webp 240w, assets/images/matchdays/matchday-04-480.webp 480w, assets/images/matchdays/matchday-04-720.webp 720w, assets/images/matchdays/matchday-04-1080.webp 1080w" sizes="(min-width: 960px) 200px, 30vw" width="2160" height="3840" alt="" loading="lazy" decoding="async" />
-        </figure>
-        <figure class="hero__poster">
-          <img src="assets/images/matchdays/matchday-08-480.webp" srcset="assets/images/matchdays/matchday-08-240.webp 240w, assets/images/matchdays/matchday-08-480.webp 480w, assets/images/matchdays/matchday-08-720.webp 720w, assets/images/matchdays/matchday-08-1080.webp 1080w" sizes="(min-width: 960px) 200px, 30vw" width="1080" height="1920" alt="" loading="lazy" decoding="async" />
-        </figure>
+        <!-- Static markup: an LCP candidate sits here and must not wait on JS. -->
+        <div class="hero__fan">
+          <figure class="hero__poster">
+            <img src="assets/images/matchdays/matchday-02-480.webp" srcset="assets/images/matchdays/matchday-02-240.webp 240w, assets/images/matchdays/matchday-02-480.webp 480w, assets/images/matchdays/matchday-02-720.webp 720w, assets/images/matchdays/matchday-02-1080.webp 1080w" sizes="(min-width: 1200px) 232px, (min-width: 960px) 19vw, 30vw" width="2160" height="3840" alt="" loading="lazy" decoding="async" />
+          </figure>
+          <figure class="hero__poster">
+            <img src="assets/images/matchdays/matchday-06-480.webp" srcset="assets/images/matchdays/matchday-06-240.webp 240w, assets/images/matchdays/matchday-06-480.webp 480w, assets/images/matchdays/matchday-06-720.webp 720w, assets/images/matchdays/matchday-06-1080.webp 1080w" sizes="(min-width: 1200px) 232px, (min-width: 960px) 19vw, 30vw" width="2160" height="3840" alt="" fetchpriority="high" decoding="async" />
+          </figure>
+          <figure class="hero__poster">
+            <img src="assets/images/matchdays/matchday-08-480.webp" srcset="assets/images/matchdays/matchday-08-240.webp 240w, assets/images/matchdays/matchday-08-480.webp 480w, assets/images/matchdays/matchday-08-720.webp 720w, assets/images/matchdays/matchday-08-1080.webp 1080w" sizes="(min-width: 1200px) 232px, (min-width: 960px) 19vw, 30vw" width="1080" height="1920" alt="" loading="lazy" decoding="async" />
+          </figure>
+          <figure class="hero__poster">
+            <img src="assets/images/matchdays/matchday-04-480.webp" srcset="assets/images/matchdays/matchday-04-240.webp 240w, assets/images/matchdays/matchday-04-480.webp 480w, assets/images/matchdays/matchday-04-720.webp 720w, assets/images/matchdays/matchday-04-1080.webp 1080w" sizes="(min-width: 1200px) 232px, (min-width: 960px) 19vw, 30vw" width="2160" height="3840" alt="" loading="lazy" decoding="async" />
+          </figure>
+        </div>
       </div>
     </div>
   </section>
