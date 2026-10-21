@@ -55,7 +55,7 @@ body {
   background-color: var(--black);
   /* Static dot grid. The original used background-attachment:fixed on four
      layers, which forces a repaint of the whole viewport on every scroll. */
-  background-image: radial-gradient(rgba(245, 245, 245, .028) 1px, transparent 1px);
+  background-image: radial-gradient(rgba(245, 245, 245, .045) 1px, transparent 1px);
   background-size: 30px 30px;
   color: var(--white);
   font-family: var(--font-body);
@@ -147,17 +147,17 @@ button, input, select, textarea { font: inherit; color: inherit; }
 .glow--1 {
   width: min(120vw, 1100px); height: min(120vw, 1100px);
   top: -28vh; left: -22vw;
-  background: radial-gradient(circle closest-side, rgba(232, 0, 28, .17), rgba(232, 0, 28, .05) 55%, transparent 72%);
+  background: radial-gradient(circle closest-side, rgba(232, 0, 28, .24), rgba(232, 0, 28, .08) 55%, transparent 72%);
 }
 .glow--2 {
   width: min(110vw, 950px); height: min(110vw, 950px);
   top: 32vh; right: -26vw;
-  background: radial-gradient(circle closest-side, rgba(232, 0, 28, .13), rgba(232, 0, 28, .035) 55%, transparent 72%);
+  background: radial-gradient(circle closest-side, rgba(232, 0, 28, .19), rgba(232, 0, 28, .06) 55%, transparent 72%);
 }
 .glow--3 {
   width: min(130vw, 1200px); height: min(130vw, 1200px);
   bottom: -40vh; left: 18vw;
-  background: radial-gradient(circle closest-side, rgba(232, 0, 28, .10), rgba(232, 0, 28, .03) 55%, transparent 72%);
+  background: radial-gradient(circle closest-side, rgba(232, 0, 28, .16), rgba(232, 0, 28, .05) 55%, transparent 72%);
 }
 
 /* -----------------------------------------------------------------------------
@@ -1404,8 +1404,8 @@ html[lang='mk'] .about h2 { font-size: clamp(2rem, 5vw, 3.6rem); }
 .deco-grid {
   inset: 0;
   background-image:
-    linear-gradient(rgba(245, 245, 245, .045) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(245, 245, 245, .045) 1px, transparent 1px);
+    linear-gradient(rgba(245, 245, 245, .085) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(245, 245, 245, .085) 1px, transparent 1px);
   background-size: 76px 76px;
   -webkit-mask-image: radial-gradient(ellipse 62% 58% at 22% 38%, #000 0%, transparent 72%);
   mask-image: radial-gradient(ellipse 62% 58% at 22% 38%, #000 0%, transparent 72%);
@@ -1419,13 +1419,13 @@ html[lang='mk'] .about h2 { font-size: clamp(2rem, 5vw, 3.6rem); }
 .deco-halftone {
   width: min(46vw, 460px);
   height: min(46vw, 460px);
-  background-image: radial-gradient(rgba(245, 245, 245, .16) 1.4px, transparent 1.6px);
+  background-image: radial-gradient(rgba(245, 245, 245, .28) 1.5px, transparent 1.7px);
   background-size: 13px 13px;
   -webkit-mask-image: radial-gradient(circle at 50% 50%, #000 0%, transparent 68%);
   mask-image: radial-gradient(circle at 50% 50%, #000 0%, transparent 68%);
 }
 .deco-halftone--red {
-  background-image: radial-gradient(rgba(232, 0, 28, .3) 1.4px, transparent 1.6px);
+  background-image: radial-gradient(rgba(232, 0, 28, .46) 1.5px, transparent 1.7px);
 }
 
 /* --- thin diagonal speed lines -------------------------------------------- */
@@ -1434,7 +1434,7 @@ html[lang='mk'] .about h2 { font-size: clamp(2rem, 5vw, 3.6rem); }
   height: min(42vw, 420px);
   background-image: repeating-linear-gradient(
     74deg,
-    rgba(245, 245, 245, .07) 0 1px,
+    rgba(245, 245, 245, .13) 0 1px,
     transparent 1px 15px
   );
   -webkit-mask-image: linear-gradient(100deg, #000 0%, transparent 78%);
@@ -1443,7 +1443,7 @@ html[lang='mk'] .about h2 { font-size: clamp(2rem, 5vw, 3.6rem); }
 .deco-speed--red {
   background-image: repeating-linear-gradient(
     74deg,
-    rgba(232, 0, 28, .16) 0 1px,
+    rgba(232, 0, 28, .28) 0 1px,
     transparent 1px 17px
   );
 }
@@ -1453,7 +1453,7 @@ html[lang='mk'] .about h2 { font-size: clamp(2rem, 5vw, 3.6rem); }
   left: 0;
   width: 100%;
   height: 1px;
-  background: linear-gradient(90deg, transparent, rgba(232, 0, 28, .38) 22%, rgba(232, 0, 28, .38) 78%, transparent);
+  background: linear-gradient(90deg, transparent, rgba(232, 0, 28, .6) 22%, rgba(232, 0, 28, .6) 78%, transparent);
 }
 
 /* --- oversized outlined word --------------------------------------------- */
@@ -1465,15 +1465,15 @@ html[lang='mk'] .about h2 { font-size: clamp(2rem, 5vw, 3.6rem); }
   letter-spacing: .01em;
   white-space: nowrap;
   color: transparent;
-  -webkit-text-stroke: 1px rgba(245, 245, 245, .055);
+  -webkit-text-stroke: 1px rgba(245, 245, 245, .1);
   font-size: clamp(5rem, 17vw, 15rem);
   user-select: none;
 }
-.deco-word--red { -webkit-text-stroke-color: rgba(232, 0, 28, .1); }
+.deco-word--red { -webkit-text-stroke-color: rgba(232, 0, 28, .2); }
 
 /* --- inline SVG line art (court markings, registration ticks) ------------- */
-.deco-art { color: rgba(245, 245, 245, .07); }
-.deco-art--red { color: rgba(232, 0, 28, .13); }
+.deco-art { color: rgba(245, 245, 245, .13); }
+.deco-art--red { color: rgba(232, 0, 28, .24); }
 .deco-art svg { display: block; width: 100%; height: 100%; }
 
 /* Firefox has no -webkit-text-stroke; the word would render as a solid block
