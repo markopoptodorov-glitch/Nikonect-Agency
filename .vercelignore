@@ -1,0 +1,11 @@
+# Static site: only the page and its assets are deployed.
+# Source PNGs are archival and never referenced by the page (485 MB).
+assets/original/
+# Dev tooling: the site has no build step, and package.json would otherwise
+# make Vercel install Playwright and Lighthouse for nothing.
+node_modules/
+scripts/
+.perf/
+package.json
+package-lock.json
+.serve.log

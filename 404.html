@@ -6,11 +6,15 @@
 <title>Page not found | Nikonect Agency</title>
 <meta name="robots" content="noindex" />
 <meta name="theme-color" content="#0a0a0a" />
-<!-- GitHub Pages serves this for any missing path, at any depth, so every
-     URL here is absolute to the project site. -->
-<link rel="icon" href="/Nikonect-Agency/assets/favicon/icon.svg" type="image/svg+xml" />
-<link rel="icon" href="/Nikonect-Agency/assets/favicon/icon-32.png" sizes="32x32" type="image/png" />
-<link rel="stylesheet" href="/Nikonect-Agency/assets/css/fonts.css" />
+<!-- Served for any missing path, at any depth, so relative URLs would break.
+     The site lives under /Nikonect-Agency/ on GitHub Pages and at the root
+     everywhere else (Vercel), so the base is picked before anything loads. -->
+<script>
+  document.write('<base href="' + (/github\.io$/.test(location.hostname) ? '/Nikonect-Agency/' : '/') + '">');
+</script>
+<link rel="icon" href="assets/favicon/icon.svg" type="image/svg+xml" />
+<link rel="icon" href="assets/favicon/icon-32.png" sizes="32x32" type="image/png" />
+<link rel="stylesheet" href="assets/css/fonts.css" />
 <style>
   * { margin: 0; box-sizing: border-box; }
   body {
@@ -47,6 +51,6 @@
   <h1>Out of bounds.</h1>
   <p>This page does not exist. The rest of the site does.</p>
   <p class="mk" lang="mk">Оваа страница не постои.</p>
-  <a href="/Nikonect-Agency/">Back to the site</a>
+  <a href="./">Back to the site</a>
 </body>
 </html>
