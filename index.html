@@ -3,31 +3,33 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>Sports Design for Clubs &amp; Tournaments | Nikonect</title>
+<title>Nikonect Agency</title>
 <meta name="description" content="Nikonect is a sports design studio in Macedonia making matchday posters, lineup graphics, social content and thumbnails for clubs, players and tournaments. First draft in 48 hours." />
 <meta name="theme-color" content="#0a0a0a" />
 <link rel="canonical" href="https://markopoptodorov-glitch.github.io/Nikonect-Agency/" />
 
 <!-- Open Graph / Twitter -->
 <meta property="og:type" content="website" />
-<meta property="og:site_name" content="Nikonect" />
-<meta property="og:title" content="Sports Design for Clubs &amp; Tournaments | Nikonect" />
+<meta property="og:site_name" content="Nikonect Agency" />
+<meta property="og:title" content="Nikonect Agency" />
 <meta property="og:description" content="Matchday posters, lineup graphics, social content and thumbnails for clubs, players and tournaments. First draft in 48 hours." />
 <meta property="og:url" content="https://markopoptodorov-glitch.github.io/Nikonect-Agency/" />
 <meta property="og:image" content="https://markopoptodorov-glitch.github.io/Nikonect-Agency/assets/og-image.jpg" />
 <meta property="og:image:width" content="1200" />
 <meta property="og:image:height" content="630" />
-<meta property="og:image:alt" content="A Nikonect matchday poster" />
+<meta property="og:image:alt" content="Nikonect Agency logo beside three matchday posters" />
 <meta property="og:locale" content="en_US" />
 <meta property="og:locale:alternate" content="mk_MK" />
 <meta name="twitter:card" content="summary_large_image" />
-<meta name="twitter:title" content="Sports Design for Clubs &amp; Tournaments | Nikonect" />
+<meta name="twitter:title" content="Nikonect Agency" />
 <meta name="twitter:description" content="Matchday posters, lineup graphics, social content and thumbnails. First draft in 48 hours." />
 <meta name="twitter:image" content="https://markopoptodorov-glitch.github.io/Nikonect-Agency/assets/og-image.jpg" />
 
 <!-- Icons -->
+<link rel="icon" href="assets/favicon/icon.svg" type="image/svg+xml" />
 <link rel="icon" href="assets/favicon/icon-32.png" sizes="32x32" type="image/png" />
 <link rel="apple-touch-icon" href="assets/favicon/icon-180.png" />
+<link rel="manifest" href="site.webmanifest" />
 
 <!-- Fonts are self-hosted: no cross-origin connection and no render-blocking
      stylesheet on the critical path. The display face used by the H1 (the LCP
@@ -39,6 +41,29 @@
 <link rel="stylesheet" href="assets/css/fonts.css" />
 
 <link rel="stylesheet" href="assets/css/styles.css" />
+
+<!-- Decided here, before first paint, so nothing flashes:
+     1. Language: a saved choice wins; otherwise a Macedonian browser gets MK.
+        The English text is held invisible until main.js swaps it, with a
+        timeout so a failed script can never leave the page blank.
+     2. Opening animation: once per browser session, never under reduced motion. -->
+<script>
+try {
+  var saved = localStorage.getItem('nikonect-lang');
+  var mkBrowser = (navigator.languages || [navigator.language]).some(function (l) { return /^mk\b/i.test(l); });
+  if (saved === 'mk' || (!saved && mkBrowser)) {
+    document.documentElement.lang = 'mk';
+    document.documentElement.classList.add('i18n-pending');
+    setTimeout(function () { document.documentElement.classList.remove('i18n-pending'); }, 2500);
+  }
+} catch (e) { /* storage blocked: stay in English */ }
+try {
+  if (!matchMedia('(prefers-reduced-motion: reduce)').matches && !sessionStorage.getItem('nikonect-intro')) {
+    document.documentElement.classList.add('has-intro');
+    sessionStorage.setItem('nikonect-intro', '1');
+  }
+} catch (e) { /* storage blocked: skip the intro */ }
+</script>
 
 <!-- Only facts that exist: name, what the studio does, where it is, its
      public profile. No prices, phone number, rating or review count. -->
@@ -57,6 +82,26 @@
 </head>
 <body>
 
+<!-- Opening animation. Pure CSS, so it clears itself even if main.js never
+     runs; main.js only removes the node afterwards and lets a tap skip it. -->
+<div class="intro" id="intro" aria-hidden="true">
+  <div class="intro__wipe"></div>
+  <div class="intro__panel">
+    <svg class="intro__mark" viewBox="296 820 488 290" fill="none">
+      <g stroke="currentColor" stroke-width="12" stroke-linecap="round">
+        <path class="intro__line intro__line--l" pathLength="1" d="M430 946 366 1002"/>
+        <path class="intro__line intro__line--r" pathLength="1" d="M650 972 711 923"/>
+        <circle class="intro__node intro__node--l" cx="341" cy="1025" r="28"/>
+        <circle class="intro__node intro__node--r" cx="737" cy="902" r="28"/>
+      </g>
+      <path class="intro__n" fill="currentColor" d="M424 832 595 962V832h60v255L485 962v125h-61Z"/>
+    </svg>
+    <div class="intro__word"><span>NIKO<em>NECT</em></span></div>
+    <div class="intro__sub"><span>Agency</span></div>
+    <span class="intro__bar"></span>
+  </div>
+</div>
+
 <a class="skip-link" href="#main" data-i18n="a11y.skip">Skip to content</a>
 
 <!-- Chromium-only refraction source for the nav glass. Behind @supports in
@@ -67,6 +112,15 @@
     <feGaussianBlur in="noise" stdDeviation="1.8" result="soft" />
     <feDisplacementMap in="SourceGraphic" in2="soft" scale="6" xChannelSelector="R" yChannelSelector="G" />
   </filter>
+  <!-- The N mark, drawn once and reused by the nav and footer logos. -->
+  <symbol id="mark" viewBox="296 820 488 290">
+    <g fill="none" stroke="currentColor" stroke-width="14" stroke-linecap="round">
+      <path d="M430 946 366 1002M650 972 711 923"/>
+      <circle cx="341" cy="1025" r="28"/>
+      <circle cx="737" cy="902" r="28"/>
+    </g>
+    <path fill="currentColor" d="M424 832 595 962V832h60v255L485 962v125h-61Z"/>
+  </symbol>
 </svg>
 
 <!-- Static background glow. Gives the glass surfaces something to work with. -->
@@ -79,8 +133,8 @@
 
 <!-- ============================ NAV ============================ -->
 <header class="nav" id="nav">
-  <nav class="nav__pill glass" aria-label="Main">
-    <a href="#hero" class="logo">NIKO<span>NECT</span></a>
+  <nav class="nav__pill glass" aria-label="Main" data-i18n-aria="aria.main">
+    <a href="#hero" class="logo" aria-label="Nikonect Agency"><svg class="logo__mark" aria-hidden="true"><use href="#mark" /></svg>NIKO<span>NECT</span></a>
 
     <div class="nav__links" id="navLinks">
       <a href="#portfolio" data-i18n="nav.work">Work</a>
@@ -92,12 +146,12 @@
     </div>
 
     <div class="nav__actions">
-      <div class="lang" role="group" aria-label="Language">
+      <div class="lang" role="group" aria-label="Language" data-i18n-aria="aria.lang">
         <button type="button" data-lang="en" aria-pressed="true">EN</button>
         <button type="button" data-lang="mk" aria-pressed="false">MK</button>
       </div>
       <a href="#contact" class="btn nav__cta" data-i18n="cta.quote">Get a quote</a>
-      <button class="burger" id="burger" aria-label="Menu" aria-expanded="false" aria-controls="navLinks">
+      <button class="burger" id="burger" aria-label="Menu" data-i18n-aria="aria.menu" aria-expanded="false" aria-controls="navLinks">
         <span></span><span></span><span></span>
       </button>
     </div>
@@ -175,7 +229,7 @@
 
   <!-- ============================ SERVICES ============================ -->
   <section class="section section--cv" id="services" aria-labelledby="services-title">
-    <div class="deco" aria-hidden="true"><span class="deco-grid"></span><span class="deco-word" style="top:-2.5rem;right:-1.5rem">Studio</span><span class="deco-hairline" style="top:0"></span></div>
+    <div class="deco" aria-hidden="true"><span class="deco-grid"></span><span class="deco-word" style="top:-2.5rem;right:-1.5rem" data-i18n="deco.studio">Studio</span><span class="deco-hairline" style="top:0"></span></div>
     <div class="sec-head shell">
       <div class="sec-eyebrow" data-i18n="services.eyebrow">What I do</div>
       <h2 class="sec-title reveal reveal--left" id="services-title" data-i18n-html="services.title">Built for the <em>game.</em></h2>
@@ -273,7 +327,7 @@
     </div>
 
     <div class="shell">
-      <div class="filters glass" id="filters" role="group" aria-label="Filter work">
+      <div class="filters glass" id="filters" role="group" aria-label="Filter work" data-i18n-aria="aria.filters">
         <button class="filter" type="button" data-filter="all" aria-pressed="true" data-i18n="work.f.all">All</button>
         <button class="filter" type="button" data-filter="client" aria-pressed="false" data-i18n="work.f.client">Client work</button>
         <button class="filter" type="button" data-filter="matchdays" aria-pressed="false" data-i18n="work.f.matchdays">Matchdays</button>
@@ -293,7 +347,7 @@
 
   <!-- ============================ PROCESS ============================ -->
   <section class="section section--cv" id="process" aria-labelledby="process-title">
-    <div class="deco" aria-hidden="true"><span class="deco-speed" style="left:-6%;top:12%"></span><span class="deco-word deco-word--red" style="bottom:-3rem;left:-1rem">Process</span><span class="deco-hairline" style="bottom:0"></span></div>
+    <div class="deco" aria-hidden="true"><span class="deco-speed" style="left:-6%;top:12%"></span><span class="deco-word deco-word--red" style="bottom:-3rem;left:-1rem" data-i18n="deco.process">Process</span><span class="deco-hairline" style="bottom:0"></span></div>
     <div class="sec-head shell">
       <div class="sec-eyebrow" data-i18n="process.eyebrow">How it works</div>
       <h2 class="sec-title reveal reveal--left" id="process-title" data-i18n-html="process.title">Three steps, <em>no fuss.</em></h2>
@@ -389,7 +443,7 @@
 
   <!-- ============================ PRICING ============================ -->
   <section class="section section--cv" id="pricing" aria-labelledby="pricing-title">
-    <div class="deco" aria-hidden="true"><span class="deco-grid deco-grid--right"></span><span class="deco-word" style="top:-2rem;left:-2rem">Packages</span><span class="deco-hairline" style="top:0"></span></div>
+    <div class="deco" aria-hidden="true"><span class="deco-grid deco-grid--right"></span><span class="deco-word" style="top:-2rem;left:-2rem" data-i18n="deco.packages">Packages</span><span class="deco-hairline" style="top:0"></span></div>
     <div class="sec-head shell">
       <div class="sec-eyebrow" data-i18n="pricing.eyebrow">Packages</div>
       <h2 class="sec-title reveal reveal--left" id="pricing-title" data-i18n-html="pricing.title">Pick your <em>lineup.</em></h2>
@@ -501,7 +555,7 @@
 </main>
 
 <footer>
-  <div class="f-logo">NIKO<span>NECT</span></div>
+  <div class="f-logo"><svg class="logo__mark" aria-hidden="true"><use href="#mark" /></svg>NIKO<span>NECT</span></div>
   <div>&copy; <span id="year">2025</span> Nikonect. <span data-i18n="footer.rights">All rights reserved.</span></div>
   <div class="f-links">
     <a href="https://instagram.com/nikonectagency" target="_blank" rel="noopener">Instagram</a>
@@ -511,11 +565,11 @@
 </footer>
 
 <!-- Floating contact dock. Links render only when configured. -->
-<div class="dock glass" id="dock" aria-label="Contact shortcuts"></div>
+<div class="dock glass" id="dock" aria-label="Contact shortcuts" data-i18n-aria="aria.dock"></div>
 
 <!-- Lightbox -->
-<dialog class="lightbox" id="lightbox" aria-label="Full size image">
-  <button class="lightbox__close" id="lightboxClose" aria-label="Close">&times;</button>
+<dialog class="lightbox" id="lightbox" aria-label="Full size image" data-i18n-aria="aria.lightbox">
+  <button class="lightbox__close" id="lightboxClose" aria-label="Close" data-i18n-aria="aria.close">&times;</button>
   <img id="lightboxImg" src="" alt="" />
   <p class="lightbox__cap" id="lightboxCap"></p>
 </dialog>

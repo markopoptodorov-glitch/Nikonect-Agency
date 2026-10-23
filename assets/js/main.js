@@ -42,34 +42,44 @@ const SITE_CONFIG = {
   /* TODO(Marko): real prices, or leave null.
      A null price renders as "Request a quote" — never "€—".
      The feature lines are deliberately non-committal: edit them to match
-     what you actually promise per package. */
+     what you actually promise per package. Every text field has an English
+     and a Macedonian version — edit both together. */
   pricing: {
     currency: '€',
     tiers: [
       {
         id: 'single',
-        name: 'Single design',
+        name: { en: 'Single design', mk: 'Еден дизајн' },
         price: null,
-        unit: 'per design',
-        desc: 'One graphic, turned around fast.',
-        features: ['One matchday graphic or thumbnail', 'First draft in 48 hours', 'Exported in the sizes you need'],
+        unit: { en: 'per design', mk: 'по дизајн' },
+        desc: { en: 'One graphic, turned around fast.', mk: 'Една графика, изработена брзо.' },
+        features: {
+          en: ['One matchday graphic or thumbnail', 'First draft in 48 hours', 'Exported in the sizes you need'],
+          mk: ['Една графика за натпревар или thumbnail', 'Прва скица за 48 часа', 'Во димензиите што ти требаат'],
+        },
       },
       {
         id: 'pack',
-        name: 'Matchday pack',
+        name: { en: 'Matchday pack', mk: 'Пакет за натпревар' },
         price: null,
-        unit: 'per pack',
-        desc: 'A consistent set for a fixture or a campaign.',
+        unit: { en: 'per pack', mk: 'по пакет' },
+        desc: { en: 'A consistent set for a fixture or a campaign.', mk: 'Усогласен сет за натпревар или кампања.' },
         featured: true,
-        features: ['A set of matchday and social designs', 'One consistent template across the set', 'First draft in 48 hours', 'Revision rounds agreed in your quote'],
+        features: {
+          en: ['A set of matchday and social designs', 'One consistent template across the set', 'First draft in 48 hours', 'Revision rounds agreed in your quote'],
+          mk: ['Сет дизајни за натпревар и социјални мрежи', 'Ист шаблон низ целиот сет', 'Прва скица за 48 часа', 'Бројот на корекции се договара во понудата'],
+        },
       },
       {
         id: 'season',
-        name: 'Season or event',
+        name: { en: 'Season or event', mk: 'Сезона или настан' },
         price: null,
         unit: null,
-        desc: 'Full coverage for a tournament or a whole season.',
-        features: ['Full tournament or season coverage', 'Schedules, results and announcement graphics', 'Scope and turnaround agreed up front'],
+        desc: { en: 'Full coverage for a tournament or a whole season.', mk: 'Целосна покриеност за турнир или цела сезона.' },
+        features: {
+          en: ['Full tournament or season coverage', 'Schedules, results and announcement graphics', 'Scope and turnaround agreed up front'],
+          mk: ['Целосна покриеност на турнир или сезона', 'Распореди, резултати и графики за најави', 'Обемот и роковите се договараат однапред'],
+        },
       },
     ],
   },
@@ -184,6 +194,11 @@ const content = {
     'contact.noform': 'The contact form is not connected yet — send me a DM on Instagram and I will get back to you.',
 
     'footer.rights': 'All rights reserved.', 'footer.top': 'Back to top',
+
+    'deco.studio': 'Studio', 'deco.process': 'Process', 'deco.packages': 'Packages',
+    'aria.main': 'Main', 'aria.lang': 'Language', 'aria.menu': 'Menu',
+    'aria.filters': 'Filter work', 'aria.dock': 'Contact shortcuts',
+    'aria.lightbox': 'Full size image', 'aria.close': 'Close',
   },
 
   mk: {
@@ -276,6 +291,11 @@ const content = {
     'contact.noform': 'Формата сè уште не е поврзана — прати ми DM на Instagram и ќе ти одговорам.',
 
     'footer.rights': 'Сите права задржани.', 'footer.top': 'Назад на почеток',
+
+    'deco.studio': 'Студио', 'deco.process': 'Процес', 'deco.packages': 'Пакети',
+    'aria.main': 'Главно мени', 'aria.lang': 'Јазик', 'aria.menu': 'Мени',
+    'aria.filters': 'Филтрирај проекти', 'aria.dock': 'Брз контакт',
+    'aria.lightbox': 'Слика во полна големина', 'aria.close': 'Затвори',
   },
 };
 
@@ -290,6 +310,8 @@ const t = (key, ...args) => {
   const v = content[lang]?.[key] ?? content.en[key] ?? '';
   return typeof v === 'function' ? v(...args) : v;
 };
+/* Config values are either a plain string or an { en, mk } pair. */
+const loc = (v) => (v && typeof v === 'object' && !Array.isArray(v) ? v[lang] ?? v.en : v);
 
 /* -----------------------------------------------------------------------------
    LANGUAGE
@@ -306,12 +328,17 @@ function applyLanguage(next) {
     const v = content[lang][el.dataset.i18nHtml];
     if (typeof v === 'string') el.innerHTML = v;
   }
+  for (const el of $$('[data-i18n-aria]')) {
+    const v = content[lang][el.dataset.i18nAria];
+    if (typeof v === 'string') el.setAttribute('aria-label', v);
+  }
   for (const b of $$('.lang button')) {
     b.setAttribute('aria-pressed', String(b.dataset.lang === lang));
   }
 
   renderPricing();
   relabelPortfolio();
+  document.documentElement.classList.remove('i18n-pending');
   try { localStorage.setItem('nikonect-lang', lang); } catch { /* private mode */ }
 }
 
@@ -319,9 +346,9 @@ function initLanguage() {
   for (const b of $$('.lang button')) {
     b.addEventListener('click', () => applyLanguage(b.dataset.lang));
   }
-  let saved = null;
-  try { saved = localStorage.getItem('nikonect-lang'); } catch { /* ignore */ }
-  if (saved && saved !== 'en') applyLanguage(saved);
+  /* The inline script in <head> has already picked the language (saved
+     choice, else the browser's) and marked <html> with it. */
+  if (document.documentElement.lang === 'mk') applyLanguage('mk');
 }
 
 /* -----------------------------------------------------------------------------
@@ -361,10 +388,13 @@ const CATEGORY = {
   slamjam:    { group: 'client',  project: 'SlamJam Skopje 2025',      filters: ['client'] },
   sportski:   { group: 'client',  project: 'Sportski Igri Veles 2025', filters: ['client'] },
   borec:      { group: 'client',  project: 'Borec Basketball',         filters: ['client'] },
-  matchdays:  { group: 'concept', project: 'Matchday poster',          filters: ['matchdays'] },
-  concepts:   { group: 'concept', project: 'Concept piece',            filters: ['concepts'] },
-  thumbnails: { group: 'concept', project: 'Thumbnail',                filters: ['thumbnails'] },
+  matchdays:  { group: 'concept', project: { en: 'Matchday poster', mk: 'Постер за натпревар' }, filters: ['matchdays'] },
+  concepts:   { group: 'concept', project: { en: 'Concept piece', mk: 'Концепт' },               filters: ['concepts'] },
+  thumbnails: { group: 'concept', project: { en: 'Thumbnail', mk: 'Thumbnail' },                filters: ['thumbnails'] },
 };
+
+/* Client names are proper names; category captions follow the language. */
+const projectOf = (tile) => tile.dataset.client || loc((CATEGORY[tile.dataset.cat] || CATEGORY.concepts).project);
 
 
 /* Priority for the round-robin below. The matchday posters are the strongest
@@ -446,7 +476,7 @@ function makeTile(entry) {
 
     /* A named client in the manifest promotes the piece out of its category
        default — that is how the Valencia poster reaches Client work. */
-    const project = entry.client || meta.project;
+    const project = entry.client || loc(meta.project);
     const group = entry.client ? 'client' : meta.group;
     const filters = entry.client ? [...new Set(['client', ...meta.filters])] : meta.filters;
 
@@ -456,7 +486,7 @@ function makeTile(entry) {
     btn.dataset.filters = [...filters, 'all'].join(' ');
     btn.dataset.full = `${entry.src}-1080.webp`;
     btn.dataset.type = entry.type;
-    btn.dataset.project = project;
+    btn.dataset.client = entry.client || '';
     btn.dataset.group = group;
     btn.dataset.cat = entry.cat;
 
@@ -509,10 +539,17 @@ function relabelPortfolio() {
     const badge = $('.badge', tile);
     if (badge) badge.textContent = t(group === 'client' ? 'work.badge.client' : 'work.badge.concept');
 
+    const project = projectOf(tile);
+    const name = $('.tile__project', tile);
+    if (name) name.textContent = project;
     const kind = $('.tile__type', tile);
-    if (kind) kind.textContent = typeLabel(tile.dataset.type);
+    if (kind) {
+      kind.textContent = typeLabel(tile.dataset.type);
+      // "Matchday poster / Matchday poster" says nothing twice.
+      kind.hidden = kind.textContent === project;
+    }
     const img = $('img', tile);
-    if (img) img.alt = `${tile.dataset.project} — ${typeLabel(tile.dataset.type)}`;
+    if (img) img.alt = `${project} — ${typeLabel(tile.dataset.type)}`;
   }
 }
 
@@ -570,8 +607,8 @@ function initLightbox() {
 
   const open = (tile) => {
     img.src = tile.dataset.full;
-    img.alt = `${tile.dataset.project} — ${typeLabel(tile.dataset.type)}`;
-    cap.textContent = `${tile.dataset.project} · ${typeLabel(tile.dataset.type)}`;
+    img.alt = `${projectOf(tile)} — ${typeLabel(tile.dataset.type)}`;
+    cap.textContent = `${projectOf(tile)} · ${typeLabel(tile.dataset.type)}`;
     dlg.showModal();
   };
 
@@ -700,7 +737,58 @@ function initHeroMotion() {
    static rather than stuck at opacity 0. Set after first paint. */
 function initMotionFlag() {
   if (reduceMotion.matches) return;
+  /* With the opening animation playing, the hero entrance waits for the
+     curtain instead (see initIntro). */
+  if (document.documentElement.classList.contains('has-intro')) return;
   requestAnimationFrame(() => document.documentElement.classList.add('motion'));
+}
+
+/* -----------------------------------------------------------------------------
+   OPENING ANIMATION
+   The sequence itself is CSS. This starts the hero entrance just as the
+   curtain lifts, lets a tap or key press skip ahead, and removes the overlay
+   once it has gone.
+   -------------------------------------------------------------------------- */
+const INTRO_LIFT_MS = 1750; // matches the .intro__panel exit delay in CSS
+const INTRO_DONE_MS = 2700; // matches the .intro hide delay in CSS
+
+function initIntro() {
+  const root = document.documentElement;
+  const intro = $('#intro');
+  if (!intro) return;
+  if (!root.classList.contains('has-intro')) { intro.remove(); return; }
+
+  let lifted = false;
+  const lift = () => {
+    if (lifted) return;
+    lifted = true;
+    root.classList.add('motion');
+  };
+  /* On a slow connection this script can arrive after the CSS sequence has
+     already run, so time is counted from navigation, not from here. */
+  if (performance.now() > INTRO_DONE_MS) {
+    intro.remove();
+    root.classList.remove('has-intro');
+    lift();
+    return;
+  }
+  const timer = setTimeout(lift, Math.max(0, INTRO_LIFT_MS - performance.now()));
+
+  const skip = () => {
+    if (lifted) return;
+    clearTimeout(timer);
+    intro.classList.add('is-skipped');
+    lift();
+  };
+  intro.addEventListener('pointerdown', skip, { once: true });
+  window.addEventListener('keydown', skip, { once: true });
+
+  /* The red wipe is the last layer to leave. */
+  $('.intro__wipe', intro)?.addEventListener('animationend', () => {
+    intro.remove();
+    root.classList.remove('has-intro');
+    window.removeEventListener('keydown', skip);
+  });
 }
 
 /* -----------------------------------------------------------------------------
@@ -849,7 +937,7 @@ function renderPricing() {
 
     const name = document.createElement('div');
     name.className = 'price__tier';
-    name.textContent = tier.name;
+    name.textContent = loc(tier.name);
 
     const amt = document.createElement('div');
     amt.className = 'price__amt';
@@ -860,17 +948,17 @@ function renderPricing() {
       amt.textContent = `${currency}${tier.price}`;
       if (tier.unit) {
         const small = document.createElement('small');
-        small.textContent = ` ${tier.unit}`;
+        small.textContent = ` ${loc(tier.unit)}`;
         amt.append(small);
       }
     }
 
     const desc = document.createElement('div');
     desc.className = 'price__desc';
-    desc.textContent = tier.desc || '';
+    desc.textContent = loc(tier.desc) || '';
 
     const ul = document.createElement('ul');
-    for (const f of tier.features || []) {
+    for (const f of loc(tier.features) || []) {
       const li = document.createElement('li');
       li.textContent = f;
       ul.append(li);
@@ -1152,6 +1240,7 @@ function init() {
   renderPricing();
   buildPortfolio();
   initMarquee();
+  initIntro();
   initMotionFlag();
   initReveal();
   initHeroMotion();

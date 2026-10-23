@@ -341,8 +341,23 @@ html.marquee-visible .dock {
   letter-spacing: .06em;
   line-height: 1;
   white-space: nowrap;
+  display: inline-flex;
+  align-items: center;
 }
 .logo span { color: var(--red); }
+
+/* The N mark ahead of the wordmark, nav and footer alike. */
+.logo__mark {
+  width: 2em;
+  height: 1.2em;
+  margin-right: .4em;
+  flex: 0 0 auto;
+  color: var(--white);
+  transition: transform .5s var(--ease);
+}
+.logo:hover .logo__mark { transform: rotate(-8deg) scale(1.06); }
+footer .f-logo { display: inline-flex; align-items: center; }
+@media (prefers-reduced-motion: reduce) { .logo:hover .logo__mark { transform: none; } }
 
 .nav__links { display: flex; gap: 1.9rem; align-items: center; }
 .nav__links a {
@@ -470,7 +485,9 @@ html.marquee-visible .dock {
   max-width: var(--maxw);
   margin-inline: auto;
 }
-@media (max-width: 960px) { .hero__grid { grid-template-columns: 1fr; } }
+/* minmax(0, 1fr), not 1fr: a bare 1fr cannot shrink below its widest child
+   and pushed the hero column a few px past the screen edge at 360px. */
+@media (max-width: 960px) { .hero__grid { grid-template-columns: minmax(0, 1fr); } }
 
 .hero__tag {
   display: inline-flex;
@@ -811,7 +828,6 @@ html.marquee-visible .dock {
   gap: .8rem;
   margin-top: 2.2rem;
 }
-@media (max-width: 480px) { .stats { grid-template-columns: 1fr; } }
 
 .stat {
   padding: 1.5rem 1.2rem;
@@ -1205,9 +1221,20 @@ footer .f-logo span { color: var(--red); }
    NARROW-SCREEN CORRECTIONS
    -------------------------------------------------------------------------- */
 @media (max-width: 620px) {
-  /* A fully rounded pill looks wrong once the filters wrap onto three rows. */
-  .filters { border-radius: var(--radius); width: 100%; }
-  .filter { flex: 1 1 auto; text-align: center; }
+  /* One swipeable row instead of a pill wrapped onto three rows. The fade on
+     the right edge says there is more to swipe to. */
+  .filters {
+    flex-wrap: nowrap;
+    width: 100%;
+    overflow-x: auto;
+    overscroll-behavior-x: contain;
+    scrollbar-width: none;
+    -webkit-mask-image: linear-gradient(90deg, #000 85%, transparent);
+    mask-image: linear-gradient(90deg, #000 85%, transparent);
+  }
+  .filters::-webkit-scrollbar { display: none; }
+  .filter { flex: 0 0 auto; padding-inline: 1.1rem; }
+  .filter:last-child { margin-right: 1.6rem; }
 
   /* Four client names will not sit on one phone line. A two-column grid keeps
      them tidy and unambiguous without the separators. */
@@ -1662,7 +1689,9 @@ html[lang='mk'] .about h2 { font-size: clamp(2rem, 5vw, 3.6rem); }
   .motion .hero.is-still .hero__poster { animation-play-state: paused; }
 
   /* ---- nav ------------------------------------------------------------- */
-  .motion .nav__pill { animation: drop-in .7s var(--ease) both; }
+  /* backwards, not both: a held transform, even an identity one, makes the
+     pill the containing block for the fixed mobile menu sheet inside it. */
+  .motion .nav__pill { animation: drop-in .7s var(--ease) backwards; }
 
   /* ---- richer section reveals ------------------------------------------ */
   /* The shared .reveal stays a plain rise; these are opt-in variants. */
@@ -1725,4 +1754,182 @@ html[lang='mk'] .about h2 { font-size: clamp(2rem, 5vw, 3.6rem); }
 @media (max-width: 620px) {
   .js-anim .reveal--left,
   .js-anim .reveal--right { transform: translate3d(0, 24px, 0); }
+}
+
+/* =============================================================================
+   OPENING ANIMATION
+   -----------------------------------------------------------------------------
+   Shown once per session, gated by html.has-intro (set by the inline script in
+   <head>, never under reduced motion). The mark draws itself, the wordmark
+   rises, then a black panel and a red wipe lift off the page in turn.
+   Pure CSS: the overlay ends hidden on its own even if main.js never runs.
+   ========================================================================== */
+.intro { display: none; }
+
+.has-intro .intro {
+  display: block;
+  position: fixed;
+  inset: 0;
+  z-index: 200;
+  pointer-events: auto;
+  animation: intro-done 0s linear 2.7s forwards;
+}
+
+.intro__wipe,
+.intro__panel { position: absolute; inset: 0; will-change: transform; }
+
+.intro__wipe {
+  background: var(--red);
+  animation: intro-up .7s cubic-bezier(.7, 0, .2, 1) 1.95s forwards;
+}
+
+.intro__panel {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background: var(--black);
+  color: var(--white);
+  animation: intro-up .7s cubic-bezier(.7, 0, .2, 1) 1.75s forwards;
+}
+
+.intro__mark { width: min(46vw, 210px); height: auto; overflow: visible; }
+
+/* The two nodes pop, the connectors draw out of the N, then the N wipes up. */
+.intro__node {
+  transform-box: fill-box;
+  transform-origin: center;
+  transform: scale(0);
+  animation: intro-pop .5s cubic-bezier(.34, 1.56, .64, 1) forwards;
+}
+.intro__node--l { animation-delay: .55s; }
+.intro__node--r { animation-delay: .62s; }
+
+.intro__line {
+  stroke-dasharray: 1;
+  stroke-dashoffset: 1;
+  animation: intro-draw .35s var(--ease) forwards;
+}
+.intro__line--l { animation-delay: .38s; }
+.intro__line--r { animation-delay: .44s; }
+
+.intro__n {
+  clip-path: inset(100% 0 0 0);
+  animation: intro-n .55s var(--ease) .1s forwards;
+}
+
+/* Text sits in a clipping line box and slides up into it. */
+.intro__word,
+.intro__sub { overflow: hidden; line-height: 1; }
+.intro__word span,
+.intro__sub span {
+  display: block;
+  transform: translate3d(0, 110%, 0);
+  animation: intro-rise .7s var(--ease) forwards;
+}
+
+.intro__word {
+  margin-top: 1.6rem;
+  font-family: var(--font-display);
+  font-size: clamp(2.6rem, 11vw, 4.6rem);
+  letter-spacing: .08em;
+  padding-left: .08em; /* balances the trailing letter-spacing */
+}
+.intro__word em { font-style: normal; color: var(--red); }
+.intro__word span { animation-delay: .78s; }
+
+.intro__sub {
+  margin-top: .55rem;
+  font-family: var(--font-body);
+  font-weight: 500;
+  font-size: clamp(.72rem, 2.6vw, .85rem);
+  text-transform: uppercase;
+  letter-spacing: .6em;
+  padding-left: .6em;
+  color: #b4b4b4;
+}
+.intro__sub span { animation-delay: .92s; }
+
+.intro__bar {
+  display: block;
+  width: min(44vw, 180px);
+  height: 2px;
+  margin-top: 1.4rem;
+  background: var(--red);
+  transform: scaleX(0);
+  animation: intro-bar .8s var(--ease) 1s forwards;
+}
+
+/* A tap or key press fast-forwards straight to the exit (see main.js). */
+.intro.is-skipped .intro__panel { animation: intro-up .5s cubic-bezier(.7, 0, .2, 1) forwards; }
+.intro.is-skipped .intro__wipe  { animation: intro-up .5s cubic-bezier(.7, 0, .2, 1) .08s forwards; }
+.intro.is-skipped { animation: intro-done 0s linear .6s forwards; }
+
+@keyframes intro-up   { to { transform: translate3d(0, -100%, 0); } }
+@keyframes intro-pop  { to { transform: scale(1); } }
+@keyframes intro-draw { to { stroke-dashoffset: 0; } }
+@keyframes intro-n    { to { clip-path: inset(0 0 0 0); } }
+@keyframes intro-rise { to { transform: none; } }
+@keyframes intro-bar  { to { transform: scaleX(1); } }
+@keyframes intro-done { to { visibility: hidden; pointer-events: none; } }
+
+@media (prefers-reduced-motion: reduce) {
+  .has-intro .intro { display: none; }
+}
+
+/* =============================================================================
+   PHONE POLISH
+   ========================================================================== */
+@media (max-width: 560px) {
+  /* Badge on its own line, caption below at full tile width, so names are
+     not cut to "SlamJa…" beside the badge. */
+  .tile__meta { flex-direction: column; align-items: flex-start; gap: .4rem; padding: .6rem .65rem .7rem; }
+  .tile__text { width: 100%; }
+  .tile__project {
+    white-space: normal;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+  }
+  .badge { font-size: .52rem; padding: .24rem .5rem; }
+}
+
+@media (max-width: 620px) {
+  /* Full-width thumb target for the one action in the contact panel. */
+  .form-panel > .btn,
+  .form-panel form .btn { width: 100%; }
+
+  /* Footer stacks and centres: logo, links, then the small print. */
+  footer { flex-direction: column; justify-content: center; text-align: center; gap: 1.1rem; padding-bottom: calc(2.2rem + env(safe-area-inset-bottom, 0px)); }
+  footer > div:nth-child(2) { order: 3; font-size: .74rem; }
+  .f-links { order: 2; flex-wrap: wrap; justify-content: center; gap: .2rem 1.2rem; }
+  .f-links a { display: inline-block; padding: .65rem .2rem; }
+}
+
+/* Still three across on a phone, just tighter — stacked, they took a whole
+   screen to say three numbers. */
+@media (max-width: 480px) {
+  .stats { gap: .5rem; }
+  .stat { padding: 1.1rem .5rem; text-align: center; }
+  .stat__n { font-size: 2rem; }
+  .stat__l { font-size: .6rem; letter-spacing: .1em; }
+}
+
+/* Held invisible for the moment between first paint and main.js swapping
+   the English markup to Macedonian. The inline script in <head> lifts this
+   on a timeout too, so it can never strand the page. */
+.i18n-pending [data-i18n],
+.i18n-pending [data-i18n-html] { visibility: hidden; }
+
+/* Smallest phones: the N mark costs ~40px in the nav, so the wordmark and
+   pill tighten to keep the menu button inside the pill. Below 340px there is
+   no room for the mark at all and the wordmark carries the brand alone. */
+@media (max-width: 400px) {
+  .nav__pill { gap: .5rem; padding-left: 1rem; }
+  .logo { font-size: 1.22rem; }
+  .logo__mark { margin-right: .3em; }
+  .nav__actions { gap: .4rem; }
+}
+@media (max-width: 340px) {
+  .nav .logo__mark { display: none; }
 }
